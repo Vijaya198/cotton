@@ -1,0 +1,447 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<title>Cotton Sandhai - Vendor Add Details</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="{% static 'css/demo/site-demos.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/site-demos.css' %}">
+	<link rel="stylesheet" href="{% static 'vendor/bootstrap-3.4.1-dist/css/bootstrap.min.css' %}">
+    <script src="{% static 'vendor/bootstrap-3.4.1-dist/js/bootstrap.min.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'vendor/jquery-validation/dist/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'vendor/jquery-validation/dist/additional-methods.min.js' %}"></script>
+    <script src="{% static 'js/jquery.steps.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+	
+</head>
+
+<body>
+
+<div id="wrapper" class="wrapper">
+	<!---Top menu-->
+	<div class="top_navbar">		
+	  <div class="openbtn" onclick="openNav()">
+		 <div class="one"></div>
+		 <div class="two"></div>
+		 <div class="three"></div>
+	  </div>
+	  <div class="top_menu">
+		<div class="logo"><img src="{% static 'images/logo3.jpg' %}"/><br></div>
+
+		<ul>
+		<div class="dropdown">
+		  <li class="dropbtn" ><a href="#">
+			<i class="glyphicon glyphicon-user"></i>
+			</a>
+		  </li>
+		  <div class="dropdown-content">
+				<a href="#">Account Info</a>
+				<a href="#">Payment Info</a>
+				<a href="#">Forgot Password</a>
+		  </div>
+		</div>
+		<li><a href="#">
+			<i data-toggle="tooltip" data-placement="right" title="Notifications" class="glyphicon glyphicon-bell"></i>
+			</a>
+          </li>
+          <li><a href="#">
+			<i  data-toggle="tooltip" data-placement="right" title="Logout" class="glyphicon glyphicon-arrow-right"></i>
+			</a>
+		  </li>
+		</ul>
+	  </div>
+	</div>
+
+    <!-- Sidebar -->
+    <div id="mySidepanel" class="sidepanel">
+	  <ul class="sidebar-nav" id="">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+
+		<li><a href="traders" >Trades</a></li>
+        <li><a href="vendors">Vendors</a></li>
+	  </ul>
+	</div>
+
+    <!-- Page content -->
+      <div id="page-content-wrapper">
+        <!-- Keep all page content within the page-content inset div! -->
+        <div class="page-content inset">
+          <div class="row">
+            <div class="col-md-12">
+            <div class="main_container">
+
+		<!--div class="page-content" style="background-color: rgba(0, 0, 0, 0.15)"-->
+			<div class="wizard-v1-content">
+				<div class="wizard-form">
+					<form class="form-register" id="form-register" action="vendorRegister" method="POST">
+						{% csrf_token %}
+						<div id="form-total">
+							<!-- SECTION 1 -->
+							<h2>
+								<span class="step-icon"></span>
+								<span class="step-text">Account &nbsp; &nbsp; </span>
+							</h2>
+
+							<section>
+								<div class="inner">
+
+									<h3  style="font-size:18px">Vendor Details</h3>
+									<div class="section-title-divider"></div>
+
+									<div class="clearfix"></div>
+									<div class="form-row">
+										<div class="form-holder form-holder-2">
+
+											<label for="card-type">Vendor Type*</label>
+												<select name="vendortype" id="vendortype" class="form-control" style="height:40px;">
+													<option value="" disabled selected>Select Vendor</option>
+
+														<option value="Buyer">Buyer</option>
+
+												</select>
+										</div>
+										<div class="form-holder form-holder-2">
+											<label for="email">Company Email*</label>
+												<input type="email" placeholder="Company Email" class="form-control" id="company_email" name="company_email"  pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+
+										</div>
+									</div>
+
+									<div class="form-row">
+
+										<div class="form-holder form-holder-2">
+											<label for="name">Company Name*</label>
+											<input type="text" placeholder="Enter Conmpany Name" class="form-control" id="company_name" name="company_name">
+										</div>
+									</div>
+
+
+									<div class="form-row">
+										<div class="form-holder form-holder-2">
+											<label for="address">Company Address*</label>
+											<input type="text" placeholder="Door no & street" class="form-control" id="adddoor" name="adddoor">
+											<br>
+											<input type="text" placeholder="locality" class="form-control" id="locality" name="locality">
+
+										</div>
+									</div>
+									<div class="form-row">
+										<div class="form-holder form-holder-2">
+											<label for="card-type">State*</label>
+												<select name="state" id="state" class="form-control" style="height:35px;">
+													<option value="" disabled selected>Select State</option>
+
+														<option value="Tamil nadu">Tamil Nadu</option>
+
+												</select>
+
+										</div>
+										<div class="form-holder form-holder-2">
+											<label for="address">Pincode</label>
+											<input type="text" placeholder="Pincode" class="form-control" id="pincode" name="pincode">
+										</div>
+									</div><br>
+									<div class="clearfix"></div>
+									<div class="form-row">
+										<div class="form-holder form-holder-2">
+											<label for="proprietorDirectorName">Proprietor/Director Name</label>
+											<input type="text" placeholder="Proprietor/Director Name" class="form-control" id="proprietorDirectorName" name="proprietorDirectorName" >
+										</div>
+										<div class="form-holder form-holder-2">
+											<label for="proprietorDirectorContact">Proprietor/director contact No </label>
+											<input type="text" placeholder="Proprietor/Director Contact No" class="form-control" id="proprietorDirectorContact" name="proprietorDirectorContact">
+										</div>
+									</div>
+									<div class="form-row">
+										<div class="form-holder form-holder-2">
+											<label for="localcontactname">Local Contact Name</label>
+											<input type="text" placeholder="local contact name" class="form-control" id="local_contact_name" name="local_contact_name" >
+										</div>
+										<div class="form-holder form-holder-2">
+											<label for="local">Local Contact No *</label>
+											<input type="text" placeholder="Local Contact No" class="form-control" id="local_contact_no" name="local_contact_no" >
+										</div>
+									</div>
+								</div>
+
+
+
+
+							</section>
+							<!-- SECTION 2 -->
+
+
+							<!-- SECTION 3 -->
+								<h2>
+								    <!--<span class="step-icon"><i class="zmdi zmdi-card"></i></span>-->
+									<span class="step-icon"></span>
+									<span class="step-text">Insurance &nbsp;  &nbsp;  </span>
+								</h2>
+								<section>
+							    <!----Bank Details-->
+								 <div class="inner">
+
+									 <h3 style="font-size:18px;">Bank and Governance</h3>
+										<div class="section-title-divider"></div>
+										<div class="clearfix"></div>
+										<div class="form-row">
+												<div class="form-holder form-holder-2">
+													<label for="gstin">GSTIN</label>
+													<input type="text" placeholder="Enter GSTIN no" class="form-control" id="gstin" name="gstin" >
+												</div>
+
+												<div class="form-holder form-holder-2">
+													<label for="uin">UIN</label>
+													<input type="text" placeholder="Enter UIN no" class="form-control" id="uin" name="uin" >
+												</div>
+
+												<div class="form-holder form-holder-2">
+													<label for="pan">PAN</label>
+													<input type="text" placeholder="Enter PAN no" class="form-control" id="pan" name="pan" >
+												</div>
+										</div>
+
+									<div class="clearfix"></div>
+										<div class="form-row">
+												<div class="form-holder form-holder-2">
+													<label for="accountno">A/C number</label>
+													<input type="text" placeholder="Account no" class="form-control" id="accountno" name="accountno" >
+												</div>
+
+												<div class="form-holder form-holder-2">
+													<label for="ifsc">IFSC code </label>
+													<input type="text" placeholder="IFSC code" class="form-control" id="ifsc" name="ifsc">
+												</div>
+										</div>
+											<div class="form-row">
+												<div class="form-holder form-holder-2">
+													<label for="accountname">A/C name</label>
+													<input type="text" placeholder="Account name" class="form-control" id="accountname" name="accountname">
+
+												</div>
+
+												<div class="form-holder form-holder-2">
+
+													<label for="account-type">Account Type</label>
+														<select name="accounttype" id="accounttype" class="form-control" style="height:50px;">
+															<option value="" disabled selected>Select Account Type</option>
+
+															<option value="current"> Current</option>
+
+														</select>
+												</div>
+											</div>
+											<div class="form-row">
+												<div class="form-holder form-holder-2">
+													<label for="bankname">Bank name</label>
+													<select name="bankname" id="bankname" class="form-control" style="height:40px;">
+															<option value="" disabled selected>Select Bank</option>
+															<option value="ICICI"> ICICI</option>
+													</select>
+												</div>
+
+												<div class="form-holder form-holder-2">
+													<label for="branch">Branch</label>
+													<input type="text" placeholder="Branch" class="form-control" id="branch" name="branch">
+												</div>
+											</div>
+
+								</div><br>
+                                <!----Insurance Details-->
+								<div class="inner">
+									<h3  style="font-size:18px;">Insurance Details</h3>
+									<div class="section-title-divider"></div>
+									<div class="clearfix"></div>
+										<div class="form-row">
+												<div class="form-holder form-holder-2">
+													<label for="insurname">Insurance Company</label>
+													<input type="text" placeholder="Insurance Company " class="form-control" id="insurname" name="insurname">
+												</div>
+											</div>
+											<div class="form-row">
+												<div class="form-holder form-holder-2">
+													<label for="insurno">Insurance No</label>
+													<input type="text" placeholder="Insurance No" class="form-control" id="insurno" name="insurno">
+												</div>
+												<div class="form-holder form-holder-2">
+													<label for="ExpiryDate">Expiry Date</label>
+													<input type="Date"  class="form-control" id="expirdate1" name="expirdate1" >
+
+												</div>
+											</div>
+										</div>
+								</section>
+							<!-- SECTION 3 -->
+							<h2>
+								<span class="step-icon"></span>
+								<span class="step-text"> Confirm &nbsp; &nbsp; </span>
+							</h2>
+
+							<section>
+								<div class="inner">
+									<h3  style="font-size:18px;">Confirm Details</h3>
+									<div class="section-title-divider"></div>
+									<!--Vendor form-->
+									<!--<form method="get" name="venorreportform" action="login.html" id="venorreportform">-->
+									<div class="form-row table-responsive">
+										<table class="table" style="border:none;">
+											<tbody style="border:none;">
+												<!---section1-->
+												<tr class="space-row" style="border:none;padding-bottom:0px;">
+													<td><h3 style="font-size:17px;width:250px !important;">Vendor Details</h3></td>
+												</tr>
+
+												<tr class="space-row bordwhite">
+													<th>Vendor Type:</th>
+													<td id="vendortype-val">vendortype</td>
+
+												</tr>
+
+												<tr class="space-row bordwhite">
+													<th style="width:auto">Company Email:</th>
+													<td id="company_email-val">company_email</td>
+												</tr>
+
+												<tr class="space-row bordwhite">
+													<th style="width:auto">Company Name:</th>
+													<td id="company_name-val">company_name</td>
+												</tr>
+
+												<tr class="space-row bordwhite">
+													<th>Address</th>
+													<td id="adddoor-val">adddoor</td>
+													<td id="locality-val">locality</td>
+													<td id="state-val">state</td>
+													<td id="pincode-val">pincode</td>
+
+												</tr>
+
+												<!---section2-->
+
+												<tr class="space-row bordwhite">
+
+													<th style="width:auto">Proprietor/Director Name:</th>
+													<td id="proprietorDirectorName-val">proprietorDirectorName</td>
+
+
+												</tr>
+												<tr class="space-row bordwhite">
+
+													<th style="width:auto" >Proprietor/Director Contact No:</th>
+													<td id="proprietorDirectorContact-val">proprietorDirectorContact</td>
+
+												</tr>
+												<tr class="space-row bordwhite">
+
+													<th style="width:auto"  >Local Contact Name:</th>
+													<td style="width:185px" id="local_contact_name-val">local_contact_name</td>
+
+													<th style="width:auto"> Local contact No:</th>
+													<td style="width:150px" id="local_contact_no-val">local_contact_no</td>
+												</tr>
+
+												<tr class="space-row">
+													<th><h3 style="font-size:18px;font-weight: 600;width:200px;"></h3></th>
+											    </tr>
+												<tr class="space-row bordwhite">
+
+													<th >GSTIN:</th>
+													<td id="gstin-val"  style="width:100px">gstin</td>
+													<th >UIN:</th>
+													<td id="uin-val" style="width:100px">uin</td>
+													<th >PAN:</th>
+													<td id="pan-val" style="width:100px">pan</td>
+
+												</tr>
+
+												<!---section3-->
+												<tr class="space-row">
+													<th><h3 style="font-size:18px;font-weight: 600;"></h3></th>
+											    </tr>
+												<tr class="space-row bordwhite">
+
+													<th >AccountNo:</th>
+													<td style="width:200px" id="accountno-val">accountno</td>
+													<th style="width:auto">AccountName:</th>
+													<td id="accountname-val">accountname</td>
+
+
+
+												</tr>
+												<tr class="space-row bordwhite" >
+
+													<th style="width:auto">Account Type:</th>
+													<td id="accounttype-val">accounttype</td>
+
+												</tr>
+												<tr class="space-row bordwhite">
+													<th >Bankname:</th>
+													<td id="bankname-val" style="width:100px;">bankname</td>
+													<th>Branch:</th>
+													<td id="branch-val" style="width:100px;margin-left:0px;text-align:left;">branch</td>
+													<th >IFSC:</th>
+													<td id="ifsc-val" style="width:100px;">ifsc</td>
+												</tr>
+												<tr class="space-row">
+													<th><h3 style="font-size:20px;width:200px;font-weight: 600;"></h3></th>
+											    </tr>
+												<tr class="space-row bordwhite">
+													<th >Insurance No:</th>
+													<td style="width:200px" id="insurno-val">insurno</td>
+													<th >ExpiryDate:</th>
+													<td id="expirdate1-val" >expirdate1</td>
+
+												</tr>
+												<tr class="space-row bordwhite">
+
+													<th style="width:auto">Insurance Name:</th>
+												<td id="insurname-val" >insurname</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+										<!------------------------BUTTON--------------------------------->
+										<input type="submit" class="btnsubmit" value="Submit" id="submitvendor" style="display:none"/>
+										<!----------------------BUTTON----------------------------------->
+								<!--</form>--->
+
+								</div>
+							</section>
+
+						</div>
+					</form>
+				</div>
+			</div>
+
+		</div>
+        </div>
+      </div>
+      </div>
+      </div>
+	</div>
+
+
+
+	<script>
+	function openNav() {
+  	document.getElementById("mySidepanel").style.width = "200px";
+	}
+
+	function closeNav() {
+	  document.getElementById("mySidepanel").style.width = "0px";
+	}
+
+
+   </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="{% static 'css/demo/site-demos.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+	<link rel="stylesheet" href="{% static 'css/site-demos.css' %}"/>
+	<link rel="stylesheet" href="{% static 'vendor/bootstrap-3.4.1-dist/css/bootstrap.min.css' %}">
+  <script src="{% static 'vendor/bootstrap-3.4.1-dist/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+  
+<style>  @media screen and (min-device-width: 1008px) {
+  .wizard-v1-content   {
+    margin-top:50px;
+    margin-left:250px;
+    width: 60%;
+    height:600px !important;
+  }
+
+  .wizard-v1-content   {
+    margin-left:420px;
+  }
+  .sidepanel  {
+      height:95%;
+  }
+  }</style>
+</head>
+<body>
+  			
+<div id="wrapper" class="wrapper">
+	<!---Top menu-->
+	<div class="top_navbar">		
+	  <div class="openbtn" onclick="openNav()">
+		 <div class="one"></div>
+		 <div class="two"></div>
+		 <div class="three"></div>
+	  </div>
+	  <div class="top_menu">
+		<div class="logo"><img src="{% static 'images/logo3.jpg' %}"/><br></div>
+
+		<ul>     
+		<div class="dropdown">			
+		  <li class="dropbtn" ><a href="#">
+			<i class="glyphicon glyphicon-user"></i>
+			</a>
+		  </li>
+		  <div class="dropdown-content">
+				<a href="#">Account Info</a>
+				<a href="#">Payment Info</a>
+				<a href="#">Forgot Password</a>
+		  </div>		 		
+		</div>
+		<li><a href="#">
+			<i data-toggle="tooltip" data-placement="right" title="Notifications" class="glyphicon glyphicon-bell"></i>
+			</a>
+          </li>
+          <li><a href="#">
+			<i  data-toggle="tooltip" data-placement="right" title="Logout" class="glyphicon glyphicon-arrow-right"></i>
+			</a>
+		  </li>
+		</ul>		
+	  </div>
+	</div>
+
+    <!-- Sidebar -->
+    <div id="mySidepanel" class="sidepanel">  
+	  <ul class="sidebar-nav" id="">     
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+		
+		<li><a href="traders" >Trades</a></li>
+        <li><a href="vendors">Vendors</a></li>
+	  </ul>
+    </div>
+    				
+    <div class="wizard-v1-content">			
+        <div class="wizard-form">	
+
+			<div id="form-total">
+    			<section>
+					<div class="inner">
+
+						<br>
+						<h1 style="text-align:center;">Confirmation Details</h1>
+
+						<div class="clearfix"></div>
+						<br>
+
+
+							<div id="form-total">
+								<div class="form-row">
+
+									<div class="form-holder form-holder-2"><br>   <br>   <br>
+
+
+
+										<h2>Vendor Id: {{updated_infos.vendor_id}}</h2>
+										<h2>Vendor Id: {{updated_infos.created_date}}</h2>
+
+									<h2 style="color:blue;text-align:center;">Your Information updated successfully!!!</h2>
+
+									</div>
+								</div>
+
+							</div>
+
+
+
+					</div> <!--inner-->
+				</section>
+    		</div>
+		</div>
+    	</div>
+
+</div>
+
+</body>
+</html>
