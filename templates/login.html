@@ -1,0 +1,114 @@
+{% load static %}
+{% load socialaccount %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--Main Style Css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+<link rel="stylesheet" href="css/style.css"/>
+<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+
+    <!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{% static 'images/icons/favicon.ico' %}"/>
+    <link rel="icon" type="image/png" href="{% static 'images/icons/icon-goog.png' %}"/>
+    <link rel="icon" type="image/png" href="{% static 'images/icons/map-marker.png' %}"/>
+    <link rel="icon" type="image/png" href="{% static 'images/icons/symbol-01.png' %}"/>
+    <link rel="icon" type="image/png" href="{% static 'images/goog.png' %}"/>
+    <link rel="icon" type="image/png" href="{% static 'images/Free_Sample_By_Wix(2).jpg' %}"/>
+    <link rel="icon" type="image/png" href="{% static 'images/logo3.png' %}"/>
+    <link rel="icon" type="image/png" href="{% static 'images/logo13.png' %}"/>
+
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+	<script src="{% static 'js/main.js' %}"></script>
+
+</head>
+
+
+
+<body style="background-color:white">
+
+	
+<div class="limiter">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+  <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+    <div class="wrap-login100 p-l-80 p-r-70 p-t-62 p-b-33">
+
+
+      <form class="login100-form validate-form flex-sb flex-w" method="POST">
+
+          {% csrf_token %}
+           {% if messages %}
+                <div class="alert alert-danger alert-dismissible col-12 mx-1" role="alert">
+                    <div id="form_errors">
+
+   				{% for message in messages %}
+                     <span class="fieldWrapper">
+                                        {{ message }}
+                                    </span>
+
+				{% endfor %}
+                    </div>
+                </div>
+
+				{% endif %}
+        <div class="login-grids">
+          <h2>Sign In with  </h2><br>
+          <div class="login">
+           <ul>                             
+              <li class="google">
+                <a class="goog" href="{% provider_login_url 'google' %}">
+
+                <i></i>&nbsp;&nbsp;Google</a>
+              </li>      
+              <li class="lifb"><a class="lifb" href="{% provider_login_url 'facebook' method='oauth2' %}">
+                <i class="fa fa-facebook" style="font-size:33px"></i>  Facebook</a>
+               </li>                      
+          </ul>
+              {% if form.errors %}
+                        <div class="alert alert-danger alert-dismissible col-12 mx-1" role="alert">
+                            <div id="form_errors">
+                                {% for key, value in form.errors.items %}
+                                    <span class="fieldWrapper">
+                                        {{ value }}
+                                    </span>
+                                {% endfor %}
+                            </div>
+
+                        </div>
+                    {% endif %}
+
+
+          <form action="login" method="POST">
+
+
+                  <label>Email</label>
+                  <input type="text" name="email" id="email" placeholder=""  required="" >
+                  <label>Password &nbsp; <span class="pass"><a href="{% url 'password_reset' %}" style="color:rgb(12, 59, 190)">Forgot password</a></span></label>
+                  <input type="password" name="password" id="password" placeholder="" value="" required="">																
+                  <input type="submit" name="result" value="Sign In"><a href="{% url 'traders' %}"></a>
+                  <p><b>Not a member</b> <span class="signup" ><a href="signup" >&nbsp; <b>Sign Up now</b></a></span>  </p>
+          </form>
+        </div>
+      <div class="clearfix"></div>								
+    </div>							
+    </form>
+  </div>
+  </div>
+</div>
+
+<!--===============================================================================================-->
+	<script src="{% static 'js/main.js' %}"></script>
+
+
+</body>
+</html>

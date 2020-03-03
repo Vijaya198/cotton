@@ -1,0 +1,51 @@
+
+{% load static %}
+{% load socialaccount %}
+
+
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-compatible" content="ie-edge">
+    <title>VRGreeks</title>
+    <meta name="viewport" content="width+device-width", initial-scale="1.0">
+</head>
+<body>
+    <div>
+        {% if messages %}
+        <ul>
+        {% for message in messages %}
+	        <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+
+    <form action="user_details" method="POST">
+        {% csrf_token %}
+
+        {% if user.is_authenticated %}
+        Hello  {{request.session.user.email}}!!!<br><br>
+
+        {% endif %}
+        <br><br>
+        <li><a href="user_details">user details</a></li>
+        <p><a href="{% url 'password_reset' %}">Reset Password</a></p>
+
+    </form>
+
+
+    <form action="account/logout" method="POST">
+        {% csrf_token %}
+        <br><br>
+        <li><a href="account/logout">logout</a></li>
+
+    </form>
+</body>
+{% endblock %}
+</html>

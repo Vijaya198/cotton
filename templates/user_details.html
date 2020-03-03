@@ -1,0 +1,27 @@
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>USER DETAILS</title>
+</head>
+<body>
+Hello  {{request.session.user.email}}!!!<br><br>
+
+
+
+<form action="account/logout" method="POST">
+        {% csrf_token %}
+        <br><br>
+        <ul>
+
+            <li><a href="account/logout">logout</a></li>
+        </ul>
+</form>
+
+
+
+</body>
+{% endblock %}
+</html>

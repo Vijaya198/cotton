@@ -1,0 +1,53 @@
+
+{% load static %}
+{% load socialaccount %}
+
+{% load i18n %}
+
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google sign in</title>
+
+</head>
+<body>
+
+
+<div>
+    {% if messages %}
+        <ul>
+        {% for message in messages %}
+	        <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+</div>
+<center>You are signed in </center>
+
+
+<h1>{% trans "Sign Out" %}</h1>
+
+<p>{% trans 'Are you sure you want to sign out?' %}</p>
+
+<form method="post" action="{% url 'account_logout' %}">
+  {% csrf_token %}
+  {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+
+  {% endif %}
+  <button type="submit">{% trans 'Sign Out' %}</button>
+</form>
+</body>
+
+
+{% endblock %}
+</html>
+
+
+
+
+
+
