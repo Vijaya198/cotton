@@ -1,0 +1,411 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<title>Cotton Sandhai - Vendor Add Details</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../static/vendor/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../static/css/demo/site-demos.css">
+	<link rel="stylesheet" href="../static/css/style.css"/>
+    <link rel="stylesheet" href="../static/css/site-demos.css"/>
+	<link rel="stylesheet" href="../static/vendor/bootstrap-3.4.1-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../static/vendor/jquery-ui-1.12.1/jquery-ui.css">
+	<link rel="stylesheet" href="../static/vendor/jquery-ui-1.12.1/jquery-ui.min.js">
+	<script src="../static/js/jquery-3.3.1.min.js"></script>
+	<script src="../static/vendor/jquery-ui-1.12.1/jquery-ui.js"></script>
+	<script src="../static/vendor/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script src="../static/vendor/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="../static/vendor/bootbox/bootbox.js"></script>
+  	<script src="../static/vendor/bootbox/bootbox.min.js"></script>
+    <script src="../static/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="../static/vendor/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="../static/js/jquery.steps.js"></script>
+    <script src="../static/js/main.js"></script>
+
+    <style>
+ .wizard-v1-content   {
+	height:auto;
+	margin-bottom:20px;
+	overflow: hidden;
+  }
+
+  .inner .form-row.table-responsive {
+    background-color:rgb(255, 255, 255)
+}
+.sidepanel  {
+  height:220%;
+  }
+    </style>
+</head>
+
+<body>
+<div id="wrapper" class="wrapper">
+	<!---Top menu-->
+	<div class="top_navbar">		
+	  <div class="openbtn" onclick="openNav()">
+		 <div class="one"></div>
+		 <div class="two"></div>
+		 <div class="three"></div>
+	  </div>
+	  <div class="top_menu">
+		<div class="logo"><img src="../static/images/logo3.jpg"/><br></div>
+
+		<!---------Top nav Icons-->
+		<ul>
+			<div class="dropdown">
+			  <li class="dropbtn">
+				<a href="#"  class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+				<span class="glyphicon glyphicon-user"></span>
+				</a>
+				<div class="dropdown-menu dropdown-content dropdown-menu-right" role="menu" aria-labelledby="navbarDropdown1">
+				  <a href="../accountinfo">Account Info</a>
+				  <a href="#">Payment Info</a>
+				  <a href="#">Forgot Password</a>
+			   </div>
+			  </li>
+			  </div>
+
+		  <!-----Account Icon-->
+
+		  <div class="dropdown">
+			<li class="dropbtn">
+				<a href="#"  class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+				  <span class="glyphicon glyphicon-bell alertNotificacao"></span>
+				  <span id="notificationsBadge" class='badgeAlert'>3</span>
+				</a>
+
+				<div class="dropdown-menu notification dropdown-menu-right" role="menu" aria-labelledby="navbarDropdown">
+				  <div class="topc" >
+					<h5 class="noticard-title">Notifications</h5>
+				  </div>
+
+					<div class="card noticard">
+					  <div class="card-body">
+
+						<p class="card-text noticart-text">With supporting text below as a natural lead-in to additional.</p>
+
+					  </div>
+					  <div class="notisection-title-divider"></div>
+					</div>
+
+					<div class="card noticard" >
+					  <div class="card-body">
+
+						<p class="card-text  noticart-text">With supporting text below as a natural lead-in to additional content.</p>
+
+					  </div>
+					  <div class="notisection-title-divider"></div>
+					</div>
+
+					<div class="card noticard" >
+					  <div class="card-body">
+
+						<p class="card-text  noticart-text">With supporting text below as a natural lead-in to additional content.</p>
+
+					  </div>
+					</div>
+					<div class="topc1" >
+				  <h5 class="noticard-title1 h51"><a href="notification.html">View more Notifications</a></h5>
+				</div>
+						  </div>
+
+				</li>
+			</div>
+
+
+
+		  <!-----Logout Icon-->
+			  <div class="dropdown">
+			<li class="dropbtn">
+			  <a href="#" class="nav-link dropdown-toggle" id="navbarDropown1" role="button"  >
+			  <span class="glyphicon glyphicon-arrow-right"></span>
+			  </a>
+			 </li>
+			</div>
+
+			  </ul>
+			</div>
+		  </div>
+
+    <!-- Sidebar -->
+    <div id="mySidepanel" class="sidepanel">  
+	  <ul class="sidebar-nav" id="">     
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+		
+		<li><a href="../traders" >Trades</a></li>
+        <li><a href="../vendors">Vendors</a></li>
+	  </ul>
+	</div>
+	
+    <!-- Page content -->
+      <div id="page-content-wrapper">
+        <!-- Keep all page content within the page-content inset div! -->
+        <div class="page-content inset">
+          <div class="row">
+            <div class="col-md-12">
+            <div class="main_container">
+				
+		<!--div class="page-content" style="background-color: rgba(0, 0, 0, 0.15)"-->
+			<div class="wizard-v1-content">			
+				<!--<div class="wizard-form">-->
+
+
+						<div id="form-total">
+							<!-- SECTION 1 -->
+							
+						
+                            <h3  style="font-size:28px;text-align:center"><b>Vendor Details</b></h3>
+                           
+							<section >
+                                
+								<div class="inner" style="margin-left:18px;">
+								
+									<!--Vendor form-->
+
+									{% for vendors_info in vendors_infos %}
+
+
+                                    <div class="form-row table-responsive reppadd">
+										<table class="table" style="overflow:hidden;">
+											<tbody style="border:none;">
+
+												<!---section1-->
+												<!--tr class="space-row" style="border:none;padding-bottom:0px;">
+													<td><h3 class="ventitle">Vendor Details</h3></td>
+												</!--tr--->
+												<tr class="space-row">
+
+													<th class="vendmob pull-left" >CS Vendor ID:</th>
+													<td id="vendor_id-val" style="width:363px;padding-right:0px">{{vendors_info.vendor_id}}</td>
+
+
+													<th class="vendmob pull-right">created At:</th>
+													<td id="created_date-val" class="pull-right" style="width:250px;padding-right:0px">{{vendors_info.created_date}}</td>
+											    </tr>
+												{% if vendors_info.updated_date != None %}
+												<tr class="space-row bordwhite col-xs-12  col-md-offset-7">
+
+													<th class="vendmob pull-right">Updated At:</th>
+													<td id="updated_date-val" class="pull-right" style="width:250px">{{vendors_info.updated_date}}</td>
+												</tr>
+												{% endif %}
+												<td class="space-row bordwhite"></td>
+												<tr class="space-row bordwhite col-xs-12 col-sm-12" style="border:none;padding-bottom:0px;">
+													<td class="col-xs-12 col-sm-12" style="width:auto"><h3 class="vendtitlep" >Company Details</h3></td>
+												</tr>
+												<tr class="space-row bordwhite col-xs-12">
+													<th class="col-xs-12 col-sm-12" style="width:260px">Company Nick Name: </th>
+													<td class="col-xs-12 col-sm-12" style="width:auto" id="company_nick_name-val">{{vendors_info.company_nick_name}}</td>
+													
+												</tr>
+
+												<tr class="space-row bordwhite col-xs-12">
+													<th class="col-xs-12 col-sm-12" style="width:260px">Company Name(as per record):</th>
+													<td class="col-xs-12 col-sm-12" style="width:auto" id="company_name_reg-val">{{vendors_info.company_name_reg}}</td>
+
+												</tr>
+												<tr class="space-row bordwhite">
+
+												</tr>
+
+												<tr class="space-row bordwhite col-xs-12">
+													<th class="col-xs-12 col-sm-12" style="width:260px">Address:</th>
+													<td class="col-xs-12 col-sm-12" style="width:auto"  id="adddoor-val">{{vendors_info.door_street}}</td>
+
+												</tr>
+												<tr class="space-row bordwhite col-xs-12">
+													<th class="col-xs-12 col-sm-12" style="width:260px"></th>
+													<td class="col-xs-12 col-sm-12" style="width:auto"  id="locality-val">{{vendors_info.locality}}</td>
+												</tr>
+												<tr class="space-row bordwhite col-xs-12">
+													<th class="col-xs-12 col-sm-12" style="width:260px"></th>
+													<td class="col-xs-12 col-sm-12" style="width:auto"  id="state-val">{{vendors_info.state}}  -  {{vendors_info.pincode}}</td>
+												</tr>
+
+												<!---section2-->
+												<tr class="space-row bordwhite col-xs-12 col-sm-12" style="border:none;padding-bottom:0px;">
+													<td class="col-xs-12 col-sm-12" style="width:auto"><h3 class="vendtitlep" >Contact Information</h3></td>
+											    </tr>
+												<tr class="space-row bordwhite col-xs-12">
+													<th class="col-xs-12 col-sm-12" style="width:260px">Primary Email:</th>
+													<td class="col-xs-12 col-sm-12" style="width:auto" id="primary_email-val">{{vendors_info.primary_email}}</td>
+												</tr>
+												<tr class="space-row bordwhite col-xs-12">
+													<th class="col-xs-12 col-sm-12" style="width:260px">Primary Contact Name:</th>
+													<td class="col-xs-12 col-sm-12" style="width:auto" id="primary_contact_name-val">{{vendors_info.primary_contact_name}}</td>
+												</tr>
+
+												<tr class="space-row bordwhite col-xs-12">
+													<th class="col-xs-12 col-sm-12" style="width:260px">Primary Contact No:</th>
+													{% if vendors_info.primary_contact_no != None %}
+													<td class="col-xs-12 col-sm-12" style="width:auto" id="primary_contact_no-val">{{vendors_info.primary_contact_no}}</td>
+													{% else %}
+													<td class="col-xs-12 col-sm-12" style="width:auto" id="primary_contact_no-val"></td>
+													{% endif %}
+												</tr>
+												<td class="space-row bordwhite"></td>
+												<tr class="space-row bordwhite col-xs-12">
+													<th class="col-xs-12 col-sm-12" style="width:260px">Secondary Email:</th>
+													<td class="col-xs-12 col-sm-12" style="width:auto" id="secondary_mail-val">{{vendors_info.secondary_email}}</td>
+												</tr>
+											
+												<tr class="space-row bordwhite col-xs-12">
+												
+													<th class="col-xs-12 col-sm-12" style="width:260px">Secondary Contact Name:</th>
+													<td class="col-xs-12 col-sm-12" style="width:auto" id="secondary_contact_name-val">{{vendors_info.secondary_contact_name}}</td>
+												
+
+												</tr>
+												<tr class="space-row bordwhite col-xs-12">
+												
+													<th class="col-xs-12 col-sm-12" style="width:260px">Secondary Contact No:</th>
+													{% if vendors_info.secondary_contact_no != None %}
+													<td class="col-xs-12 col-sm-12" style="width:auto" id="secondary_contact_no-val">{{vendors_info.secondary_contact_no}}</td>
+													{% else %}
+													<td class="col-xs-12 col-sm-12" style="width:auto" id="secondary_contact_no-val"></td>
+													{% endif %}
+
+												</tr>
+
+											
+
+
+												<!---section3-->
+												<td class="space-row bordwhite"></td>
+												<tr class="space-row bordwhite col-xs-12 col-sm-12" style="border:none;padding-bottom:0px;">
+
+													<td class="col-xs-12 col-sm-12" style="width:auto"><h3 class="vendtitlep" style="width:auto" >Governance</h3></td>
+											    </tr>
+												<br>
+												<tr class="space-row bordwhite col-xs-12">
+
+													<th class="col-xs-12 col-sm-12" style="width:260px">GSTIN:</th>
+													<td class="col-xs-12 col-sm-12" style="width:auto" id="gstin-val"   style="width:210px">{{vendors_info.gstin}}</td>
+												</tr>
+												<tr class="space-row bordwhite col-xs-12">
+													<th class="col-xs-12 col-sm-12" style="width:260px" >UIN:</th>
+													<td class="col-xs-12 col-sm-12" style="width:auto" id="uin-val" style="width:190px">{{vendors_info.uin}}</td>
+
+												</tr>
+												<td class="space-row bordwhite"></td>
+												<tr class="space-row bordwhite col-xs-12 col-sm-12" style="border:none;padding-bottom:0px;">
+
+													<td class="col-xs-12 col-sm-12" style="width:auto"><h3 class="vendtitlep">Insurance</h3></td>
+											    </tr>
+												<tr class="space-row bordwhite col-xs-12">
+													<th class="col-xs-12 col-sm-12" style="width:260px" >Insurance No:</th>
+													<td class="col-xs-12 col-sm-12" style="width:auto" id="insurno-val">{{vendors_info.insurance_no}}</td>
+												</tr>
+												<tr class="space-row bordwhite col-xs-12">
+													<th class="col-xs-12 col-sm-12" style="width:260px">ExpiryDate:</th>
+													{% if vendors_info.expiry_date != None %}
+													<td class="col-xs-12 col-sm-12" style="width:auto" id="expirydate-val" >{{vendors_info.expiry_date}}</td>
+													{% else %}
+													<td class="col-xs-12 col-sm-12" style="width:auto" id="expirydate-val" ></td>
+													{% endif %}
+
+												</tr>
+												<tr class="space-row bordwhite col-xs-12">
+													<th class="col-xs-12 col-sm-12" style="width:260px">Insurance Company:</th>
+													<td class="col-xs-12 col-sm-12" style="width:auto" id="insurcompany-val">{{vendors_info.insurance_company}}</td>
+												</tr>
+
+											</tbody>
+										</table>										
+									</div> <br><br>
+										<!------------------------BUTTON---------------------------------
+										<button class="btnsubmit"  value="Submit1" id="submitvendor" style="display:none">Submit</button>			
+										----------------------BUTTON----------------------------------->
+										<!--<div class="col-md-6">
+										 <button ><a href="javascript:history.back();">back</a></button>
+										</div>
+							   			<div class="col-md-6">
+							  		 		<button class="btnsubmit center-block text-center" id="backhome"><a class="viewvend" href="addVendor">Edit vendor</a></button>
+										</div>-->
+									<form action="/editVendorDetails" method="POST">
+									{% csrf_token %}
+										<div class="col-md-6">
+              								<button class=" btnsubmit1 center-block text-center"  id="backvendor" formaction="javascript:history.back();" >Go back</button>
+             							</div>
+            							<div class="col-md-6">
+
+              								<button  type="submit" name="Edit" class="btnsubmit1 center-block text-center"  value="{{vendors_info.vendor_id}}"  id="EditVendor">Edit vendor</button>
+
+										</div>
+									</form>
+									{% endfor %}
+
+								
+								</div>
+							</section>		
+						
+						</div>						
+
+
+				<!--</div>-->
+			</div>
+	
+		</div>
+        </div>
+      </div>
+      </div>
+
+      </div>
+	</div>
+
+{% block javascript %}
+	<script>
+	function openNav() {
+  	document.getElementById("mySidepanel").style.width = "200px";
+	}
+    
+	function closeNav() {
+	  document.getElementById("mySidepanel").style.width = "0px";	  
+	}
+
+//......logout.......
+$(document).on("click", '#navbarDropown1', function(e) {
+
+    bootbox.confirm({
+        title:"Logout",
+        message: "Do you want to Logout?",
+        buttons: {
+            confirm: {
+                label: 'Yes',
+                className: 'btn-success'
+            },
+            cancel: {
+                label: 'No',
+                className: 'btn-danger'
+            }
+        },
+        callback: function (result) {
+        if(result)
+        {
+
+            //$('#navbarDropown1').attr('href', "account/logout")
+            window.location.href="/account/logout"
+
+        }
+
+
+        }
+
+    });
+});
+
+</script>
+
+
+
+{% endblock javascript %}
+
+</body>
+</html>

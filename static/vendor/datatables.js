@@ -11470,7 +11470,8 @@
 			 *      } );
 			 *    } );
 			 */
-			"sEmptyTable": "No data available in table",
+
+
 	
 	
 			/**

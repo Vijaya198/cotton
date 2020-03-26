@@ -1,0 +1,616 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<title>Cotton Sandhai - Vendor Add Details</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!--
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../static/css/demo/site-demos.css">
+	<link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/site-demos.css">
+	<link rel="stylesheet" href="../static/vendor/bootstrap-3.4.1-dist/css/bootstrap.min.css">
+    <script src="../static/vendor/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../static/js/jquery-3.3.1.min.js"></script>
+    <script src="../static/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="../static/vendor/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="../static/js/jquery.steps.js"></script>
+    <script src="../static/js/main.js"></script>
+	<link rel="stylesheet" href="../static/vendor/jquery-ui-1.12.1/jquery-ui.css">
+	<script src="../static/vendor/jquery-ui-1.12.1/jquery-ui.js"></script>
+	<script src="../static/vendor/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+
+	-->
+
+	<link rel="stylesheet" href="../static/vendor/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../static/css/style.css"/>
+	<link rel="stylesheet" href="../static/vendor/bootstrap-3.4.1-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../static/vendor/jquery-ui-1.12.1/jquery-ui.css">
+	<link rel="stylesheet" href="../static/vendor/jquery-ui-1.12.1/jquery-ui.min.js">
+	<script src="../static/js/jquery-3.3.1.min.js"></script>
+
+    <script src="../static/vendor/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+
+	<script src="../static/js/main.js"></script>
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../static/css/demo/site-demos.css">
+<!---	<link rel="stylesheet" href="../static/css/style.css">-->
+    <link rel="stylesheet" href="../static/css/site-demos.css">
+<!--	<link rel="stylesheet" href="../static/vendor/bootstrap-3.4.1-dist/css/bootstrap.min.css">
+    <script src="../static/vendor/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--<script src="../static/js/jquery-3.3.1.min.js"></script>-->
+	<script src="../static/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="../static/vendor/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="../static/js/jquery.steps.js"></script>
+  <!--  <script src="../static/js/main.js"></script>-->
+
+	<link rel="stylesheet" href="../static/vendor/jquery-ui-1.12.1/jquery-ui.css">
+<script src="../static/vendor/jquery-ui-1.12.1/jquery-ui.js"></script>
+	<script src="../static/vendor/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+
+	
+	<style>
+	.sidepanel  {
+		 height:300%;
+		 }
+
+		  @media screen
+			  and (min-device-width: 900px)
+			 {
+			   #page-content-wrapper {
+				   margin-left: 75px;
+				 width: auto;
+				 height:auto;
+			   }
+		  }
+   .form-total {
+    		background-color:rgb(255, 255, 255)
+		  }
+
+		  .wizard-v1-content   {
+			height:auto;
+			margin-bottom:20px;
+  			}
+
+
+	</style>
+</head>
+
+<body>
+
+<div id="wrapper" class="wrapper">
+	<!---Top menu-->
+	<div class="top_navbar">		
+	  <div class="openbtn" onclick="openNav()">
+		 <div class="one"></div>
+		 <div class="two"></div>
+		 <div class="three"></div>
+	  </div>
+	  <div class="top_menu">
+		<div class="logo"><img src="../static/images/logo3.jpg"/><br></div>
+
+		<!---------Top nav Icons-->
+		<ul>
+			<div class="dropdown">
+			  <li class="dropbtn">
+				<a href="#"  class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+				<span class="glyphicon glyphicon-user"></span>
+				</a>
+				<div class="dropdown-menu dropdown-content dropdown-menu-right" role="menu" aria-labelledby="navbarDropdown1">
+				  <a href="accountinfo">Account Info</a>
+				  <a href="#">Payment Info</a>
+				  <a href="#">Forgot Password</a>
+			   </div>
+			  </li>
+			  </div>
+
+		  <!-----Account Icon-->
+
+		  <div class="dropdown">
+			<li class="dropbtn">
+				<a href="#"  class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+				  <span class="glyphicon glyphicon-bell alertNotificacao"></span>
+				  <span id="notificationsBadge" class='badgeAlert'>3</span>
+				</a>
+
+				<div class="dropdown-menu notification dropdown-menu-right" role="menu" aria-labelledby="navbarDropdown">
+				  <div class="topc" >
+					<h5 class="noticard-title">Notifications</h5>
+				  </div>
+
+					<div class="card noticard">
+					  <div class="card-body">
+						<h5 class="card-title  noticard-title">Special title treatment</h5>
+						<p class="card-text noticart-text">With supporting text below as a natural lead-in to additional.</p>
+
+					  </div>
+					  <div class="notisection-title-divider"></div>
+					</div>
+
+					<div class="card noticard" >
+					  <div class="card-body">
+						<h5 class="card-title noticard-title">Special title treatment</h5>
+						<p class="card-text  noticart-text">With supporting text below as a natural lead-in to additional content.</p>
+
+					  </div>
+					  <div class="notisection-title-divider"></div>
+					</div>
+
+					<div class="card noticard" >
+					  <div class="card-body">
+						<h5 class="card-title noticard-title">Special title treatment</h5>
+						<p class="card-text  noticart-text">With supporting text below as a natural lead-in to additional content.</p>
+
+					  </div>
+					</div>
+					</div>
+
+				</li>
+			</div>
+
+
+
+		  <!-----Logout Icon-->
+			  <div class="dropdown">
+			<li class="dropbtn">
+			  <a href="#" class="nav-link dropdown-toggle" id="navbarDropown1" role="button"  >
+			  <span class="glyphicon glyphicon-arrow-right"></span>
+			  </a>
+			 </li>
+			</div>
+
+			  </ul>
+			</div>
+		  </div>
+
+    <!-- Sidebar -->
+    <div id="mySidepanel" class="sidepanel">
+	  <ul class="sidebar-nav" id="">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+
+		<li><a href="traders" >Trades</a></li>
+        <li><a href="vendors">Vendors</a></li>
+	  </ul>
+	</div><!--SIDEPANEL-->
+
+    <!-- Page content -->
+      <div id="page-content-wrapper">
+        <!-- Keep all page content within the page-content inset div! -->
+        <div class="page-content inset">
+          <div class="row">
+            <div class="col-md-12">
+            <div class="main_container">
+ 			<!--- /*----------------------  copy -----------------------*/    ------>   
+			<h3 class="vendtitle">Update Your Vendor Details</h3>
+ 			<!--- /*----------------------  copy -----------------------*/    ------>   
+		<!--div class="page-content" style="background-color: rgba(0, 0, 0, 0.15)"-->
+
+			<div class="wizard-v1-content">
+
+				<div class="wizard-form">
+
+
+							<form class="form-register" id="form-register" style="padding:25px;background-color:white" action="updateVendor" method="POST">
+							{% csrf_token %}
+							<div id="form-total">
+
+							<section>
+								<div class="inner">
+									<div class="form-row">
+									<div class="form-holder form-holder-2">
+									<h3 style="margin-left:0px">CS Vendor Id:{{vendors_info.vendor_id}}</h3>
+									</div>
+									<div class="form-holder form-holder-2">
+									<h3 style="text-align:right">created at:   {{vendors_info.created_date}} </h3>
+									</div>
+									</div>
+									<div class="form-row">
+									<div class="form-holder form-holder-2">
+									<h3 style="text-align:right">updated at:   {{vendors_info.updated_date}} </h3>
+									</div>
+									</div>
+									<input type="hidden" id="vendor_id" name="vendor_id" value="{{vendors_info.vendor_id}}"/>
+									<input type="hidden" id="created_date" name="created_date" value="{{vendors_info.created_date}}"/>
+									<h3  style="font-size:18px">Company Details</h3>
+									<div class="section-title-divider"></div>
+
+									<div class="clearfix"></div>
+									<div class="form-row">
+										<div class="form-holder form-holder-2">
+											<label for="name">Company Nick Name*</label>
+											<input type="text" maxlength="254" onkeypress="runScript(event)" placeholder="Enter Company Nick Name" value="{{vendors_info.company_nick_name}}" class="form-control" id="company_nick_name" onkeypress="runScript(event)" name="company_nick_name">
+											<input type="hidden" id="companyuniquename" name="companyuniquename" value="{{vendors_info.company_nick_name}}"/>
+											<span id="spancompanynickname" style="color:red"></span>
+											<div class="spce">
+												<span id="invaild1" >This field is required</span>
+												<!--<span id="compnameexist" >Company name already exist</span>-->
+											</div>
+										</div>
+										<div class="form-holder form-holder-2">
+											<label for="name">Company Name*(as per record)</label>
+											<input type="text" maxlength="254" onclick="companyNickNameValidation(event)" placeholder="Enter Company Name" value="{{vendors_info.company_name_reg}}" class="form-control" id="company_name_reg" name="company_name_reg">
+											<div class="spce"><span id="invaild2" >This field is required</span></div>
+										</div>
+									</div>
+
+
+									<div class="form-row">
+										<div class="form-holder form-holder-2">
+											<label for="address">Address*</label>
+											<input type="text" maxlength="254" placeholder="Door no & street" value="{{vendors_info.door_street}}" class="form-control" id="adddoor" name="adddoor">
+											<div class="spce"><span id="invaild3" >This field is required</span></div>
+											<br>
+											<input type="text" maxlength="254" placeholder="locality" value="{{vendors_info.locality}}" class="form-control" id="locality" name="locality">
+
+										</div>
+									</div>
+									<div class="form-row">
+										<div class="form-holder form-holder-2">
+											<label for="card-type">State*</label>
+												<select maxlength="254" name="state" id="state" style="height:35px;" required>
+													<option value="{{vendors_info.state}}" selected>{{vendors_info.state}}</option>
+														{% for all_state in all_states %}
+														<option value={{all_state.state}}>{{all_state.state}}</option>
+														{% endfor %}
+												</select>
+											<div class="spce"><span id="invaild6" >This field is required</span></div>
+										</div>
+										<div class="form-holder form-holder-2">
+											<label for="address">Pincode</label>
+											<input type="text" maxlength="254" placeholder="Pincode" value="{{vendors_info.pincode}}" class="form-control" id="pincode" name="pincode" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+											<div class="spce"><span id="invaild4" >This field is required</span></div>
+										</div>
+									</div><br>
+									<h3  style="font-size:18px">Contact Information</h3>
+									<div class="section-title-divider"></div>
+									<div class="clearfix"></div>
+									<div class="form-row">
+										<div class="form-holder form-holder-2">
+											<label for="primaryEmail"> Primary Email*</label>
+											<input type="email" maxlength="254" placeholder="Enter Primary Email ID" value="{{vendors_info.primary_email}}" class="form-control" id="primary_email" name="primary_email"  pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+											<div class="spce"><span id="invaild5" >This field is required</span></div>
+										</div>
+										<div class="form-holder form-holder-2">
+											<label for="primaryContactName">Primary Contact Name</label>
+											<input type="text" maxlength="254" placeholder=" Enter Primary contact Name" value="{{vendors_info.primary_contact_name}}" class="form-control" id="primary_contact_name" name="primary_contact_name" >
+										</div>
+										<div class="form-holder form-holder-2">
+											<label for="primaryContactNo">Primary Contact No</label>
+											{% if vendors_info.primary_contact_no != None %}
+											<input type="text" maxlength="10" placeholder="Enter Primary Contact No" value="{{vendors_info.primary_contact_no}}" class="form-control" id="primary_contact_no" name="primary_contact_no" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+											{% else %}
+											<input type="text" maxlength="10" placeholder="Enter Primary Contact No" value="" class="form-control" id="primary_contact_no" name="primary_contact_no" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+											{% endif %}
+
+
+										</div>
+																			</div>
+									<div class="form-row">
+										<div class="form-holder form-holder-2">
+											<label for="secondayEmail"> Secondary Email</label>
+												<input type="email" maxlength="254" placeholder="Enter Secondary Email Id" value="{{vendors_info.secondary_email}}" class="form-control" id="secondary_email" name="secondary_email"  pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+
+										</div>
+										<div class="form-holder form-holder-2">
+											<label for="secondaryContactName">Secondary Contact Name</label>
+											<input type="text" maxlength="254" placeholder=" Enter Secondary Contact Name" value="{{vendors_info.secondary_contact_name}}" class="form-control" id="secondary_contact_name" name="contact_name2" >
+										</div>
+										<div class="form-holder form-holder-2">
+											<label for="secondaryContactNo">Secondary Contact No </label>
+											{% if vendors_info.secondary_contact_no != None %}
+											<input type="text" maxlength="10" placeholder="Enter Secondary Contact No" value="{{vendors_info.secondary_contact_no}}" class="form-control" id="secondary_contact_no" name="secondary_contact_no" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+											{% else %}
+											<input type="text" maxlength="10" placeholder="Enter Secondary Contact No" value="" class="form-control" id="secondary_contact_no" name="secondary_contact_no" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+											{% endif %}
+										</div>
+
+									</div>
+								</div>
+								<div class="inner">
+									 <h3 style="font-size:18px;">Governance</h3>
+										<div class="section-title-divider"></div>
+										<div class="clearfix"></div>
+										<div class="form-row">
+												<div class="form-holder form-holder-2">
+													<label for="gstin">GSTIN</label>
+													<input type="text" maxlength="15" placeholder="Enter GSTIN no" value="{{vendors_info.gstin}}" class="form-control" id="gstin" name="gstin" >
+												</div>
+												<div class="form-holder form-holder-2">
+													<label for="uin">UIN</label>
+													<input type="text" maxlength="15" placeholder="Enter UIN no" value="{{vendors_info.uin}}" class="form-control" id="uin" name="uin" >
+												</div>
+										</div>
+									<div class="clearfix"></div>
+								 </div><br>
+								<div class="inner">
+									<h3  style="font-size:18px;">Insurance Details</h3>
+									<div class="section-title-divider"></div>
+									<div class="clearfix"></div>
+										<div class="form-row">
+												<div class="form-holder form-holder-2">
+													<label for="insurname">Insurance Company</label>
+													<input type="text" maxlength="254" placeholder="Insurance Company " value="{{vendors_info.insurance_company}}" class="form-control" id="insurcompany" name="insurcompany">
+
+													<span id="spancompany"></span>
+												</div>
+											</div>
+											<div class="form-row">
+												<div class="form-holder form-holder-2">
+													<label for="insurno">Insurance No</label>
+													<input type="text" maxlength="50" placeholder="Insurance No" value="{{vendors_info.insurance_no}}" class="form-control" id="insurno" name="insurno">
+												</div>
+												<div class="form-holder form-holder-2">
+													<label for="ExpiryDate">Expiry Date</label>
+													<input type="text"  autocomplete="off" value="{{vendors_info.expiry_date | date:'Y-m-d'}}" class="form-control" id="expirydate" name="expirydate" >
+
+												</div>
+											</div>
+										</div>
+							</section>
+							<div class="col-md-6">
+
+								<button type="button" class="btnsubmit1 center-block text-center" id="backvendor" onclick="javascript:history.back();">Go back</button>
+
+							</div>
+							<div class="col-md-6">
+							<!------------------------BUTTON--------------------------------->
+									<button type="submit" data-title="Submit" data-target="#Submit" name="submit" class="btnsubmit1 center-block text-center" value="{{vendors_info.vendor_id}}"  id="submitvendor">submit</button>
+							<!----------------------BUTTON---------------------------------->
+							</div>
+
+
+
+
+
+						</div>
+						</form>
+						</div>
+
+
+						</div>
+
+				</div>
+			</div>
+
+		</div>
+        </div>
+      </div>
+      </div>
+
+
+
+
+
+	<script>
+	function openNav() {
+  	document.getElementById("mySidepanel").style.width = "200px";
+	}
+
+	function closeNav() {
+	  document.getElementById("mySidepanel").style.width = "0px";
+	}
+	function companyNickNameValidation(e){
+		 var tb = document.getElementById("company_nick_name");
+		 var vendorid=document.getElementById("vendor_id");
+		 if (tb.value !== "")
+		 {
+		 	//e.preventDefault();
+		 	//alert(tb.value);
+		 	$.ajax({
+            	url: '{% url "valid_company_nick_name" %}',
+            	data: {
+            		'vendor_id':vendorid.value,
+                   'company_nick_name': tb.value,
+                   },
+            	dataType: 'json',
+            	success: function (data) {
+            		//alert(data.duplicate_flag)
+            		if (data.duplicate_flag)
+            		{
+            			//document.getElementById("company_nick_name").style.borderColor = "red";
+						$('#spancompanynickname').text("Company Nick Name already Exist");
+						$('#company_nick_name').focus()
+						e.preventDefault();
+						return false;
+            		}
+             		else
+                	{
+						$('#spancompanynickname').text("");
+						return true;
+                	}
+            	}
+        	});
+		 }
+		 else
+		 {
+		 	$('#spancompanynickname').text("Required Field");
+		 	$('#company_nick_name').focus();
+		 	return true;
+		}
+	}
+	function runScript(e){
+		var code = e.keyCode || e.which;
+        var tb = document.getElementById("company_nick_name");
+		var vendorid=document.getElementById("vendor_id");
+
+		if(code == 13){
+			e.preventDefault(e);
+        	$.ajax({
+            	url: '{% url "valid_company_nick_name" %}',
+            	data: {
+            		'vendor_id':vendorid.value,
+                   'company_nick_name': tb.value,
+                   },
+            	dataType: 'json',
+            	success: function (data) {
+            		//alert("ENTER"+data.duplicate_flag);
+            		if (data.duplicate_flag)
+            		{
+						//alert("enter" + tb.value)
+						$('#spancompanynickname').text("Company Nick Name already Exist");
+
+						$('#company_nick_name').focus();
+						e.preventDefault(e);
+						return false;
+            		}
+             		else
+                	{
+                		//alert("enter" + tb.value)
+						$('#spancompanynickname').text("");
+						$('#company_name_reg').focus();
+						return true;
+                	}
+            	}
+        	});
+		}
+}
+
+
+$(document).ready(function(){
+$('#spancompanynickname').text("company_nick_name already exist")
+	$("#company_nick_name").on('keydown', function(e) {
+
+
+  			var keyCode = e.keyCode || e.which;
+  			if (keyCode == 9){
+
+  			var tb = document.getElementById("company_nick_name");
+  			var vendorid=document.getElementById("vendor_id");
+
+  			//alert (tb.value + " " + vendor_id.value);
+  			$.ajax({
+            	url: '{% url "valid_company_nick_name" %}',
+            	data: {
+            		'vendor_id':vendorid.value,
+                   'company_nick_name': tb.value,
+                   },
+            	dataType: 'json',
+            	success: function (data) {
+            		//alert("KEYCODE 9"+ data.duplicate_flag)
+            		if (data.duplicate_flag)
+            		{
+            			//document.getElementById("company_nick_name").style.borderColor = "red";
+
+						$('#spancompanynickname').text("Company Nick Name already Exist");
+						//$('#company_nick_name').focus();
+						e.preventDefault(e);
+						return false;
+            		}
+             		else
+                	{
+                		//alert("tab else")
+						$('#spancompanynickname').text("");
+						return true;
+                	}
+            	}
+        	});
+        	//alert("hi")
+  			//return False;
+  			}
+  			//alert("hi2")
+  			//else{return true;}
+  		});
+
+	$("#expirydate").datepicker({
+		minDate: 0
+	});
+
+	$( "#form-register" ).submit(function( event ) {
+		//alert("hi submit")
+
+		var tb = document.getElementById("company_nick_name");
+		var vendorid = document.getElementById("vendor_id");
+		alert(tb.value+ vendorid)
+		if (tb.value !== "")
+		{
+
+		$.ajax({
+            	url: '{% url "valid_company_nick_name" %}',
+            	data: {
+            	'vendor_id':vendorid.value,
+                   'company_nick_name': tb.value,
+                   },
+            	dataType: 'json',
+            	success: function (data) {
+					//alert("hi");
+					//alert(data.duplicate_flag);
+            		if (data.duplicate_flag)
+            		{
+            			//alert("hi2")
+            			//alert("Input value"+tb.value);
+
+            			//document.getElementById("company_nick_name").style.borderColor = "red";
+						$('#spancompanynickname').text("Company Nick Name already Exist");
+						$('#company_nick_name').focus();
+						//$('#form-register').submit(function(event){
+       					//	return false; // prevents form submit
+     					//	});
+						return false;
+
+            		}
+             		else {
+             		//alert("hi true flag")
+						$('#spancompanynickname').text("")
+						//$('#form-register').action="vendorRegister"
+						return true;
+                	}// else for duplicate flag
+
+
+            	}
+
+        });
+
+
+		}
+		else
+	{return false;}
+
+
+	});
+});
+
+//....logout...
+
+$(document).on("click", '#navbarDropown1', function(e) {
+
+    bootbox.confirm({
+        title:"Logout",
+        message: "Do you want to Logout?",
+        buttons: {
+            confirm: {
+                label: 'Yes',
+                className: 'btn-success'
+            },
+            cancel: {
+                label: 'No',
+                className: 'btn-danger'
+            }
+        },
+        callback: function (result) {
+        if(result)
+        {
+
+            //$('#navbarDropown1').attr('href', "account/logout")
+            window.location.href="account/logout"
+
+        }
+
+
+        }
+
+    });
+});
+
+
+   </script>
+</body>
+</html>

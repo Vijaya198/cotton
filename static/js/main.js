@@ -1,161 +1,178 @@
 $(function(){
 
-
     $("#menu-toggle").click(function(e) {       
         $("#wrapper").toggleClass("active");
     });
 
 
  
-   $("#form-total").steps({
-        headerTag: "h2",
-        bodyTag: "section",
-        transitionEffect: "fade",        
-        autoFocus: true,
-        transitionEffectSpeed: 500,
-        titleTemplate : '<div class="title">#title#</div>',
-        
-
-        labels: {
-            previous : 'Previous',
-            next : 'Next',
-            finish : '',
-            current : '',
-            
-        }, 
-        
-        
-        onStepChanged: function (event, currentIndex, newIndex) {
-            if (currentIndex < newIndex) {
-                $('.steps li.current').next().removeClass('done');                                  
-              }
-              var $input = $('#submitvendor');
-              if (currentIndex === 2) { //if last step             
-                var $input = $('#submitvendor');
-                 $('.actions > ul > li:last-child').attr('style', 'display:none');                            
-                 $('a[href="#finish"]').remove();
-                 $input.appendTo($('ul[aria-label=Pagination]'));       
-                 $input.attr('style', 'display:block');
-                 } 
-              
-        },
-
-              
-       onStepChanging: function (event, currentIndex, newIndex) { 
-        $('ul[aria-label=Pagination] button').attr('style', 'display:none');                              
-        if (newIndex === 2) { //if last step   
-            $('ul[aria-label=Pagination] button').attr('style', 'display:block');                              
-        }
-
-            var vtype = $('#vtype').val();
-            var company_email = $('#company_email').val();
-            var company_name = $('#company_name').val();
-            var adddoor = $('#adddoor').val();
-            var locality = $('#locality').val();
-            var state = $('#state').val();
-            var pincode = $('#pincode').val();
-            var proprietorDirectorName = $('#proprietorDirectorName').val();
-            var proprietorDirectorContact = $('#proprietorDirectorContact').val();
-            var local_contact_name = $('#local_contact_name').val();
-            var local_contact_no = $('#local_contact_no').val();
-
-
-            var gstin = $('#gstin').val();
-            var uin = $('#uin').val();
-            var pan = $('#pan').val();
-
-            var accountno = $('#accountno').val();
-            var accountname = $('#accountname').val();
-            var ifsc = $('#ifsc').val();
-            var bankname = $('#bankname').val();
-            var branch = $('#branch').val();
-            var accounttype = $('#accounttype').val();
-            var insurno = $('#insurno').val();
-            var expirdate1 = $('#expirdate1').val();
-            var expirdate2 = $('#expirdate2').val();
-            var insurname = $('#insurname').val();    
-
-         
-        
-             //vendor             
-             $('#vtype-val').text(vtype);
-             $('#company_email-val').text(company_email);
-             $('#company_name-val').text(company_name);
-             $('#adddoor-val').text(adddoor);
-             $('#locality-val').text(locality);
-             $('#state-val').text(state);
-             $('#pincode-val').text(pincode);
-             $('#proprietorDirectorName-val').text(proprietorDirectorName);
-             $('#proprietorDirectorContact-val').text(proprietorDirectorContact); 
-             $('#local_contact_name-val').text(local_contact_name);
-             $('#local_contact_no-val').text(local_contact_no);
-
-            
-             $('#gstin-val').text(gstin);
-             $('#uin-val').text(uin);
-             $('#pan-val').text(pan);
- 
-             $('#accountno-val').text(accountno);
-             $('#accountname-val').text(accountname);
-             $('#ifsc-val').text(ifsc);
-             $('#bankname-val').text(bankname);
-             $('#branch-val').text(branch);   
-             $('#accounttype-val').text(accounttype);
-             $('#insurno-val').text(insurno);
-             $('#expirdate1-val').text(expirdate1);
-             $('#expirdate2-val').text(expirdate2);
-             $('#insurname-val').text(insurname);
-             
-                     
-            $("#form-register").validate().settings.ignore = ":disabled,:hidden";
-            return $("#form-register").valid();
-               
-        },
-        onFinished: function (event, currentIndex) {
-          
-            var form = $(this);
-            jQuery("#wizard").submit();
-            // Submit form input
-            form.submit();
-        }
-    });
-
-});
-
+   
 
 
 $(document).ready(function() {
     $('form input:not([type="submit"])').keydown(function(e) {
-   // $('form input').keydown(function (e) {
+    // $('form input').keydown(function (e) {
         if (e.keyCode == 13) {
-            e.preventDefault();
-            return false;
+        //alert("hi")
+            //e.preventDefault();
+            //return false;
         }
+
+     $('.nav-item a').on('click', function(e){
+    var currentAttrValue = $(this).attr('href');
+    // Show/Hide Tabs
+    $('.tab-content ' + currentAttrValue).show().siblings().hide();
+    // Change/remove current tab to active
+    $(this).parent('li').addClass('active').siblings().removeClass('active');
+   // e.preventDefault();
+    });
+   
     });
 
-    /* Auto complete query */
-    $(function(){
-        var banks = ["Allahabad Bank","Andhra Bank","Bank of India","City Union Bank","Corporation Bank"];
-        var states=["Andra Pradesh","Arunachal Pradesh","Goa","Gujarat","Karnataka","Kerala","Madya Pradesh","Tamilnadu"];
-        $("#bankname").autocomplete({
-            source: function(req, responseFn) {
-                var re = $.ui.autocomplete.escapeRegex(req.term);
-                var matcher = new RegExp( "^" + re, "i" );
-                var a = $.grep( banks, function(item,index){
-                    return matcher.test(item);
-                });
-                responseFn( a );
-            }
-        });
-        $("#state").autocomplete({
-            source: function(req, responseFn) {
-                var re = $.ui.autocomplete.escapeRegex(req.term);
-                var matcher = new RegExp( "^" + re, "i" );
-                var a = $.grep( states, function(item,index){
-                    return matcher.test(item);
-                });
-                responseFn( a );
-            }
-        });
-      });  
+    //Jquery Date 
+	$("#expirydate").datepicker({
+        minDate: 0
+	});
+
+    /* -----------------------------------------------
+    validation message
+    -------------------------------------------------*/
+        $( "#invaild1" ).toggle();
+        $( "#invaild2" ).toggle();
+        $( "#invaild3" ).toggle();
+        $( "#invaild4" ).toggle();
+        $( "#invaild5" ).toggle();
+		$( "#invaild6" ).toggle();
+        $( "#invaildin1" ).toggle();
+        $( "#invaildin2" ).toggle();
+        $( "#compnameexist" ).toggle();
+    
+      $("#company_nick_name").keypress(function() {
+           $(this).css("border", "none"); $( "#invaild1" ).hide();
+            $( "#spancompanynickname").text("");
+             });
+      //company nickname
+   
+     /////////////
+      $("#company_name_reg").keypress(function() {
+
+           $(this).css("border", "none"); $( "#invaild2" ).hide();
+
+      });
+      $("#adddoor").keypress(function() {
+
+           $(this).css("border", "none"); $( "#invaild3" ).hide();
+
+
+      });
+      $("#pincode").keypress(function() {
+
+           $(this).css("border", "none"); $( "#invaild4" ).hide();
+
+      });
+      $("#primary_email").keypress(function() {
+
+           $(this).css("border", "none"); $( "#invaild5" ).hide();
+
+      });     
+	  $("#state").click(function() {
+
+           $(this).css("border", "none"); $( "#invaild6" ).hide();
+
+      });
+      $("#insurcompany").keypress(function() {
+           $(this).css("border", "none"); $( "#invaildin2" ).hide();     
+      });
+      $("#expirydate").keypress(function() {
+           $(this).css("border", "none"); $( "#invaildin1" ).hide();     
+      });
+	  $("#expirydate").click(function() {
+           $(this).css("border", "none"); $( "#invaildin1" ).hide();     
+      });
+
+
+
+	//Vendor Validation		
+	$( "#form-register" ).submit(function(e) {
+     //e.preventDefault();
+
+      var txtval = $("#company_nick_name").val();
+      if (txtval == "") {
+      //alert(txtval)
+      $("#company_nick_name").css("border", "1px solid red");$( "#invaild1" ).show();return false;}
+      else if(txtval== null)
+      {$("#company_nick_name").css("border", "1px solid red");$( "#invaild1" ).show();return false;}
+      else{$("#company_nick_name").css("border", "none");$( "#invaild1" ).hide();}
+
+      var txtval1 = $("#company_name_reg").val();
+      if (txtval1 == "") {
+      $("#company_name_reg").css("border", "1px solid red");$( "#invaild2" ).show();return false;}
+      else if(txtval1== null)
+      {$("#company_name_reg").css("border", "1px solid red");$( "#invaild2" ).show();return false;}
+      else{$("#company_name_reg").css("border", "none");$( "#invaild2" ).hide();}
+
+      var txtval2 = $("#adddoor").val();
+      if (txtval2 == "") {
+      $("#adddoor").css("border", "1px solid red");$( "#invaild3" ).show();return false;}
+      else if(txtval2== null)
+      {$("#adddoor").css("border", "1px solid red");$( "#invaild3" ).show();return false;}
+      else{$("#adddoor").css("border", "none");$( "#invaild3" ).hide();}
+
+
+      var txtval3 = $("#pincode").val();
+      if (txtval3 == "") {
+      $("#pincode").css("border", "1px solid red");$( "#invaild4" ).show();return false;}
+      else if(txtval3== null)
+      {$("#pincode").css("border", "1px solid red");$( "#invaild4" ).show();return false;}
+      else{$("#pincode").css("border", "none");$( "#invaild4" ).hide();}
+
+      var txtval4 = $("#primary_email").val();
+      if (txtval4 == "") {
+      $("#primary_email").css("border", "1px solid red");$( "#invaild5" ).show();return false;}
+       else if(txtval== null)
+      {$("#primary_email").css("border", "1px solid red");$( "#invaild5" ).show();return false;}
+      else{$("#primary_email").css("border", "none");$( "#invaild5" ).hide();}
+
+      var txtval5 = $("#state").val();
+      //alert(txtval5);
+      if (txtval5 == null) {
+       //alert(txtval5+"null");
+       //e.preventDefault(e);
+      $("#state").css("border", "1px solid red");$( "#invaild6" ).show(); return false;}
+      else{
+      //alert(txtval5 + "not null");
+      $("#state").css("border", "none");$( "#invaild6" ).hide();}
+
+
+
+	//Check Insurance field
+     if($("#insurno").val()  !== ""){	
+
+		if($("#insurcompany").val()  == "" && ($("#expirydate").val()  == "")) {       
+		  $("#insurcompany").css("border", "1px solid red"); 
+		  $( "#invaildin2" ).show();	
+	  	  $("#expirydate").css("border", "1px solid red");
+	     $( "#invaildin1" ).show();	
+	  }
+
+	  else if($("#insurcompany").val()  == "") {       
+		  $("#insurcompany").css("border", "1px solid red"); 
+		  $( "#invaildin2" ).show();		
+	  }
+
+	  else  if( $("#expirydate").val()  == "") {        
+      $("#expirydate").css("border", "1px solid red");
+	  $( "#invaildin1" ).show();
+	 //alert("hhh")
+	  }
+
+	   		
+	}
+
+		
+   });
+    
+   
+
+     });  
   });

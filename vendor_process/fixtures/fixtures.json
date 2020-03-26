@@ -1,0 +1,223 @@
+[
+  {
+    "model": "vendor_process.state",
+    "pk": 1,
+    "fields": {
+      "state": "Andhra Pradesh"
+    }
+  },
+  {
+    "model": "vendor_process.state",
+    "pk": 2,
+    "fields": {
+      "state": "Arunachal Pradesh"
+      }
+
+  },
+  {
+    "model": "vendor_process.state",
+    "pk": 3,
+    "fields": {
+      "state": "Assam"
+      }
+
+  },
+  {
+    "model": "vendor_process.state",
+    "pk": 4,
+    "fields": {
+      "state": "Bihar"
+      }
+
+  },
+  {
+    "model": "vendor_process.state",
+    "pk": 5,
+    "fields": {
+      "state": "Chhattisgarh"
+      }
+
+  },
+  {
+    "model": "vendor_process.state",
+    "pk": 6,
+    "fields": {
+      "state": "Goa"
+      }
+
+  },
+  {
+    "model": "vendor_process.state",
+    "pk": 7,
+    "fields": {
+      "state": "Gujarat"
+      }
+
+  },
+  {
+    "model": "vendor_process.state",
+    "pk": 8,
+    "fields": {
+      "state": "Haryana"
+      }
+
+  },
+  {
+    "model": "vendor_process.state",
+    "pk": 9,
+    "fields": {
+      "state": "Himachal Pradesh"
+      }
+
+  },
+  {
+    "model": "vendor_process.state",
+    "pk": 10,
+    "fields": {
+      "state": "Jharkhand"
+      }
+
+  },
+  {
+    "model": "vendor_process.state",
+    "pk": 11,
+    "fields": {
+      "state": "Karnataka"
+      }
+
+  },
+  {
+    "model": "vendor_process.state",
+    "pk": 12,
+    "fields": {
+      "state": "Kerala"
+      }
+
+  },
+  {
+    "model": "vendor_process.state",
+    "pk": 13,
+    "fields": {
+      "state": "Madhya Pradesh"
+      }
+
+  },
+  {
+    "model": "vendor_process.state",
+    "pk": 14,
+    "fields": {
+      "state": 	"Maharashtra,"
+      }
+
+  },
+  {
+    "model": "vendor_process.state",
+    "pk": 15,
+    "fields": {
+      "state": "Manipur"
+      }
+
+  },
+  {
+    "model": "vendor_process.state",
+    "pk": 16,
+    "fields": {
+      "state": "Meghalaya"
+      }
+
+  },
+  {
+    "model": "vendor_process.state",
+    "pk": 17,
+    "fields": {
+      "state": "Mizoram"
+      }
+
+  },
+  {
+    "model": "vendor_process.state",
+    "pk": 18,
+    "fields": {
+      "state": "Nagaland"
+      }
+
+  },{
+    "model": "vendor_process.state",
+    "pk": 19,
+    "fields": {
+      "state": "Odisha"
+      }
+
+  },
+  {
+    "model": "vendor_process.state",
+    "pk": 20,
+    "fields": {
+      "state": "Punjab"
+      }
+
+  },
+  {
+    "model": "vendor_process.state",
+    "pk": 21,
+    "fields": {
+      "state": "Rajasthan"
+      }
+
+  },
+  {
+    "model": "vendor_process.state",
+    "pk": 22,
+    "fields": {
+      "state": "Sikkim"
+      }
+
+  },
+  {
+    "model": "vendor_process.state",
+    "pk": 23,
+    "fields": {
+      "state": "Tamil Nadu"
+      }
+
+  },{
+    "model": "vendor_process.state",
+    "pk": 24,
+    "fields": {
+      "state": "Telangana"
+      }
+
+  },
+  {
+    "model": "vendor_process.state",
+    "pk": 25,
+    "fields": {
+      "state": "Tripura"
+      }
+
+  },{
+    "model": "vendor_process.state",
+    "pk": 26,
+    "fields": {
+      "state": "Uttar Pradesh"
+      }
+
+  },
+  {
+    "model": "vendor_process.state",
+    "pk": 27,
+    "fields": {
+      "state": "Uttarakhand"
+      }
+
+
+  },
+  {
+    "model": "vendor_process.state",
+    "pk": 28,
+    "fields": {
+      "state": "West Bengal"
+      }
+
+  }
+]

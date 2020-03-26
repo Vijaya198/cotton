@@ -1,0 +1,313 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<title>Cotton Sandhai - Vendor Add Details</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">    	
+	<link rel="stylesheet" href="css/style.css"/>    
+	<link rel="stylesheet" href="vendor/bootstrap-3.4.1-dist/css/bootstrap.min.css">
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="vendor/jquery-ui-1.12.1/jquery-ui.js"></script>
+	<script src="vendor/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script src="vendor/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+     <script src="js/main.js"></script>
+
+<style>
+ .wizard-v1-content   {    
+	height:auto;
+	margin-bottom:20px;
+  }
+  .inner .form-row.table-responsive {    
+    background-color:rgb(255, 255, 255)
+}
+.sidepanel  {
+  height:120%;
+  }
+</style>
+
+</head>
+
+<body>
+<div id="wrapper" class="wrapper">
+	<!---Top menu-->
+	<div class="top_navbar">		
+	  <div class="openbtn" onclick="openNav()">
+		 <div class="one"></div>
+		 <div class="two"></div>
+		 <div class="three"></div>
+	  </div>
+	  <div class="top_menu">
+		<div class="logo"><img src="../static/images/logo3.jpg"/><br></div>
+
+		<!---------Top nav Icons-->
+		<ul>
+			<div class="dropdown">
+			  <li class="dropbtn">
+				<a href="#"  class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+				<span class="glyphicon glyphicon-user"></span>
+				</a>
+				<div class="dropdown-menu dropdown-content dropdown-menu-right" role="menu" aria-labelledby="navbarDropdown1">
+				  <a href="../accountinfo">Account Info</a>
+				  <a href="#">Payment Info</a>
+				  <a href="#">Forgot Password</a>
+			   </div>
+			  </li>
+			  </div>
+
+		  <!-----Account Icon-->
+
+		  <div class="dropdown">
+			<li class="dropbtn">
+				<a href="#"  class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+				  <span class="glyphicon glyphicon-bell alertNotificacao"></span>
+				  <span id="notificationsBadge" class='badgeAlert'>3</span>
+				</a>
+
+				<div class="dropdown-menu notification dropdown-menu-right" role="menu" aria-labelledby="navbarDropdown">
+				  <div class="topc" >
+					<h5 class="noticard-title">Notifications</h5>
+				  </div>
+
+					<div class="card noticard">
+					  <div class="card-body">
+						<h5 class="card-title  noticard-title">Special title treatment</h5>
+						<p class="card-text noticart-text">With supporting text below as a natural lead-in to additional.</p>
+
+					  </div>
+					  <div class="notisection-title-divider"></div>
+					</div>
+
+					<div class="card noticard" >
+					  <div class="card-body">
+						<h5 class="card-title noticard-title">Special title treatment</h5>
+						<p class="card-text  noticart-text">With supporting text below as a natural lead-in to additional content.</p>
+
+					  </div>
+					  <div class="notisection-title-divider"></div>
+					</div>
+
+					<div class="card noticard" >
+					  <div class="card-body">
+						<h5 class="card-title noticard-title">Special title treatment</h5>
+						<p class="card-text  noticart-text">With supporting text below as a natural lead-in to additional content.</p>
+
+					  </div>
+					</div>
+					</div>
+
+				</li>
+			</div>
+
+
+
+		  <!-----Logout Icon-->
+			  <div class="dropdown">
+			<li class="dropbtn">
+			  <a href="#"  class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+			  <span class="glyphicon glyphicon-arrow-right"></span>
+			  </a>
+			 </li>
+			</div>
+
+			  </ul>
+			</div>
+		  </div>
+
+    <!-- Sidebar -->
+    <div id="mySidepanel" class="sidepanel">  
+	  <ul class="sidebar-nav" id="">     
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+		
+		<li><a href="../traders" >Trades</a></li>
+        <li><a href="../vendors">Vendors</a></li>
+	  </ul>
+	</div>
+	
+    <!-- Page content -->
+      <div id="page-content-wrapper">
+        <!-- Keep all page content within the page-content inset div! -->
+        <div class="page-content inset">
+          <div class="row">
+            <div class="col-md-12">
+            <div class="main_container">
+				
+		<!--div class="page-content" style="background-color: rgba(0, 0, 0, 0.15)"-->
+			<div class="wizard-v1-content">			
+					<div id="form-total">
+						<!-- SECTION 1 -->							
+                            <h3  style="font-size:28px;text-align:center"><b>Vendor Details</b></h3>
+                           	<section >                               
+								<div class="inner" style="margin-left:18px;">								
+									<!--Vendor form-->
+                                    <div class="form-row table-responsive reppadd">
+										<table class="table" style="border:none;">
+											<tbody style="border:none;">
+
+												<tr class="space-row col-xs-12">
+
+													<th class="vendmob col-xs-12">CS Vendor ID</th>
+													<td id="vendor_id-val" class="col-xs-12"  style="width:210px">{{vendors_info.vendor_id}}</td>
+													<td style="width:100px"></td>
+													<th class="vendmob col-xs-12">created date</th>
+													<td id="created_date-val" class="col-xs-12" style="width:210px">{{vendors_info.created_date}}</td>
+											    </tr>
+												<tr class="space-row">
+													<th></th>
+													<td></td>
+													<td></td>
+
+													<th class="col-xs-12">updated date</th>
+													<td id="updated_date-val" style="width:210px">{{vendors_info.updated_date}}</td>
+												</tr>
+												<br>
+												<tr class="space-row bordwhite col-xs-12">											
+													<th class="col-xs-12 col-sm-12" style="width:260px">Company Nick Name: </th>
+													<td class="col-xs-12 col-sm-12" style="width:auto" id="company_nick_name-val">{{vendors_info.company_nick_name}}</td>
+													
+												</tr>
+
+												<tr class="space-row bordwhite col-xs-12 col-sm-12 col-md-10">
+													<th class="col-xs-12 col-sm-12" style="width:260px">Company Name(as per Reg): </th>
+													<td  class="col-xs-12 col-sm-12" style="width:auto" id="company_name_reg-val">{{vendors_info.company_name_reg}}</td>
+
+												</tr>
+											
+
+												<tr class="space-row bordwhite">
+													<th class="col-xs-12 col-sm-12" style="width:260px">Address:</th>
+													<td  class="col-xs-12" style="width:auto"  id="adddoor-val">{{vendors_info.door_street}}</td>
+
+												</tr>
+												<tr class="space-row bordwhite">
+													
+													<td  class="col-xs-12" style="width:auto"   id="locality-val">{{vendors_info.locality}}</td>
+												</tr>
+												<tr class="space-row bordwhite">
+													
+													<td  class="col-xs-12" style="width:auto"   id="state-val">{{vendors_info.state}}  -  {{vendors_info.pincode}}</td>
+												</tr>
+												
+											
+												<tr class="space-row bordwhite col-xs-12 col-sm-12  col-md-12">
+													<th class="col-xs-12"  style="width:260px">Primary Email:</th>
+													<td class="col-xs-12  col-md-12" style="width:auto"  id="primary_email-val">{{vendors_info.primary_email}}</td>
+												</tr>
+												<tr class="space-row bordwhite col-xs-12 col-sm-12">
+													<th class="col-xs-12"  style="width:260px" >Primary Contact Name:</th>
+													<td class="col-xs-12  col-md-12" style="width:auto" id="primary_contact_name-val">{{vendors_info.primary_contact_name}}</td>
+												</tr>
+
+												<tr class="space-row bordwhite col-xs-12 col-sm-12">
+													<th  class="col-xs-12" style="width:260px" >Primary Contact No:</th>
+													{% if vendors_info.primary_contact_no != None %}
+													<td class="col-xs-12 col-sm-12" style="width:auto" id="primary_contact_no-val">{{vendors_info.primary_contact_no}}</td>
+													{% else %}
+													<td class="col-xs-12 col-sm-12" style="width:auto" id="primary_contact_no-val"></td>
+													{% endif %}
+												</tr>
+												<tr  class="space-row bordwhite col-xs-12 col-sm-12">
+													<th class="col-xs-12 col-sm-12" style="width:260px">Secondary Email:</th>
+													<td class="col-xs-12 col-sm-12" style="width:auto" id="secondary_mail-val">{{vendors_info.secondary_email}}</td>
+												</tr>
+											
+												<tr class="space-row bordwhite col-xs-12 col-sm-12"> 					
+												
+													<th class="col-xs-12 col-sm-12" style="width:260px">Secondary Contact Name:</th>
+													<td class="col-xs-12 col-sm-12" style="width:auto" id="secondary_contact_name-val">{{vendors_info.secondary_contact_name}}</td>
+												
+
+												</tr>
+												<tr class="space-row bordwhite col-xs-12 col-sm-12"> 					
+												
+													<th class="col-xs-12 col-sm-12" style="width:260px" >Secondary Contact No:</th>
+													{% if vendors_info.secondary_contact_no != None %}
+													<td class="col-xs-12 col-sm-12" style="width:auto" id="secondary_contact_no-val">{{vendors_info.secondary_contact_no}}</td>
+													{% else %}
+													<td  class="col-xs-12 col-sm-12" style="width:auto" id="secondary_contact_no-val"></td>
+													{% endif %}
+												</tr>
+
+												<!---section3-->
+
+												<tr class="space-row bordwhite col-xs-12 col-sm-12">
+													
+
+													<th class="col-md-2 col-xs-12 col-lg-2 ">GSTIN:</th>
+													<td class="col-md-4 col-xs-12 col-lg-4"  style="width:220px" id="gstin-val" >{{vendors_info.gstin}}</td>
+													<th  class="col-md-2 col-xs-12 col-lg-2 ">UIN:</th>
+													<td class="col-md-4 col-xs-12 col-lg-4"  style="width:220px" id="uin-val">{{vendors_info.uin}}</td>
+
+												</tr>
+												<tr class="space-row bordwhite col-xs-12">						
+													<th class="col-md-2 col-xs-12 col-lg-2">Insurance No:</th>
+													<td style="width:220px" class="col-md-6 col-xs-12 col-lg-6" id="insurno-val">{{vendors_info.insurance_no}}</td>
+													<th class="col-md-1 col-xs-12 col-lg-2">ExpiryDate:</th>
+													{% if vendors_info.expiry_date != None %}
+													<td style="width:220px" class="col-md-6 col-xs-12 col-lg-6" id="expirydate-val" >{{vendors_info.expiry_date}}</td>
+													{% else %}
+													<td style="width:220px" class="col-md-6 col-xs-12 col-lg-6" id="expirydate-val" ></td>
+													{% endif %}
+
+												</tr>
+												<tr class="space-row bordwhite col-xs-12">						
+															
+												<th class="col-xs-12 col-sm-12" style="width:260px">Insurance Company:</th>
+												<td class="col-xs-12 col-sm-12" style="width:auto" id="insurcompany-val">{{vendors_info.insurance_company}}</td>
+												</tr>
+
+											</tbody>
+										</table>										
+									</div> <br>
+									<form action="/editVendorDetails" method="POST">
+									{% csrf_token %}
+
+									<div class="col-md-6 col-xs-6">
+										<button  type="submit" class="btnsubmit3 center-block text-center viewvend"  value="submit"  id="submiteditvendor"  formaction="javascript:history.back();" >Go Back</button>
+										
+									   </div>
+									  <div class="col-md-6 col-xs-6">
+										<!--button type="submit" class="btnsubmit1 center-block text-center viewvend" value="submit"  id="submitvendor">back</button--->
+										  <button  type="submit" class="btnsubmit3 center-block text-center viewvend"  value="submit" value="{{vendors_info.vendor_id}}"  id="EditVendor" formaction="vendor.html">Edit vendor</button>
+										  <br><br>
+									   </div>     
+									</form>
+									{% endfor %}
+									
+							</section>		
+						
+						</div>						
+				</div>
+	
+	    	</div>
+         </div>
+       </div>
+    </div>
+  </div>
+</div>
+{% block javascript %}
+	<script>
+	function openNav() {
+  	document.getElementById("mySidepanel").style.width = "200px";
+	}
+    
+	function closeNav() {
+	  document.getElementById("mySidepanel").style.width = "0px";	  
+	}
+
+
+
+</script>
+/* Auto complete query */
+
+
+{% endblock javascript %}
+
+</body>
+</html>

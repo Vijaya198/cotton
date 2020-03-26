@@ -36,6 +36,7 @@ INSTALLED_APPS = [
 
     #'AccountLogin.apps.AccountLoginConfig'
     'trade_information',
+    'vendor_process',
 
     'allauth',
     'allauth.account',
@@ -120,15 +121,15 @@ AUTHENTICATION_BACKENDS = (
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        #'NAME':'cotton_sandhai',
         'NAME':'cot_sandhai2',
-        #'USER':'admin',
-        'USER':'root',
-       # 'PASSWORD':'VRgeeks123',
-        'PASSWORD':'Kanishka07052010',
-        #'HOST':'database-1.cg2nmqihdd66.ap-south-1.rds.amazonaws.com',
+        #'NAME':'cot_sandhai2',
+        'USER':'dme',
+        #'USER':'root',
+        'PASSWORD':'dharini2009',
+        #'PASSWORD':'Kanishka07052010',
         'HOST':'localhost',
-        'PORT':'3306',
+        #'HOST':'localhost',
+        'PORT':'8888',
         #'OPTIONS': {
         #   'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
        # }
@@ -215,7 +216,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 ACCOUNT_USERNAME_REQUIRED = False
-
+#USERNAME_FIELD='email'
 
 
 ACCOUNT_LOGOUT_ON_GET = True
@@ -231,6 +232,8 @@ PASSWORD_RESET_TIMEOUT_DAYS=1
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 SOCIAL_AUTH_LOGIN_URL = 'accounts/login'
 SOCIAL_AUTH_LOGOUT_URL = 'user_logout'
+#SESSION_SAVE_EVERY_REQUEST = False
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 #SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/traderadd'
 #FACEBOOK_APP_ID = str('176266560136878')
 #FACEBOOK_APP_SECRET = str('ece90495c8d172913c603746a920bb28')

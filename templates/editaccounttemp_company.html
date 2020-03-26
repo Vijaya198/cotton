@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cotton Sandhai -Account Profile - Edit </title>
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/demo/site-demos.css">
+	<link rel="stylesheet" href="css/style.css"/>
+	<link rel="stylesheet" href="css/site-demos.css"/>
+	<link rel="stylesheet" href="vendor/bootstrap-3.4.1-dist/css/bootstrap.min.css">
+  <script src="vendor/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>  
+   <script src="js/jquery-3.3.1.min.js"></script>
+   <script src="vendor/bootstrap/js/popper.min.js"></script>
+
+
+</head>
+
+<style>
+
+  body{
+    
+  box-sizing: content-box;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.1);
+   }
+
+  .card-group [class*='col-'] {
+  float:none;
+}
+
+@media screen and (min-device-width: 1008px) {
+  .wizard-v1-contentp   {
+    margin-top:50px;
+    margin-left:250px;
+    width: 100%;
+    height:600px !important;
+    background-color: #c1c1c1;
+  }
+  .wizard-v1-content{
+  margin-top:0px;
+  margin-left:400px;
+  height:auto;
+ }
+
+  .sidepanel  {
+      height:130%;
+  }
+  }
+
+  .profile-page .page-header {
+    height: 180px;
+    width:100%;
+    background-position: top center;
+    background-color:rgb(241, 244, 247);
+}
+
+
+.page-header {
+    padding-bottom: 9px;
+    margin: 20px 0 20px;
+    border-bottom: 1px solid #eee;
+}
+.main-raised {
+  margin: -60px 0px 0px;
+    border-radius: 1px;
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+.main {
+    background: #FFFFFF;   
+    z-index: 3;
+}
+
+.title{
+  text-align: left;
+  margin-left:0px;
+}
+
+.img-raised {
+    box-shadow: 0 16px 18px -12px rgba(0, 0, 0, 0.56), 0 4px 5px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.acsave {
+  padding: 10px;
+  margin-left:5px;
+}
+
+.form-group label{
+ 
+  padding:6px;
+}
+
+.form-group input{
+  padding:5px;
+  margin-left:0px;
+  border-radius: 5px;
+  border:1px solid rgb(216, 214, 214) !important;
+  box-shadow: none !important;
+}
+
+.form-group label{
+  color:rgb(111, 111, 114);
+}
+.card .card-body .heading{ border-top: 0px; }
+
+
+.card .card-body .ind{
+  margin-left:190px;
+}
+
+.acch5{
+  font-size:14px;
+  margin-left:5px;
+  font-weight: bold;
+  text-decoration: underline;
+  padding-bottom:10px;
+}
+
+.profile-page .page-header {
+  height: 60px !important;
+  width: 100%;
+
+  background-color:rgb(77, 148, 228);
+}
+
+.form-group .lbl{ 
+font-weight:600 !important;
+}
+.form-group label{ 
+padding:6px;
+margin-left:5px;
+font-weight:normal;
+font-size:14px;
+font-family: 'Montserrat';
+}
+
+.btn-three{
+display:inline-block;
+box-sizing: border-box;
+text-decoration:none;
+font-family:'Roboto',sans-serif;
+font-weight:400;
+color:#FFFFFF;
+background: rgba(126, 197, 176, 0.993) !important;
+border: none;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 8px 6px -6px rgb(179, 173, 173);
+	   -moz-box-shadow: 0 8px 6px -6px rgb(163, 159, 159);
+	        box-shadow: 0 8px 6px -6px rgb(177, 175, 175);
+width:65px;
+  cursor: pointer;
+  outline: none;
+
+ padding:5px;
+}
+.btn-three1{
+  display:inline-block;
+box-sizing: border-box;
+text-decoration:none;
+font-family:'Roboto',sans-serif;
+font-weight:400;
+color:#FFFFFF;
+
+border: none;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 8px 6px -6px rgb(179, 173, 173);
+	   -moz-box-shadow: 0 8px 6px -6px rgb(163, 159, 159);
+	        box-shadow: 0 8px 6px -6px rgb(177, 175, 175);
+width:65px;
+  cursor: pointer;
+  outline: none;
+
+ padding:5px;
+  margin-top:-5px !important;background-color: lightgray !important;color:rgb(65, 62, 62)
+}
+.btn-three1:hover{
+  background-color: darkgray !important;
+}
+.btn-three:hover{
+  background: rgba(67, 165, 136, 0.993) !important;
+}
+@media (max-width:767px) {
+  .wizard-form{  
+  text-align:left !important;
+  margin-left:0px !important;
+  width:100%;
+}
+.wizard-v1-content .wizard-form {
+	width: 100%;
+  padding:5px 5px;
+width:100%;
+}
+}
+</style>
+<body>
+     			
+<div id="wrapper" class="wrapper">
+	<!---Top menu-->
+	<div class="top_navbar">		
+	  <div class="openbtn" onclick="openNav()">
+		 <div class="one"></div>
+		 <div class="two"></div>
+		 <div class="three"></div>
+	  </div>
+	  <div class="top_menu">
+		<div class="logo"><img src="images/logo3.jpg"/><br></div>
+
+		<ul>     
+		<div class="dropdown">			
+		  <li class="dropbtn" ><a href="#">
+			<i class="glyphicon glyphicon-user"></i>
+			</a>
+		  </li>
+		  <div class="dropdown-content">
+				<a href="accountprofile.html">Account Info</a>
+				<a href="#">Payment Info</a>
+				<a href="#">Forgot Password</a>
+		  </div>		 		
+		</div>
+		<li><a href="#">
+			<i data-toggle="tooltip" data-placement="right" title="Notifications" class="glyphicon glyphicon-bell"></i>
+			</a>
+          </li>
+          <li><a href="#">
+			<i  data-toggle="tooltip" data-placement="right" title="Logout" class="glyphicon glyphicon-arrow-right"></i>
+			</a>
+		  </li>
+		</ul>		
+	  </div>
+</div>
+
+    <!-- Sidebar -->
+    <div id="mySidepanel" class="sidepanel" style="z-index: 111;">  
+	  <ul class="sidebar-nav" id="">     
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+		
+		<li><a href="traders.html" style="z-index: 111;">Trades</a></li>
+    <li><a href="vendor.html" style="z-index: 111;">Vendors</a></li>
+	  </ul>
+    </div>
+    
+    <div class="wizard-v1-content mt10" >	
+        <div class="wizard-form">	
+          <section >     
+            <div class="tabcontainer2  container">              
+             
+           </div><!--pro page-->      
+                  
+     <!--card group--->
+
+     <!--card group--->
+     <div class="card-group">    
+      <form id="formaccount" action="editaccounttitle.html" method="get">   
+        <div class="col-md-12"> 
+              <div class="card border-light mb-3">  
+                <button type="submit" class="pencil" style="float:right;border:none;background:transparent;" > <i class="fa fa-pencil" aria-hidden="true"></i></button>  
+                <div class="card-body"> 
+                 <div class="profile-page col-md-12 ">                                       
+                  <!--div class="page-header header-filter" data-parallax="active" style="background-color:white;transform: translate3d(0px, 0px, 0px);"-->                      
+                  <div class="headertitle col-md-12 col-xs-12">                                                     
+                  <label class="col-md-8 col-xs-12 col-sm-12"
+                       style="text-align:center !important;color:white !important;"
+                       name="companyname" >Company name
+                  </label>
+                  </div>               
+                  </div>
+                </div>       
+              </div>        
+              <!--/div-->          
+            </div>
+          </form>   
+    </div>
+
+          <div class="col-md-12">      
+                 <ul class="nav nav-tabs card-header-tabs" id="myTabs">
+                            <li class="nav-item active">
+                              <a class="nav-link" href="#company1">One</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#company2">Two</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#company3">Three</a>
+                          </li>
+                     </ul>
+                  
+                      <div class="card-body tab-content">
+                          <div id="company1" class="tab-pane active">
+                            
+                            <form id="formaccount" action="accountprofile.html" method="get">    
+                              <div class="card  mb-3">
+                                <div class="card-block">    
+                                    <div class="card-header">
+                                      <div class="d-flex  justify-content-between align-items-center mb-3">
+                                        <h5 class="card-title mb-0">Company 1
+                                          <button type="cancel" class="mt-0 pull-right  btn-four" >Cancel</button>
+                                          <button type="submit" class="mt-0 mr-5 pull-right btn-four1" style="margin-right:6px;">Save </button>
+                                        </h5>
+                                       
+                                      </div>
+                                    </div>
+                                    <div class="card-body">                                       
+                                      <div class="row form-group">
+                                        <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="localcontactname">Name</label>
+                                        <input class="col-md-8 col-sm-12 col-xs-12" type="text"  placeholder="local contact name"  id="localcontactname" name="localcontactname" >
+                                     </div>
+              
+                                     <div class="row form-group">
+                                     <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="name">Company Email</label>
+                                     <input type="email" placeholder="Company email" class="col-md-8 col-sm-12 col-xs-12" id="company_name" name="company_name">     
+                                     </div>
+              
+                                     <div class="row form-group">
+                                      <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="address">Company Address</label>
+                                      <input type="text" placeholder="Door no & street" class="col-md-8 col-sm-12 col-xs-12" id="adddoor" name="adddoor">
+                                      </div>
+                                      
+                                      <div class="row form-group col-lg-offset-3">
+                                        <input type="text" placeholder="locality" class="col-md-8 col-sm-12 col-xs-12" id="locality" name="locality">                     
+                                       </div>
+                                       <div class="row form-group col-lg-offset-3">
+                                        <input type="text" placeholder="State" class="col-md-3 col-sm-12 col-xs-12" id="state" name="state">
+                                         </div>
+                                       <div class="row form-group col-lg-offset-3">
+                                        <input type="number" placeholder="Pincode"   class="col-lg-offset-1 col-md-3 col-sm-12 col-xs-12" id="pincode" name="pincode">
+                                      </div>
+                
+                               </div>
+                              </div>
+                          </div>
+                        </form>                  
+                      </div>
+                  
+                  
+                          <div id="company2" class="tab-pane">                  
+                            <form id="formaccount" action="editaccount_company2.html" method="get">     
+                              <div class="card border-light mb-3">
+                                <div class="card-block">
+                                  
+                                  <div class="card-header">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                      <h5 class="card-title mb-0">Company 2  
+                                        <button type="submit" class="pencil"  > <i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                        </h5>                                   
+                                    </div>
+                                  </div>
+                                  
+                                  <div class="card-body"> 
+                                        
+                                    <div class="row form-group ">                       
+                                      <label class=" col-sm-12 col-xs-12 pull-left1" name="companyname" id="companyname" style="float:left;" for="">Company Name</label>                    
+                                      </div>
+                    
+                                     <div class="row form-group pull-left1">                      
+                                     <label class="col-md-8 col-sm-12 col-xs-12" id="company_name" name="company_name">Comapny email</label>     
+                                     </div>
+                    
+                                    <div class="row form-group pull-left1">											
+                                    <label  class="col-md-8 col-sm-12 col-xs-12" id="adddoor" name="adddoor">Address</label>
+                                    </div>
+                    
+                                    <div class="row form-group pull-left1">
+                                    <label class="col-md-8 col-sm-12 col-xs-12" id="locality" name="locality">Location</label>                     
+                                   </div>
+                               
+                                    <div class="row form-group pull-left1">
+                                    <label  style="width:auto !important;padding-right:0px !important;" class="col-md-3 col-sm-12 col-xs-6" id="state" name="state">State&nbsp;  &nbsp;  &nbsp;-  &nbsp;</label>
+                                    <label  style="margin-left:1px;" class="col-md-3 col-sm-12 col-xs-6" id="pincode" name="pincode">Pincode</label>
+                                  </div>
+                    
+                               </div>
+                            </div>
+                        </div>
+                      </form>
+                   </div>
+                  
+                  
+                  <!------Card 1 company 3-->        
+                  <div id="company3" class="tab-pane">                   
+                  
+                            <form id="formaccount" action="editaccount_company3.html" method="get">     
+                              <div class="card border-light mb-3">
+                                <div class="card-block">
+                                  
+                                  <div class="card-header">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                      <h5 class="card-title mb-0">Company 3
+                                        <button type="submit" class="pencil"  > <i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                        </h5>
+                                    </div>
+                                  </div>
+                                  
+                                  <div class="card-body"> 
+                                        
+                                    <div class="row form-group ">                       
+                                      <label class=" col-sm-12 col-xs-12 pull-left1" name="companyname" id="companyname" style="float:left;" for="">Company Name</label>                    
+                                      </div>
+                    
+                                     <div class="row form-group pull-left1">                      
+                                     <label class="col-md-8 col-sm-12 col-xs-12" id="company_name" name="company_name">Comapny email</label>     
+                                     </div>
+                    
+                                    <div class="row form-group pull-left1">											
+                                    <label  class="col-md-8 col-sm-12 col-xs-12" id="adddoor" name="adddoor">Address</label>
+                                    </div>
+                    
+                                    <div class="row form-group pull-left1">
+                                    <label class="col-md-8 col-sm-12 col-xs-12" id="locality" name="locality">Location</label>                     
+                                   </div>
+                               
+                                    <div class="row form-group pull-left1">
+                                    <label  style="width:auto !important;padding-right:0px !important;" class="col-md-3 col-sm-12 col-xs-6" id="state" name="state">State&nbsp;  &nbsp;  &nbsp;-  &nbsp;</label>
+                                    <label  style="margin-left:1px;" class="col-md-3 col-sm-12 col-xs-6" id="pincode" name="pincode">Pincode</label>
+                                  </div>
+                    
+                               </div>
+                            </div>
+                        </div>
+                      </form>
+                  
+                          </div>
+                        </div>
+                     
+                      <!-- END WIDGET 2 -->
+                    </div>
+
+      <!-----card 2-->
+          
+          
+      <div class="col-md-12">
+        <form id="formaccount" action="editaccount_contact.html" method="get">  
+          <div class="card border-light mb-3">
+              <div class="card-block">
+                <div class="card-header">
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5 class="card-title mb-0" >Contact Details
+                      <button type="submit" class="pencil"> <i class="fa fa-pencil" aria-hidden="true"></i></button></h5>
+                  </div>
+                </div>
+                  <div class="card-body">                 
+                    <div class="row form-group"> 
+                      <h5 class="acch5">Proprietor/Director</h5>
+                  
+                      <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="proprietorDirectorName">Name </label>
+
+                    <label class="col-md-8 col-sm-12 col-xs-12"   id="proprietorDirectorName" name="proprietorDirectorName" >Proprietor/Director Name</label>                  
+                    </div>
+
+                <div class="row form-group">
+                  <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="proprietorDirectorContact">Contact No </label>                     
+                  <label class="col-md-8 col-sm-12 col-xs-12"    id="proprietorDirectorContactno">Proprietor/Director Contact No</label>
+                </div>
+
+                <div class="row form-group"> 
+                  <h5 class="acch5">Local Contact</h5>
+                <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="localcontactname">Name</label>                     
+                  <label  class="col-md-8 col-sm-12 col-xs-12"  id="local_contact_name" name="local_contact_name" >Local contact name</label>
+                </div>
+
+                  <div class="row form-group">       
+                    <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="local"> Contact No </label>                 
+                    <label  class="col-md-8 col-sm-12 col-xs-12"  id="local_contact_no" name="local_contact_no" >Local Contact No</label>
+                </div>
+             </div>                  
+              
+            </div>
+        </div>
+    </div>
+  </form>
+      <!-----card 2 ends-->
+   </div>
+
+
+</div>
+ 
+   </section>
+  </div><!--wiz form-->
+ </div><!--wiz content-->  
+</div> <!--wrapper-->
+
+<script>
+	function openNav() {
+  	document.getElementById("mySidepanel").style.width = "200px";
+	}    
+	function closeNav() {
+	  document.getElementById("mySidepanel").style.width = "0px";	  
+  }
+  
+   
+  $(document).ready(function() {
+$('.nav-item a').on('click', function(e){
+var currentAttrValue = $(this).attr('href');
+// Show/Hide Tabs
+$('.tab-content ' + currentAttrValue).show().siblings().hide();
+// Change/remove current tab to active
+$(this).parent('li').addClass('active').siblings().removeClass('active');
+e.preventDefault();
+});
+});
+</script>
+</body>
+</html>

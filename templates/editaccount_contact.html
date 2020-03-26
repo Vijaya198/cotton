@@ -1,0 +1,793 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cotton Sandhai -Account Profile - Edit </title>
+    <link rel="stylesheet" href="../static/vendor/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../static/css/demo/site-demos.css">
+	<link rel="stylesheet" href="../static/css/style.css"/>
+	<link rel="stylesheet" href="../static/css/site-demos.css"/>
+	<link rel="stylesheet" href="../static/vendor/bootstrap-3.4.1-dist/css/bootstrap.min.css">
+    <script src="../static/vendor/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+    <script src="../static/js/jquery-3.3.1.min.js"></script>
+    <script src="../static/vendor/bootstrap/js/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="../static/vendor/bootbox/bootbox.js"></script>
+    <script src="../static/vendor/bootbox/bootbox.min.js"></script>
+    <script src="../static/vendor/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../static/vendor/bootstrap-3.4.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/vendor/jquery-ui-1.12.1/jquery-ui.css">
+    <link rel="stylesheet" href="../static/vendor/jquery-ui-1.12.1/jquery-ui.min.js">
+
+    <script src="../static/vendor/jquery-ui-1.12.1/jquery-ui.js"></script>
+    <script src="../static/vendor/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script src="../static/vendor/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+</head>
+
+<style>
+.btn-accountsave {
+  border:1px soild rgba(126, 197, 176, 0.993);
+  color: #fff !important;
+  background: rgba(126, 197, 176, 0.993) !important;
+  
+  padding:5px;
+  
+  width:65px;
+  margin-right:10px !important;
+  margin-top:0px;
+  background: rgba(126, 197, 176, 0.993) !important;
+  border-bottom-color: rgba(0,0,0,0.34);
+	text-shadow:0 1px 0 rgba(0,0,0,0.15);
+	box-shadow: 0 1px 0 rgba(255,255,255,0.34) inset, 
+				      0 2px 0 -1px rgba(0,0,0,0.13), 
+				      0 3px 0 -1px rgba(0,0,0,0.08), 
+				      0 3px 13px -1px rgba(0,0,0,0.21);
+  }
+
+.btn-two {
+	color: white;	
+  padding: 5px;
+  display: inline-block;
+  width:65px;
+  margin-top:-5px !important;
+  margin-right:5px !important;
+  margin-left:10px !important;
+  background: rgba(126, 197, 176, 0.993) !important;
+  border-radius: 5px;
+	border: 1px solid rgba(0,0,0,0.21);
+	border-bottom-color: rgba(0,0,0,0.34);
+	text-shadow:0 1px 0 rgba(0,0,0,0.15);
+	box-shadow: 0 1px 0 rgba(255,255,255,0.34) inset, 
+				      0 2px 0 -1px rgba(0,0,0,0.13), 
+				      0 3px 0 -1px rgba(0,0,0,0.08), 
+				      0 3px 13px -1px rgba(0,0,0,0.21);
+}
+
+.btn-two1 {
+	color: rgb(65, 63, 63);	
+	padding: 5px;
+  display: inline-block;
+  width:65px;
+  margin-top:-5px !important;
+  background: rgba(203, 204, 204, 0.993) !important;
+  border-radius: 5px;
+	border: 1px solid rgba(0,0,0,0.21);
+	border-bottom-color: rgba(0,0,0,0.34);
+	text-shadow:0 1px 0 rgba(0,0,0,0.15);
+	box-shadow: 0 1px 0 rgba(255,255,255,0.34) inset, 
+				      0 2px 0 -1px rgba(0,0,0,0.13), 
+				      0 3px 0 -1px rgba(0,0,0,0.08), 
+				      0 3px 13px -1px rgba(0,0,0,0.21);
+}
+
+  body{
+    
+  box-sizing: content-box;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.1);
+   }
+
+  .card-group [class*='col-'] {
+  float:none;
+}
+.form-group label{ 
+padding:6px;
+margin-left:5px;
+font-weight:normal;
+font-size:14px;
+font-family: 'Montserrat';
+}
+@media screen and (min-device-width: 1008px) {
+  .wizard-v1-contentp   {
+    margin-top:50px;
+    margin-left:250px;
+    width: 100%;
+    height:600px !important;
+    background-color: #c1c1c1;
+  }
+  .wizard-v1-content{
+  margin-top:0px;
+  margin-left:400px;
+  height:auto;
+ }
+
+  .sidepanel  {
+      height:250%;
+  }
+  }
+
+  .profile-page .page-header {
+    height: 180px;
+    width:100%;
+    background-position: top center;
+    background-color:rgb(241, 244, 247);
+}
+
+.page-header {
+    padding-bottom: 9px;
+    margin: 20px 0 20px;
+    border-bottom: 1px solid #eee;
+}
+.main-raised {
+  margin: -60px 0px 0px;
+    border-radius: 1px;
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+.main {
+    background: #FFFFFF;   
+    z-index: 3;
+}
+
+.title{
+  text-align: left;
+  margin-left:0px;
+}
+
+.img-raised {
+    box-shadow: 0 16px 18px -12px rgba(0, 0, 0, 0.56), 0 4px 5px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.acsave {
+  padding: 10px;
+  margin-left:5px;
+}
+
+.form-group label{
+ 
+  padding:6px;
+}
+
+.form-group input{
+  padding:5px;
+  margin-left:0px;
+  border-radius: 5px;
+  border:1px solid rgb(216, 214, 214) !important;
+  box-shadow: none !important;
+}
+
+.form-group label{
+  color:rgb(111, 111, 114);
+}
+.card .card-body .heading{ border-top: 0px; }
+
+
+.card .card-body .ind{
+  margin-left:190px;
+}
+.card .card-header1{ margin:0px !important; border:0px;
+
+padding-bottom: 10px;padding-top:0px;margin-top:0px;
+}
+
+.profile-page .page-header {
+  height: 60px !important;
+  width: 100%;
+
+  background-color:rgb(77, 148, 228);
+}
+.form-group .lbl{
+ font-weight:600 !important;
+}
+.form-group label{ 
+padding:6px;
+margin-left:5px;
+font-weight:normal;
+font-size:14px;
+font-family: 'Montserrat';
+}
+.acch5{
+    font-size:14px;
+    margin-left:10px;
+    font-weight: bold;
+    text-decoration: underline;
+    padding-bottom:10px;
+  }
+@media (max-width:767px) {
+
+  .wizard-form{
+  
+  text-align:left !important;
+  margin-left:0px !important;
+}
+
+
+}
+</style>
+<body>
+     			
+<div id="wrapper" class="wrapper">
+	<!---Top menu-->
+	<div class="top_navbar">		
+	  <div class="openbtn" onclick="openNav()">
+		 <div class="one"></div>
+		 <div class="two"></div>
+		 <div class="three"></div>
+	  </div>
+	  <div class="top_menu">
+		<div class="logo"><img src="../static/images/logo3.jpg"/><br></div>
+
+		<!---------Top nav Icons-->
+		<ul>
+			<div class="dropdown">
+			  <li class="dropbtn">
+				<a href="#"  class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+				<span class="glyphicon glyphicon-user"></span>
+				</a>
+				<div class="dropdown-menu dropdown-content dropdown-menu-right" role="menu" aria-labelledby="navbarDropdown1">
+				  <a href="accountinfo">Account Info</a>
+				  <a href="#">Payment Info</a>
+				  <a href="#">Forgot Password</a>
+			   </div>
+			  </li>
+			  </div>
+
+		  <!-----Account Icon-->
+
+		  <div class="dropdown">
+			<li class="dropbtn">
+				<a href="#"  class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+				  <span class="glyphicon glyphicon-bell alertNotificacao"></span>
+				  <span id="notificationsBadge" class='badgeAlert'>3</span>
+				</a>
+
+				<div class="dropdown-menu notification dropdown-menu-right" role="menu" aria-labelledby="navbarDropdown">
+				  <div class="topc" >
+					<h5 class="noticard-title">Notifications</h5>
+				  </div>
+
+					<div class="card noticard">
+					  <div class="card-body">
+						<h5 class="card-title  noticard-title">Special title treatment</h5>
+						<p class="card-text noticart-text">With supporting text below as a natural lead-in to additional.</p>
+
+					  </div>
+					  <div class="notisection-title-divider"></div>
+					</div>
+
+					<div class="card noticard" >
+					  <div class="card-body">
+						<h5 class="card-title noticard-title">Special title treatment</h5>
+						<p class="card-text  noticart-text">With supporting text below as a natural lead-in to additional content.</p>
+
+					  </div>
+					  <div class="notisection-title-divider"></div>
+					</div>
+
+					<div class="card noticard" >
+					  <div class="card-body">
+						<h5 class="card-title noticard-title">Special title treatment</h5>
+						<p class="card-text  noticart-text">With supporting text below as a natural lead-in to additional content.</p>
+
+					  </div>
+					</div>
+					</div>
+
+				</li>
+			</div>
+
+
+
+		  <!-----Logout Icon-->
+			  <div class="dropdown">
+			<li class="dropbtn">
+			  <a href="#" class="nav-link dropdown-toggle" id="navbarDropown1" role="button">
+			  <span class="glyphicon glyphicon-arrow-right"></span>
+			  </a>
+			 </li>
+			</div>
+
+			  </ul>
+			</div>
+		  </div>
+
+
+
+
+
+    <!-- Sidebar -->
+    <div id="mySidepanel" class="sidepanel" style="z-index: 111;">  
+	  <ul class="sidebar-nav" id="">     
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+		
+		<li><a href="traders" style="z-index: 111;">Trades</a></li>
+    <li><a href="vendors" style="z-index: 111;">Vendors</a></li>
+	  </ul>
+    </div>
+    
+    <div class="wizard-v1-content mt10" >	
+        <div class="wizard-form">	
+          <section >     
+            <div class="tabcontainer2  container">              
+             
+           </div><!--pro page-->      
+                  
+     <!--card group--->
+     
+     <div class="card-group"> 
+
+
+              <div class="col-md-12">
+              <div class="card border-light mb-3">
+                <!--<button type="submit" class="pencil" style="float:right;border:none;background:transparent;" > <i class="fa fa-pencil" aria-hidden="true"></i></button>-->
+                <div class="card-body">
+                 <div class="profile-page col-md-12 ">
+                  <!--div class="page-header header-filter" data-parallax="active" style="background-color:white;transform: translate3d(0px, 0px, 0px);"-->
+                  <div class="headertitle col-md-12 col-xs-12">
+                      <label  style="text-align:center !important;color:white !important;" id="account_id" name="account_id">Cotton Sandhai A/C No:{{request.session.account_id}}</label>
+
+                  </div>
+                  </div>
+                </div>
+              </div>
+              <!--/div-->
+            </div>
+
+          </div>
+                 
+                   
+
+                            <div class="col-md-12">
+              <form id="formaccount1" action="editcontactaccount" method="POST">
+                  {% csrf_token %}
+                {% for user_information in user_informations %}
+                <div class="card border-light mb-3">
+                  <div class="card-block">
+                    <div class="card-header">
+                      <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h5 class="card-title mb-0" >Contact Details
+                          <button formaction="accountinfo" class="mt-0 pull-right  btn-two1" >Cancel</button>
+                          <button type="submit" class="mt-0 mr-5 pull-right btn-two">Save </button>
+                          </h5>
+
+                      </div>
+                    </div>
+                      <div class="card-body">
+                      <!--  <div class="row form-group">
+                          <h5 class="acch5"></h5>
+
+                          		<label class="col-md-3 col-sm-12 col-xs-12 lbl" for="proprietorDirectorName">Name </label>
+
+									  <label class="col-md-8 col-sm-12 col-xs-12"   id="proprietorDirectorName" name="proprietorDirectorName" >Proprietor/Director Name</label>
+                        </div>
+                        -->
+                    <div class="row form-group">
+                      <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="contact name">A/C Holder Name*: </label>
+                      <input maxlength="254" class="col-md-8 col-sm-12 col-xs-12" type="text" value="{{user_information.acc_holder_name}}" placeholder=" " onkeypress="validitycheck(event)" name="account_holder_name" id="account_holder_name"/>
+                        {% if acc_holder_empty_flag %}
+                        <br><span id="spanaccname" name="spanaccname" style="color:red">A/c Holder Name shold not be empty.</span>
+                        {% endif %}
+                    </div>
+
+                    <div class="row form-group">
+
+                       <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="contact no">A/c Holder Contact No</label>
+                       <input  maxlength="10" class="col-md-8 col-sm-12 col-xs-12"   type="text" value='{{user_information.acc_holder_contact_no| default:""}}' placeholder=" " id="account_contact_no" name="account_contact_no" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                    </div>
+
+
+                 </div>
+                </div>
+            </div>
+          {% endfor %}
+          </form>
+    </div>
+
+                              <div class="col-md-12">
+                        <form id="formaccount2" action="account_mail" method="get">
+                            <div class="card border-light mb-3">
+                              <div class="card-block">
+                                <div class="card-header">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <h5 class="card-title mb-0" >Email Details
+                                        <button type="submit" class="pencil"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                </h5>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+
+                                    <div class="row form-group">
+                                        <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="contact name">Primary EmailId: </label>
+                                        <label class="col-md-8 col-sm-12 col-xs-12"  name="acc_holder_email" id="acc_holder_email">{{request.session.email}}</label>
+                                    </div>
+
+                                    <div class="row form-group">
+
+                                        <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="email">Secondary Email IDs</label>
+                                        <label  class="col-md-8 col-sm-12 col-xs-12"  id="entity_email1" name="entity_email1">{{user_p_mail}}</label>
+                                        <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="email"></label>
+                                        <label  class="col-md-8 col-sm-12 col-xs-12"  id="entity_email2" name="entity_email2">{{user_s1_mail}}</label>
+                                        <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="email"></label>
+                                        <label  class="col-md-8 col-sm-12 col-xs-12"  id="entity_email3" name="entity_email3">{{user_s2_mail}}</label>
+                                    </div>
+
+
+                                </div>
+
+                              </div>
+                            </div>
+                        </form>
+              </div>
+      <div class="col-md-12">
+                <ul class="nav nav-tabs card-header-tabs" id="myTabs">
+                      <li class="nav-item active">
+                        <a class="nav-link" href="#company1">Entity-1</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#company2">Entity-2</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#company3">Entity-3</a>
+                      </li>
+                    </ul>
+                    <!------Card 1-->
+                  <div class="card-body tab-content">
+                    <div id="company1" class="tab-pane active">
+                      <form id="formaccount3" action="editaccountone" method="get">
+                          {% for user_addr_p in user_addr_ps %}
+                        <div class="card border-light mb-3">
+                          <div class="card-block">
+                            
+                            <div class="card-header1">
+                              <div class="d-flex justify-content-between align-items-center mb-3">
+
+                                  <button type="submit" class="pencil pull-right"  ><i class="fa fa-pencil" aria-hidden="true"></i></button>
+
+                             </div>
+                            </div>
+                            
+
+                                    <div class="card-body">
+                                      <div class="row form-group ">
+                                        <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="entityname">Entity Name</label>
+                                        <label class=" col-sm-12 col-xs-12 col-md-8" name="entity_name1" id="entity_name1" for="">{{user_addr_p.entity_name}}</label>
+                                      </div>
+                                      <div class="row form-group">
+                                        <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="mail">Entity Email</label>
+                                        <label class="col-md-8 col-sm-12 col-xs-12"  id="entity_mail1" name="entity_mail1">{{user_addr_p.email}}</label>
+                                      </div>
+                                      <div class="row form-group">
+                                        <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="contact no">Contact No:</label>
+
+                                       <label class="col-md-8 col-sm-12 col-xs-12"  id="entity_contact_no1" name="entity_contact_no1">{{user_addr_p.contact_no| default_if_none:""}}</label>
+
+
+                                      </div>
+
+                                       <div class="row form-group">
+                                         <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="address"> Address:</label>
+                                         <label  class="col-md-8 col-sm-12 col-xs-12"  id="entity_adddoor1" name="entityadddoor1">{{user_addr_p.door_street}}</label>
+                                     </div>
+
+                                   <div class="row form-group">
+
+                                        <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="locality"></label>
+                                        <label class="col-md-8 col-sm-12 col-xs-12"  id="entity_locality1" name="entity_locality1">{{user_addr_p.locality}}</label>
+                                        <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="locality"></label>
+
+                                       <label  class="col-md-8 col-sm-12 col-xs-12" id="entity_state1" name="entity_state1">{{user_addr_p.state|default_if_none:""}} - {{user_addr_p.pincode| default_if_none:""}}</label>
+
+
+                                        </label>
+                                    </div>
+                                    <div class="row form-group">
+                                         <h5 class="acch5"> Governance:</h5>
+                                     </div>
+
+                                    <div class="row form-group">
+                                      <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="gstin">GSTIN:</label>
+                                      <label class="col-md-8 col-sm-12 col-xs-12"  id="entity_gstin1" name="entity_gstin1">{{user_addr_p.gstin}}</label>
+                                   </div>
+                                        <div class="row form-group">
+                                      <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="uin">UIN:</label>
+                                      <label class="col-md-8 col-sm-12 col-xs-12"  id="entity_uin1" name="entity_uin1">{{user_addr_p.uin}}</label>
+                                   </div>
+
+                                   <div class="row form-group">
+                                         <h5 class="acch5"> Insuance:</h5>
+                                     </div>
+                                   <div class="row form-group">
+                                      <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="insurancename">Insurance Company:</label>
+                                      <label class="col-md-8 col-sm-12 col-xs-12"  id="entity_insur_name1" name="entity_insur_name1">{{user_addr_p.insurance_name}}</label>
+                                   </div>
+                                    <div class="row form-group">
+                                      <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="insurno">Insurance No:</label>
+                                      <label class="col-md-8 col-sm-12 col-xs-12"  id="entity_insur_no1" name="entity_insur_no1">{{user_addr_p.insurance_no}}</label>
+                                   </div>
+                                         <div class="row form-group">
+                                      <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="expirdate">Expire Date:</label>
+                                      <label class="col-md-8 col-sm-12 col-xs-12"  id="entity_expiry_date1" name="entity_expiry_date1">{{user_addr_p.expiry_date}}</label>
+                                   </div>
+                                 </div>
+                      </div>
+                  </div>
+                          {% endfor %}
+                </form>
+            
+                    </div>
+
+
+                    <!------Card 1 company 2-->
+
+                    <div id="company2" class="tab-pane">
+            
+                      <form id="formaccount5" action="editaccounttwo" method="get">
+                            {% for user_addr_s1 in user_addr_s1s %}
+                          <div class="card border-light mb-3">
+                          <div class="card-block">
+                            
+                            <div class="card-header1">
+                              <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="card-title mb-0">
+                                  <button type="submit" class="pencil pull-right"  > <i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                </h5>
+                              </div>
+                            </div>
+                                    <div class="card-body">
+
+                                      <div class="row form-group ">
+                                        <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="entityname">Entity Name</label>
+                                        <label class=" col-sm-12 col-xs-12 col-md-8" name="entity_name2" id="entity_name2" for="">{{user_addr_s1.entity_name}}</label>
+                                      </div>
+
+                                     <div class="row form-group">
+                                      <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="mail">Entity Email</label>
+                                      <label class="col-md-8 col-sm-12 col-xs-12"  id="entity_mail2" name="entity_mail2">{{user_addr_s1.email}}</label>
+                                     </div>
+                                    <div class="row form-group">
+                                      <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="contact no">Contact No:</label>
+                                      <label class="col-md-8 col-sm-12 col-xs-12"  id="entity_contact_no2" name="entity_contact_no2">{{user_addr_s1.contact_no| default_if_none:""}}</label>
+                                    </div>
+                                     <div class="row form-group">
+                                         <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="address"> Address:</label>
+                                         <label  class="col-md-8 col-sm-12 col-xs-12"  id="entity_adddoor2" name="entityadddoor2">{{user_addr_s1.door_street}}</label>
+                                     </div>
+
+                                   <div class="row form-group">
+
+                                        <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="locality"></label>
+                                        <label class="col-md-8 col-sm-12 col-xs-12"  id="entity_locality2" name="entity_locality2">{{user_addr_s1.locality}}</label>
+                                        <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="locality"></label>
+                                        <label  class="col-md-8 col-sm-12 col-xs-12" id="entity_state2" name="entity_state2">{{user_addr_s1.state|default_if_none:""}} - {{user_addr_s1.pincode| default_if_none:""}}
+                                        </label>
+                                    </div>
+                                    <div class="row form-group">
+                                      <h5 class="acch5"> Governance:</h5>
+
+                                    </div>
+
+                                    <div class="row form-group">
+                                      <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="gstin">GSTIN:</label>
+                                      <label class="col-md-8 col-sm-12 col-xs-12"  id="entity_gstin2" name="entity_gstin2">{{user_addr_s1.gstin}}</label>
+                                   </div>
+                                        <div class="row form-group">
+                                      <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="uin">UIN:</label>
+                                      <label class="col-md-8 col-sm-12 col-xs-12"  id="entity_uin2" name="entity_uin2">{{user_addr_s1.uin}}</label>
+                                   </div>
+                                   <div class="row form-group">
+                                      <h5 class="acch5"> Insurance:</h5>
+
+                                    </div>
+
+                                   <div class="row form-group">
+                                      <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="insurancename">Insurance Company:</label>
+                                      <label class="col-md-8 col-sm-12 col-xs-12"  id="entity_insur_name2" name="entity_insur_name2">{{user_addr_s1.insurance_name}}</label>
+                                   </div>
+                                    <div class="row form-group">
+                                      <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="insurno">Insurance No:</label>
+                                      <label class="col-md-8 col-sm-12 col-xs-12"  id="entity_insur_no2" name="entity_insur_no2">{{user_addr_s1.insurance_no}}</label>
+                                   </div>
+                                         <div class="row form-group">
+                                      <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="expirdate">Expire Date:</label>
+                                      <label class="col-md-8 col-sm-12 col-xs-12"  id="entity_expiry_date2" name="entity_expiry_date2">{{user_addr_s1.expiry_date}}</label>
+                                   </div>
+                                 </div>
+                      </div>
+                  </div>
+                  {% endfor %}
+                </form>
+             </div>
+
+            
+                    <!------Card 1 company 3-->
+
+                    <div id="company3" class="tab-pane">                    
+            
+                      <form id="formaccount5" action="editaccountthree" method="get">
+                       {% for user_addr_s2 in user_addr_s2s %}
+                        <div class="card border-light mb-3">
+                          <div class="card-block">
+                            
+                            <div class="card-header1">
+                              <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="card-title mb-0">
+                                  <button type="submit" class="pencil pull-right"  > <i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                </h5>
+                              </div>
+                            </div>
+                            
+                                                                <div class="card-body">
+
+                                      <div class="row form-group ">
+                                        <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="entityname">Entity Name</label>
+                                        <label class=" col-sm-12 col-xs-12 col-md-8" name="enitity_name3" id="entity_name3" for="">{{user_addr_s2.entity_name}}</label>
+                                      </div>
+
+                                     <div class="row form-group">
+                                      <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="mail">Entity Email</label>
+                                      <label class="col-md-8 col-sm-12 col-xs-12"  id="entity_mail3" name="entity_mail3">{{user_addr_s2.email}}</label>
+                                     </div>
+                                     <div class="row form-group">
+                                      <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="contact no">Contact No:</label>
+                                      <label class="col-md-8 col-sm-12 col-xs-12"  id="entity_contact_no3" name="entity_contact_no3">{{user_addr_s2.pincode| default_if_none:""}}</label>
+                                     </div>
+
+                                      <div class="row form-group">
+                                         <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="address"> Address:</label>
+                                         <label  class="col-md-8 col-sm-12 col-xs-12"  id="entity_adddoor3" name="entityadddoor3">{{user_addr_s2.door_street}}</label>
+                                     </div>
+
+                                   <div class="row form-group">
+
+                                        <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="locality"></label>
+                                        <label class="col-md-8 col-sm-12 col-xs-12"  id="entity_locality3" name="entity_locality3">{{user_addr_s2.locality}}</label>
+                                        <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="locality"></label>
+                                        <label  class="col-md-8 col-sm-12 col-xs-12" id="entity_state3" name="entity_state3">{{user_addr_s2.state|default_if_none:""}} -{{user_addr_s2.pincode| default_if_none:""}}
+                                        </label>
+                                    </div>
+
+                                   <div class="row form-group">
+                                      <h5 class="acch5">Governance:</h5>
+
+                                    </div>
+                                    <div class="row form-group">
+                                      <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="gstin">GSTIN:</label>
+                                      <label class="col-md-8 col-sm-12 col-xs-12"  id="entity_gstin3" name="entity_gstin3">{{user_addr_s2.gstin}}</label>
+                                   </div>
+                                        <div class="row form-group">
+                                      <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="uin">UIN:</label>
+                                      <label class="col-md-8 col-sm-12 col-xs-12"  id="entity_uin3" name="entity_uin3">{{user_addr_s2.uin}}</label>
+                                   </div>
+                                   <div class="row form-group">
+                                      <h5 class="acch5">Insurance:</h5>
+
+                                    </div>
+                                   <div class="row form-group">
+                                      <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="insurancename">Insurance company:</label>
+                                      <label class="col-md-8 col-sm-12 col-xs-12"  id="entity_insur_name3" name="entity_insur_name3">{{user_addr_s2.insurance_name}}</label>
+                                   </div>
+                                    <div class="row form-group">
+                                      <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="insurno">Insurance No:</label>
+                                      <label class="col-md-8 col-sm-12 col-xs-12"  id="entity_insur_no3" name="entity_insur_no3">{{user_addr_s2.insurance_no}}</label>
+                                   </div>
+                                         <div class="row form-group">
+                                      <label class="col-md-3 col-sm-12 col-xs-12 lbl" for="expirdate">Expire Date:</label>
+                                      <label class="col-md-8 col-sm-12 col-xs-12"  id="entity_expiry_date3" name="entity_expiry_date3">{{user_addr_s2.expiry_date}}</label>
+                                   </div>
+                                 </div>
+                      </div>
+                  </div>
+                          {% endfor %}
+                </form>
+            
+                    </div>
+
+                  </div>
+                </div>
+          </section>
+            </div>
+                <!-- END WIDGET 2 -->
+              </div>
+
+</div>
+
+
+     
+  </div>
+</div>
+          </section>
+</div>
+
+
+  </div><!--wiz form-->
+ </div><!--wiz content-->  
+</div> <!--wrapper-->
+
+<script>
+	function openNav() {
+  	document.getElementById("mySidepanel").style.width = "200px";
+	}    
+	function closeNav() {
+	  document.getElementById("mySidepanel").style.width = "0px";	  
+	}
+   
+$(document).ready(function() {
+
+    $('.nav-item a').on('click', function(e){
+        var currentAttrValue = $(this).attr('href');
+        // Show/Hide Tabs
+    $('.tab-content ' + currentAttrValue).show().siblings().hide();
+    // Change/remove current tab to active
+    $(this).parent('li').addClass('active').siblings().removeClass('active');
+    e.preventDefault();
+    });
+
+    $("#entity_expiry_date1").datepicker({
+		minDate: 0
+	});
+
+    $("#entity_expiry_date2").datepicker({
+		minDate: 0
+	});
+
+    $("#entity_expiry_date3").datepicker({
+		minDate: 0
+	});
+
+});
+
+function validitycheck(e){
+    $('#spanaccname').hide();
+}
+$(document).on("click", '#navbarDropown1', function(e) {
+
+    bootbox.confirm({
+        title:"Logout",
+        message: "Do you want to Logout?",
+        buttons: {
+            confirm: {
+                label: 'Yes',
+                className: 'btn-success'
+            },
+            cancel: {
+                label: 'No',
+                className: 'btn-danger'
+            }
+        },
+        callback: function (result) {
+        if(result)
+        {
+
+            //$('#navbarDropown1').attr('href', "account/logout")
+            window.location.href="account/logout"
+
+        }
+
+
+        }
+
+    });
+});
+
+</script>
+</body>
+</html>

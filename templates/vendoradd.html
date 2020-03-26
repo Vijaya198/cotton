@@ -1,37 +1,54 @@
-
-
+{% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
 	<title>Cotton Sandhai - Vendor Add Details</title>
-	<link rel="stylesheet" href="../static/vendor/font-awesome/css/font-awesome.min.css">    
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="../static/css/demo/site-demos.css">
-	<link rel="stylesheet" href="../static/css/style.css"/>
-    <link rel="stylesheet" href="../static/css/site-demos.css"/>    
+	<link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/site-demos.css">
 	<link rel="stylesheet" href="../static/vendor/bootstrap-3.4.1-dist/css/bootstrap.min.css">
-    
-    <link rel="stylesheet" href="../static/vendor/jquery-ui-1.12.1/jquery-ui.css">
-	<link rel="stylesheet" href="../static/vendor/jquery-ui-1.12.1/jquery-ui.min.js">
-	<script src="../static/js/jquery-3.3.1.min.js"></script>
-	<script src="../static/vendor/jquery-ui-1.12.1/jquery-ui.js"></script>
-	<script src="../static/vendor/jquery-ui-1.12.1/jquery-ui.min.js"></script>
     <script src="../static/vendor/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../static/js/jquery-3.3.1.min.js"></script>
     <script src="../static/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="../static/vendor/jquery-validation/dist/additional-methods.min.js"></script>
     <script src="../static/js/jquery.steps.js"></script>
     <script src="../static/js/main.js"></script>
-	
-</head>
 
+	<link rel="stylesheet" href="../static/vendor/jquery-ui-1.12.1/jquery-ui.css">
+	<script src="../static/vendor/jquery-ui-1.12.1/jquery-ui.js"></script>
+	<script src="../static/vendor/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+
+	<style>
+	.sidepanel  {
+  		height:240%;
+  	}
+
+	@media screen
+  	 and (min-device-width: 1200px)
+ 	 and (max-device-width: 1600px)
+ 	 and (-webkit-min-device-pixel-ratio: 1)
+ 	 {
+		.wizard-v1-content   {
+   		 margin-left:140px;
+    	 width: 900PX;
+   		 height:1250px !important;
+		}
+
+   }
+</style>
+</head>
 <body>
 <div id="wrapper" class="wrapper">
 	<!---Top menu-->
-	<div class="top_navbar">		
+	<div class="top_navbar">
 	  <div class="openbtn" onclick="openNav()">
 		 <div class="one"></div>
 		 <div class="two"></div>
@@ -40,40 +57,90 @@
 	  <div class="top_menu">
 		<div class="logo"><img src="../static/images/logo3.jpg"/><br></div>
 
-		<ul>     
-		<div class="dropdown">			
-		  <li class="dropbtn" ><a href="#">
-			<i class="glyphicon glyphicon-user"></i>
-			</a>
-		  </li>
-		  <div class="dropdown-content">
-				<a href="accountprofile.html">Account Info</a>
-				<a href="#">Payment Info</a>
-				<a href="#">Forgot Password</a>
-		  </div>		 		
-		</div>
-		<li><a href="#">
-			<i data-toggle="tooltip" data-placement="right" title="Notifications" class="glyphicon glyphicon-bell"></i>
-			</a>
-          </li>
-          <li><a href="#">
-			<i  data-toggle="tooltip" data-placement="right" title="Logout" class="glyphicon glyphicon-arrow-right"></i>
-			</a>
-		  </li>
-		</ul>		
-	  </div>
-	</div>
+		<!---------Top nav Icons-->
+		<ul>
+			<div class="dropdown">
+			  <li class="dropbtn">
+				<a href="#"  class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+				<span class="glyphicon glyphicon-user"></span>
+				</a>
+				<div class="dropdown-menu dropdown-content dropdown-menu-right" role="menu" aria-labelledby="navbarDropdown1">
+				  <a href="accountinfo">Account Info</a>
+				  <a href="#">Payment Info</a>
+				  <a href="#">Forgot Password</a>
+			   </div>
+			  </li>
+			  </div>
+
+		  <!-----Account Icon-->
+
+		  <div class="dropdown">
+			<li class="dropbtn">
+				<a href="#"  class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+				  <span class="glyphicon glyphicon-bell alertNotificacao"></span>
+				  <span id="notificationsBadge" class='badgeAlert'>3</span>
+				</a>
+
+				<div class="dropdown-menu notification dropdown-menu-right" role="menu" aria-labelledby="navbarDropdown">
+				  <div class="topc" >
+					<h5 class="noticard-title">Notifications</h5>
+				  </div>
+
+					<div class="card noticard">
+					  <div class="card-body">
+						<h5 class="card-title  noticard-title">Special title treatment</h5>
+						<p class="card-text noticart-text">With supporting text below as a natural lead-in to additional.</p>
+
+					  </div>
+					  <div class="notisection-title-divider"></div>
+					</div>
+
+					<div class="card noticard" >
+					  <div class="card-body">
+						<h5 class="card-title noticard-title">Special title treatment</h5>
+						<p class="card-text  noticart-text">With supporting text below as a natural lead-in to additional content.</p>
+
+					  </div>
+					  <div class="notisection-title-divider"></div>
+					</div>
+
+					<div class="card noticard" >
+					  <div class="card-body">
+						<h5 class="card-title noticard-title">Special title treatment</h5>
+						<p class="card-text  noticart-text">With supporting text below as a natural lead-in to additional content.</p>
+
+					  </div>
+					</div>
+					</div>
+
+				</li>
+			</div>
+
+
+
+		  <!-----Logout Icon-->
+			  <div class="dropdown">
+			<li class="dropbtn">
+			  <a href="#"  class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+			  <span class="glyphicon glyphicon-arrow-right"></span>
+			  </a>
+			 </li>
+			</div>
+
+			  </ul>
+			</div>
+		  </div>
 
     <!-- Sidebar -->
-    <div id="mySidepanel" class="sidepanel">  
-	  <ul class="sidebar-nav" id="">     
+    <div id="mySidepanel" class="sidepanel">
+	  <ul class="sidebar-nav" id="">
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-		
-		<li><a href="traders.html" >Trades</a></li>
-        <li><a href="vendor.html">Vendors</a></li>
+
+		<li><a href="traders" >Trades</a></li>
+        <li><a href="vendors">Vendors</a></li>
 	  </ul>
-	</div>
-	
+	</div><!--SIDEPANEL-->
+
     <!-- Page content -->
       <div id="page-content-wrapper">
         <!-- Keep all page content within the page-content inset div! -->
@@ -81,359 +148,364 @@
           <div class="row">
             <div class="col-md-12">
             <div class="main_container">
-				
+ 			<!--- /*----------------------  copy -----------------------*/    ------>
+			<h3 class="vendtitle">Enter Your Vendor Details</h3>
+ 			<!--- /*----------------------  copy -----------------------*/    ------>
 		<!--div class="page-content" style="background-color: rgba(0, 0, 0, 0.15)"-->
-			<div class="wizard-v1-content">			
-				<div class="wizard-form">					
-					<form class="form-register" id="form-register" action="confirmform.html" method="get">
+			<div class="wizard-v1-content">
+
+				<div class="wizard-form">
 
 						<div id="form-total">
-							<!-- SECTION 1 -->
-							<h2>							
-								<span class="step-icon"></span>
-								<span class="step-text">Account &nbsp; &nbsp; </span>							
-							</h2>
-						
+							<form class="form-register" action="vendorRegister" id="form-register" style="padding:25px;background-color: rgb(243, 243, 243) "  method="POST">
+							{% csrf_token %}
 							<section>
 								<div class="inner">
-
-									<h3  style="font-size:18px">Vendor Details</h3>
-									<div class="section-title-divider"></div>
-								
 									<div class="clearfix"></div>
 									<div class="form-row">
 										<div class="form-holder form-holder-2">
-
-											<label for="card-type">Vendor Type*</label>
-												<select name="vtype" id="vtype" class="form-control" style="height:40px;">
-													<option value="" disabled selected>Select Vendor</option>
-
-														<option value="Buyer">Buyer</option>
-
-												</select>
-										</div>
-										<div class="form-holder form-holder-2">
-											<label for="email">Company Email*</label>
-												<input type="email" placeholder="Company Email" class="form-control" id="company_email" name="company_email"  pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
-
+											<label for="name">Company Nick Name*</label>
+											<input type="text" maxlength="254" placeholder="Enter Company Name" class="form-control" id="company_nick_name" name="company_nick_name" onkeypress="runScript(event)" required>
+											<span id="spancompanynickname" style="color:red"></span>
+											<div class="spce">
+												<span id="invaild1" >This field is required</span>
+												<!--<span id="compnameexist" >Company name already exist</span>-->
+											</div>
 										</div>
 									</div>
-
 									<div class="form-row">
-
 										<div class="form-holder form-holder-2">
-											<label for="name">Company Name*</label>
-											<input type="text" placeholder="Enter Conmpany Name" class="form-control" id="company_name" name="company_name">
+											<label for="name">Company Name*(as per registration)</label>
+											<input type="text" maxlength="254" onclick="companyNickNameValidation(event)" placeholder="Enter Company Name" class="form-control" id="company_name_reg" name="company_name_reg" required>
+											<div class="spce"><span id="invaild2" >This field is required</span></div>
 										</div>
 									</div>
 
 
 									<div class="form-row">
 										<div class="form-holder form-holder-2">
-											<label for="address">Company Address*</label>
-											<input type="text" placeholder="Door no & street" class="form-control" id="adddoor" name="adddoor">
+											<label for="address">Address*</label>
+											<input type="text" maxlength="254" placeholder="Door no & street" class="form-control" id="adddoor" name="adddoor" required>
+											<div class="spce"><span id="invaild3">This field is required</span></div>
 											<br>
-											<input type="text" placeholder="locality" class="form-control" id="locality" name="locality">
+											<input type="text" maxlength="254" placeholder="locality" class="form-control" id="locality" name="locality">
 
 										</div>
 									</div>
 									<div class="form-row">
 										<div class="form-holder form-holder-2">
 											<label for="card-type">State*</label>
-											<input type="text" placeholder="State" class="form-control" id="state" name="state">		
+												<select maxlength="254" name="state" id="state" style="height:35px;" required>
+													<option value="" disabled selected >Select State</option>
+														<option value="Tamil nadu">Tamil Nadu</option>
+												</select>
+												<div class="spce"><span id="invaild6" >This field is required</span></div>
 										</div>
 										<div class="form-holder form-holder-2">
-											<label for="address">Pincode</label>
-											<input type="number" placeholder="Pincode" class="form-control" id="pincode" name="pincode">
+											<label for="address">Pincode *</label>
+											<input type="text" maxlength="6" placeholder="Pincode" class="form-control" id="pincode" name="pincode" required>
+											<div class="spce"><span id="invaild4" >This field is required</span></div>
 										</div>
 									</div><br>
+									<h3  style="font-size:18px">Contact Information</h3>
+									<div class="section-title-divider"></div>
 									<div class="clearfix"></div>
 									<div class="form-row">
 										<div class="form-holder form-holder-2">
-											<label for="proprietorDirectorName">Proprietor/Director Name</label>
-											<input type="text" placeholder="Proprietor/Director Name" class="form-control" id="proprietorDirectorName" name="proprietorDirectorName" >
+											<label for="primaryEmail"> Primary Email*</label>
+												<input type="email" maxlength="254" placeholder="Enter primary Email" class="form-control" id="primary_email" name="primary_email"  pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" required>
+												<div class="spce"><span id="invaild5" >This field is required</span></div>
 										</div>
 										<div class="form-holder form-holder-2">
-											<label for="proprietorDirectorContact">Proprietor/director contact No </label>
-											<input type="text" placeholder="Proprietor/Director Contact No" class="form-control" id="proprietorDirectorContact" name="proprietorDirectorContact">
+											<label for="primaryContactName">Primary Contact Name</label>
+											<input type="text" maxlength="254" placeholder=" Enter Name" class="form-control" id="primary_contact_name" name="primary_contact_name" >
 										</div>
+										<div class="form-holder form-holder-2">
+											<label for="primaryContactNo">Primary Contact No</label>
+											<input type="text" maxlength="10" placeholder="Enter Contact No" class="form-control" id="primary_contact_no" name="primary_contact_no">
+										</div>
+
 									</div>
 									<div class="form-row">
 										<div class="form-holder form-holder-2">
-											<label for="localcontactname">Local Contact Name</label>
-											<input type="text" placeholder="local contact name" class="form-control" id="local_contact_name" name="local_contact_name" >
+											<label for="secondayEmail">Secondary Email</label>
+												<input type="email" maxlength="254" placeholder="Enter Email Id" class="form-control" id="secondary_email" name="secondary_email"  pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
 										</div>
 										<div class="form-holder form-holder-2">
-											<label for="local">Local Contact No *</label>
-											<input type="text" placeholder="Local Contact No" class="form-control" id="local_contact_no" name="local_contact_no" >
+											<label for="secondaryContactName">Secondary Contact Name</label>
+											<input type="text" maxlength="254" placeholder=" Enter Name" class="form-control" id="secondary_contact_name" name="contact_name2" >
 										</div>
+										<div class="form-holder form-holder-2">
+											<label for="secondaryContactNo">Secondary Contact No </label>
+											<input type="text" maxlength="10" placeholder="Enter Contact No" class="form-control" id="secondary_contact_no" name="secondary_contact_no">
+										</div>
+
 									</div>
 								</div>
-
-									
-
-                               
-							</section>
-							<!-- SECTION 2 -->
-
-	
-							<!-- SECTION 3 -->
-								<h2>
-								    <!--<span class="step-icon"><i class="zmdi zmdi-card"></i></span>-->
-									<span class="step-icon"></span>									
-									<span class="step-text">Insurance &nbsp;  &nbsp;  </span>							
-								</h2>
-								<section>
-							    <!----Bank Details-->
-								 <div class="inner">
-
-									 <h3 style="font-size:18px;">Company and Tax Details</h3>
+								<div class="inner">
+									 <h3 style="font-size:18px;">Governance</h3>
 										<div class="section-title-divider"></div>
 										<div class="clearfix"></div>
 										<div class="form-row">
 												<div class="form-holder form-holder-2">
 													<label for="gstin">GSTIN</label>
-													<input type="text" placeholder="Enter GSTIN no" class="form-control" id="gstin" name="gstin" >
+													<input type="text" maxlength="15" placeholder="Enter GSTIN no" class="form-control" id="gstin" name="gstin" >
 												</div>
-
 												<div class="form-holder form-holder-2">
 													<label for="uin">UIN</label>
-													<input type="text" placeholder="Enter UIN no" class="form-control" id="uin" name="uin" >
-												</div>
-
-												<div class="form-holder form-holder-2">
-													<label for="pan">PAN</label>
-													<input type="text" placeholder="Enter PAN no" class="form-control" id="pan" name="pan" >
+													<input type="text" maxlength="15" placeholder="Enter UIN no" class="form-control" id="uin" name="uin" >
 												</div>
 										</div>
-									<div class="section-title-divider"></div>
 									<div class="clearfix"></div>
-										<div class="form-row">
-												<div class="form-holder form-holder-2">
-													<label for="accountno">A/C number</label>
-													<input type="text" placeholder="Account no" class="form-control" id="accountno" name="accountno" >
-												</div>
-		
-												<div class="form-holder form-holder-2">
-													<label for="ifsc">IFSC code </label>
-													<input type="text" placeholder="IFSC code" class="form-control" id="ifsc" name="ifsc">
-												</div>
-										</div>
-											<div class="form-row">
-												<div class="form-holder form-holder-2">
-													<label for="accountname">A/C name</label>
-													<input type="text" placeholder="Account name" class="form-control" id="accountname" name="accountname">
-													
-												</div>
-
-												<div class="form-holder form-holder-2">
-													
-													<label for="account-type">Account Type</label>
-														<select name="accounttype" id="accounttype" class="form-control" style="height:50px;">
-															<option value="" disabled selected>Select Account Type</option>
-															<option value="current"> Current</option>
-														</select>
-												</div>
-											</div>
-											<div class="form-row">
-												<div class="form-holder form-holder-2">
-													<label for="banknamelabel">Bank name</label>
-													<input type="text" placeholder="Enter Bank name"  id="bankname" class="form-control"> 
-													
-												</div>
-											
-												<div class="form-holder form-holder-2">
-													<label for="branch">Branch</label>
-													<input type="text" placeholder="Branch" class="form-control" id="branch" name="branch">
-												</div>
-											</div>
-											
-								</div><br>
-                                <!----Insurance Details-->
+								 </div><br>
 								<div class="inner">
 									<h3  style="font-size:18px;">Insurance Details</h3>
 									<div class="section-title-divider"></div>
 									<div class="clearfix"></div>
 										<div class="form-row">
 												<div class="form-holder form-holder-2">
-													<label for="insurname">Insurance Company</label>
-													<input type="text" placeholder="Insurance Company " class="form-control" id="insurname" name="insurname">
-												</div>
-											</div>
-											<div class="form-row">
-												<div class="form-holder form-holder-2">
 													<label for="insurno">Insurance No</label>
-													<input type="text" placeholder="Insurance No" class="form-control" id="insurno" name="insurno">
+													<input type="text" maxlength="50" placeholder="Insurance No" onfocus="offinsuranceno(event)" class="form-control" id="insurno" name="insurno">
+													<span id="spaninsuranceno" style="color:red"></span>
 												</div>
 												<div class="form-holder form-holder-2">
 													<label for="ExpiryDate">Expiry Date</label>
-													<input type="Date"  class="form-control" id="expirdate1" name="expirdate1" >
-													
+													<input type="text"  placeholder="dd-mm-yyyy" onfocusin="offexpirydate(event)" class="form-control" id="expirydate" name="expirydate" >
+													<span id="spanexpirydate" style="color:red"></span>
+												</div>
+										</div>
+										<div class="form-row">
+												<div class="form-holder form-holder-2">
+													<label for="insurname">Insurance Company</label>
+													<input type="text" maxlength="254" placeholder="Enter Insurance Company" onfocusin="offcompany(event)" class="form-control" id="insurcompany" name="insurcompany">
+													<span id="spancompany" style="color:red"></span>
 												</div>
 											</div>
+
 										</div>
-								</section>
-							<!-- SECTION 3 -->
-							<h2>						
-								<span class="step-icon"></span>								
-								<span class="step-text"> Confirm &nbsp; &nbsp; </span>															
-							</h2>
+							</section>
+							<!------------------------BUTTON--------------------------------->
+									<br><br><button type="submit" class="col-md-12 col-md-offset-2 col-xs-12 center-block text-center" value="submit"  id="submitvendor">submit</button><br><br>
+								<!----------------------BUTTON---------------------------------->
 
-							<section>
-								<div class="inner">
-									<h3  style="font-size:18px;">Confirm Details</h3>
-									<div class="section-title-divider"></div>
-									<!--Vendor form-->
-									<form method="get" name="venorreportform" action="login.html" id="venorreportform">
-									<div class="form-row table-responsive">
-										<table class="table" style="border:none;">
-											<tbody style="border:none;">
-												<!---section1-->
-												<tr class="space-row" style="border:none;padding-bottom:0px;">
-													<td><h3 style="font-size:17px;width:250px !important;">Vendor Details</h3></td>
-												</tr>
+						</form>
+						</div>
 
-												<tr class="space-row bordwhite">											
-													<th>Vendor Type:</th>
-													<td id="vtype-val"></td>
-													
-												</tr>
+						</div>
 
-												<tr class="space-row bordwhite">											
-													<th style="width:auto">Company Email:</th>
-													<td id="company_email-val"></td>
-												</tr>
 
-												<tr class="space-row bordwhite">																							
-													<th style="width:auto">Company Name:</th>
-													<td id="company_name-val"></td>
-												</tr>
+						</div>
 
-												<tr class="space-row bordwhite">
-													<th>Address</th>
-													<td id="adddoor-val"></td>
-													<td id="locality-val"></td>
-													<td id="state-val"></td>
-													<td id="pincode-val"></td>
-												</tr>
-
-												<!---section2-->
-											
-												<tr class="space-row bordwhite"> 					
-												
-													<th style="width:auto">Proprietor/Director Name:</th>
-													<td id="proprietorDirectorName-val"></td>
-												
-
-												</tr>
-												<tr class="space-row bordwhite"> 					
-												
-													<th style="width:auto" >Proprietor/Director Contact No:</th>
-													<td id="proprietorDirectorContact-val"></td>
-
-												</tr>
-												<tr class="space-row bordwhite">
-
-													<th style="width:auto"  >Local Contact Name:</th>
-													<td style="width:185px" id="local_contact_name-val"></td>
-												
-													<th style="width:auto"> Local contact No:</th>
-													<td style="width:150px" id="local_contact_no-val"></td>
-												</tr>
-										
-												<tr class="space-row">
-													<th><h3 style="font-size:18px;font-weight: 600;width:200px;"></h3></th>
-											    </tr>
-												<tr class="space-row bordwhite">						
-												
-													<th >GSTIN:</th>
-													<td id="gstin-val"  style="width:100px"></td>
-													<th >UIN:</th>
-													<td id="uin-val" style="width:100px"></td>
-													<th >PAN:</th>
-													<td id="pan-val" style="width:100px"></td>
-
-												</tr>
-
-												<!---section3-->
-												<tr class="space-row">
-													<th><h3 style="font-size:18px;font-weight: 600;"></h3></th>
-											    </tr>
-												<tr class="space-row bordwhite">
-												
-													<th >AccountNo:</th>
-													<td style="width:200px" id="accountno-val"></td>
-													<th style="width:auto">AccountName:</th>
-													<td id="accountname-val"></td>
-																		
-																					
-																				
-												</tr>
-												<tr class="space-row bordwhite" >
-											
-													<th style="width:auto">Account Type:</th>
-													<td id="accounttype-val"></td>
-																			
-												</tr>
-												<tr class="space-row bordwhite">				
-													<th >Bankname:</th>
-													<td id="bankname-val" style="width:100px;"></td>
-													<th>Branch:</th>
-													<td id="branch-val" style="width:100px;margin-left:0px;text-align:left;"></td>
-													<th >IFSC:</th>
-													<td id="ifsc-val" style="width:100px;"></td>
-												</tr>
-												<tr class="space-row">
-													<th><h3 style="font-size:20px;width:200px;font-weight: 600;"></h3></th>
-											    </tr>
-												<tr class="space-row bordwhite">						
-													<th >Insurance No:</th>
-													<td style="width:200px" id="insurno-val"></td>
-													<th >ExpiryDate:</th>
-													<td id="expirdate1-val" ></td>
-
-												</tr>
-												<tr class="space-row bordwhite">						
-															
-													<th style="width:auto">Insurance Name:</th>
-												<td id="insurname-val" ></td>
-												</tr>
-											</tbody>
-										</table>										
-									</div>
-										<!------------------------BUTTON--------------------------------->
-										<button class="btnsubmit"  value="Submit1" id="submitvendor" style="display:none">Submit</button>			
-										<!----------------------BUTTON----------------------------------->
-								</form>	
-								
-								
-							</section>		
-						
-						</div>						
-					</form>
 				</div>
 			</div>
-	
+
 		</div>
         </div>
       </div>
       </div>
-      </div>
-	</div>
 
-	
+
+
+
+
 	<script>
 	function openNav() {
   	document.getElementById("mySidepanel").style.width = "200px";
 	}
-    
+
 	function closeNav() {
-	  document.getElementById("mySidepanel").style.width = "0px";	  
+	  document.getElementById("mySidepanel").style.width = "0px";
+	}
+	function offexpirydate(e){
+
+		$('#spanexpirydate').text("");
+
+	}
+	function offcompany(e){
+		$('#spancompany').text("");
+
+	}
+	function offcompany(e){
+		$('#spaninsuranceno').text("");
+
 	}
 
+	function companyNickNameValidation(e){
+		 var tb = document.getElementById("company_nick_name");
+		 if (tb.value !== "")
+		 {
+		 //e.preventDefault();
+		 	alert(tb.value);
+		 	$.ajax({
+            	url: '{% url "valid_company_nick_name" %}',
+            	data: {
+            		'vendor_id':"",
+                   'company_nick_name': tb.value,
+                   },
+            	dataType: 'json',
+            	success: function (data) {
+            		alert(data.duplicate_flag)
+            		if (data.duplicate_flag)
+            		{
+            			//document.getElementById("company_nick_name").style.borderColor = "red";
+						$('#spancompanynickname').text("VendorName available.Enter New Name");
+						$('#company_nick_name').focus()
+						e.preventDefault();
+						return false;
+            		}
+             		else
+                	{
+						$('#spancompanynickname').text("");
+						return true;
+                	}
+            	}
+        	});
+		 }
+		 else
+		 {
+		 	$('#spancompanynickname').text("company nick name is empty. Pls Enter");
+		 	$('#company_nick_name').focus();
+		 	return true;
+		}
+	}
+	function runScript(e){
+		var code = e.keyCode || e.which;
+        var tb = document.getElementById("company_nick_name");
 
-/* Auto complete query */
+		if(code == 13){
+		//e.preventDefault(e);
+        	$.ajax({
+            	url: '{% url "valid_company_nick_name" %}',
+            	data: {
+            		'vendor_id':"",
+                   'company_nick_name': tb.value,
+                   },
+            	dataType: 'json',
+            	success: function (data) {
+            		//alert("ENTER"+data.duplicate_flag);
+            		if (data.duplicate_flag)
+            		{
+						alert("enter" + tb.value)
+						$('#spancompanynickname').text("VendorName available.Enter New Name");
 
-</script>
+						$('#company_nick_name').focus();
+						e.preventDefault(e);
+						return false;
+            		}
+             		else
+                	{
+                		alert("enter" + tb.value)
+						$('#spancompanynickname').text("");
+						$('#company_name_reg').focus();
+						return true;
+                	}
+            	}
+        	});
+		}
+}
+
+
+$(document).ready(function(){
+
+	$("#company_nick_name").on('keydown', function(e) {
+
+
+  			var keyCode = e.keyCode || e.which;
+  			if (keyCode == 9){
+
+  			var tb = document.getElementById("company_nick_name");
+  			alert (tb.value);
+  			$.ajax({
+            	url: '{% url "valid_company_nick_name" %}',
+            	data: {
+            		'vendor_id':"",
+                   'company_nick_name': tb.value,
+                   },
+            	dataType: 'json',
+            	success: function (data) {
+            		alert("KEYCODE 9"+data.duplicate_flag)
+            		if (data.duplicate_flag)
+            		{
+            			//document.getElementById("company_nick_name").style.borderColor = "red";
+
+						$('#spancompanynickname').text("VendorName available.Enter New Name");
+						//$('#company_nick_name').focus();
+						e.preventDefault(e);
+						//return false;
+            		}
+             		else
+                	{
+                		alert("tab else")
+						$('#spancompanynickname').text("");
+						return true;
+                	}
+            	}
+        	});
+        	//alert("hi")
+  			//return False;
+  			}
+  			//alert("hi2")
+  			//else{return true;}
+  		});
+
+	$("#expirydate").datepicker({
+		minDate: 0
+	});
+
+	$( "#form-register" ).submit(function( event ) {
+		alert("hi")
+
+		var tb = document.getElementById("company_nick_name");
+		if (tb.value !== "")
+		{
+
+		$.ajax({
+            	url: '{% url "valid_company_nick_name" %}',
+            	data: {
+            	'vendor_id':"",
+                   'company_nick_name': tb.value,
+                   },
+            	dataType: 'json',
+            	success: function (data) {
+					alert("hi");
+					alert(data.duplicate_flag);
+            		if (data.duplicate_flag)
+            		{
+            			alert("hi2")
+            			alert("Input value"+tb.value);
+
+            			//document.getElementById("company_nick_name").style.borderColor = "red";
+						$('#spancompanynickname').text("VendorName available.Enter New Name");
+						$('#company_nick_name').focus();
+						//$('#form-register').submit(function(event){
+       					//	return false; // prevents form submit
+     					//	});
+						//return false;
+
+            		}
+             		else {
+						$('#spancompanynickname').text("")
+						//$('#form-register').action="vendorRegister"
+						return true;
+                	}// else for duplicate flag
+
+                	alert("hi4");
+
+                	//return false;
+            	}
+
+        });
+
+        if(data.duplicalte_flag)
+        {
+        alert("falg"+data.duplicate_flag)
+        event.preventDefault();return false;}
+		}
+
+	});
+});
+
+
+   </script>
 </body>
 </html>

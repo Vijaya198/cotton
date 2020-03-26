@@ -1,0 +1,260 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<title>Cotton Sandhai - Vendor Add Details</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../static/css/demo/site-demos.css">
+	<link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/site-demos.css">
+	<link rel="stylesheet" href="../static/vendor/bootstrap-3.4.1-dist/css/bootstrap.min.css">
+    <script src="../static/vendor/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../static/js/jquery-3.3.1.min.js"></script>
+    <script src="../static/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="../static/vendor/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="../static/js/jquery.steps.js"></script>
+    <script src="../static/js/main.js"></script>
+	
+	<style>
+	@media screen 
+  	 and (min-device-width: 1200px) 
+ 	 and (max-device-width: 1600px)
+ 	 and (-webkit-min-device-pixel-ratio: 1)
+ 	 {
+		.wizard-v1-content   {
+   		 margin-left:140px;
+    	 width: 900PX;
+   		 height:1600px !important;
+		}
+	
+   }
+
+	</style>
+</head>
+
+<body>
+
+<div id="wrapper" class="wrapper">
+	<!---Top menu-->
+	<div class="top_navbar">		
+	  <div class="openbtn" onclick="openNav()">
+		 <div class="one"></div>
+		 <div class="two"></div>
+		 <div class="three"></div>
+	  </div>
+	  <div class="top_menu">
+		<div class="logo"><img src="../static/images/logo3.jpg"/><br></div>
+
+		<ul>
+		<div class="dropdown">
+		  <li class="dropbtn" ><a href="#">
+			<i class="glyphicon glyphicon-user"></i>
+			</a>
+		  </li>
+		  <div class="dropdown-content">
+				<a href="#">Account Info</a>
+				<a href="#">Payment Info</a>
+				<a href="#">Forgot Password</a>
+		  </div>
+		</div>
+		<li><a href="#">
+			<i data-toggle="tooltip" data-placement="right" title="Notifications" class="glyphicon glyphicon-bell"></i>
+			</a>
+          </li>
+          <li>
+			  <a href="#">
+				<i  data-toggle="tooltip" data-placement="right" title="Logout" class="glyphicon glyphicon-arrow-right"></i>
+			</a>
+		  </li>
+		</ul>
+	  </div><!--TOP-MENu-->
+	</div><!--tOP-NAV-BAR-->
+
+    <!-- Sidebar -->
+    <div id="mySidepanel" class="sidepanel">
+	  <ul class="sidebar-nav" id="">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+
+		<li><a href="traders" >Trades</a></li>
+        <li><a href="vendors">Vendors</a></li>
+	  </ul>
+	</div><!--SIDEPANEL-->
+
+    <!-- Page content -->
+      <div id="page-content-wrapper">
+        <!-- Keep all page content within the page-content inset div! -->
+        <div class="page-content inset">
+          <div class="row">
+            <div class="col-md-12">
+            <div class="main_container">
+ 			<!--- /*----------------------  copy -----------------------*/    ------>   
+			<h3 class="vendtitle">ACCOUNT DETAILS</h3>
+ 			<!--- /*----------------------  copy -----------------------*/    ------>   
+		<!--div class="page-content" style="background-color: rgba(0, 0, 0, 0.15)"-->
+			<div class="wizard-v1-content">
+
+				<div class="wizard-form">
+
+						<div id="form-total">
+							<form class="form-register" id="form-register" style="padding:25px;background-color: rgb(243, 243, 243) " action="updateVendor" method="POST">
+							{% csrf_token %}
+							{% for vendors_info in vendors_infos %}
+							<section>
+								<div class="inner">
+
+									<h3  style="font-size:18px">Vendor Details</h3>
+									<div class="section-title-divider"></div>
+
+									<div class="clearfix"></div>
+									<div class="form-row">
+
+										<div class="form-holder form-holder-2">
+											<label for="name">Company Branch Name*</label>
+											<input type="text" placeholder="Enter Company Name" value="{{vendors_info.company_branch_name}}" class="form-control" id="company_branch_name" name="company_branch_name">
+										</div>
+									</div>
+
+
+									<div class="form-row">
+										<div class="form-holder form-holder-2">
+											<label for="address">Company Address*</label>
+											<input type="text" placeholder="Door no & street" value="{{vendors_info.door_street}}" class="form-control" id="adddoor" name="adddoor">
+											<br>
+											<input type="text" placeholder="locality" value="{{vendors_info.locality}}" class="form-control" id="locality" name="locality">
+
+										</div>
+									</div>
+									<div class="form-row">
+										<div class="form-holder form-holder-2">
+											<label for="card-type">State*</label>
+												<select name="state" id="state" style="height:35px;">
+													<option value="{{vendors_info.state}}" selected>{{vendors_info.state}}</option>
+														<option>Karnataka</option>
+												</select>
+										</div>
+										<div class="form-holder form-holder-2">
+											<label for="address">Pincode</label>
+											<input type="text" placeholder="Pincode" value="{{vendors_info.pincode}}" class="form-control" id="pincode" name="pincode">
+										</div>
+									</div><br>
+									<h3  style="font-size:18px">Contact Information</h3>
+									<div class="section-title-divider"></div>
+									<div class="clearfix"></div>
+									<div class="form-row">
+										<div class="form-holder form-holder-2">
+											<label for="primaryContactName">Primary Contact Name</label>
+											<input type="text" placeholder=" Enter Name" value="{{vendors_info.primary_contact_name}}" class="form-control" id="primary_contact_name" name="primary_contact_name" >
+										</div>
+										<div class="form-holder form-holder-2">
+											<label for="primaryContactNo">Primary Contact No </label>
+											<input type="text" placeholder="Enter Contact No" value="{{vendors_info.primary_contact_no}}" class="form-control" id="primary_contact_no" name="primary_contact_no">
+										</div>
+										<div class="form-holder form-holder-2">
+											<label for="primaryEmail"> Primary Email*</label>
+												<input type="email" placeholder="Enter primary Email" value="{{vendors_info.primary_email}}" class="form-control" id="primary_email" name="primary_email"  pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+										</div>
+									</div>
+									<div class="form-row">
+										<div class="form-holder form-holder-2">
+											<label for="secondaryContactName">Secondary Contact Name</label>
+											<input type="text" placeholder=" Enter Name" value="{{vendors_info.secondary_contact_name}}" class="form-control" id="secondary_contact_name" name="contact_name2" >
+										</div>
+										<div class="form-holder form-holder-2">
+											<label for="secondaryContactNo">Secondary Contact No </label>
+											<input type="text" placeholder="Enter Contact No" value="{{vendors_info.secondary_contact_no}}" class="form-control" id="secondary_contact_no" name="secondary_contact_no">
+										</div>
+										<div class="form-holder form-holder-2">
+											<label for="secondayEmail"> Secondary Email*</label>
+												<input type="email" placeholder="Enter Email Id" value="{{vendors_info.secondary_email}}" class="form-control" id="secondary_email" name="secondary_email"  pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+										</div>
+									</div>
+								</div>
+								<div class="inner">
+									 <h3 style="font-size:18px;">Governance</h3>
+										<div class="section-title-divider"></div>
+										<div class="clearfix"></div>
+										<div class="form-row">
+												<div class="form-holder form-holder-2">
+													<label for="gstin">GSTIN</label>
+													<input type="text" placeholder="Enter GSTIN no" value="{{vendors_info.gstin}}" class="form-control" id="gstin" name="gstin" >
+												</div>
+												<div class="form-holder form-holder-2">
+													<label for="uin">UIN</label>
+													<input type="text" placeholder="Enter UIN no" value="{{vendors_info.uin}}" class="form-control" id="uin" name="uin" >
+												</div>
+										</div>
+									<div class="clearfix"></div>
+								 </div><br>
+								<div class="inner">
+									<h3  style="font-size:18px;">Insurance Details</h3>
+									<div class="section-title-divider"></div>
+									<div class="clearfix"></div>
+										<div class="form-row">
+												<div class="form-holder form-holder-2">
+													<label for="insurname">Insurance Company</label>
+													<input type="text" placeholder="Insurance Company " value="{{vendors_info.insurance_company}}" class="form-control" id="insurcompany" name="insurcompany">
+												</div>
+											</div>
+											<div class="form-row">
+												<div class="form-holder form-holder-2">
+													<label for="insurno">Insurance No</label>
+													<input type="text" placeholder="Insurance No" value="{{vendors_info.insurance_no}}" class="form-control" id="insurno" name="insurno">
+												</div>
+												<div class="form-holder form-holder-2">
+													<label for="ExpiryDate">Expiry Date</label>
+													<input type="Date"  value="{{vendors_info.expiry_date | date:'Y-m-d'}}" class="form-control" id="expirydate" name="expirydate" >
+
+												</div>
+											</div>
+										</div>
+							</section>
+
+							<!------------------------BUTTON--------------------------------->
+									<br><br><button type="submit" data-title="Submit" data-target="#Submit" name="submit" class="col-md-12 col-md-offset-2 col-xs-12 center-block text-center" value="{{vendors_info.vendor_id}}"  id="submitvendor">submit</button><br><br>
+								<!----------------------BUTTON---------------------------------->
+
+
+
+
+							{% endfor %}
+						</form>
+						</div>
+
+						</div>
+
+
+						</div>
+
+				</div>
+			</div>
+
+		</div>
+        </div>
+      </div>
+      </div>
+
+
+
+
+
+	<script>
+	function openNav() {
+  	document.getElementById("mySidepanel").style.width = "200px";
+	}
+
+	function closeNav() {
+	  document.getElementById("mySidepanel").style.width = "0px";
+	}
+
+
+   </script>
+</body>
+</html>

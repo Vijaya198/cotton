@@ -1,0 +1,227 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<title>Cotton Sandhai - Vendor Add Details</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">    
+
+	<link rel="stylesheet" href="css/style.css"/>
+    
+	<link rel="stylesheet" href="vendor/bootstrap-3.4.1-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="vendor/jquery-ui-1.12.1/jquery-ui.css">
+	<link rel="stylesheet" href="vendor/jquery-ui-1.12.1/jquery-ui.min.js">
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="vendor/jquery-ui-1.12.1/jquery-ui.js"></script>
+	<script src="vendor/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script src="vendor/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>   
+ 
+	<script src="js/main.js"></script>
+	<style>
+		
+ .sidepanel  {
+  height:100%;
+  }
+
+  .btnsubmit1 {
+    margin-top:20px;
+  }
+  @media screen 
+   and (min-device-width: 1200px) 
+ 	 and (max-device-width: 1600px) 
+ 	 and (-webkit-min-device-pixel-ratio: 1)
+ 	 {
+		.wizard-v1-content   {
+   		 margin-left:170px;
+    	 width: 900PX;
+   		 height:auto !important;
+		}
+		
+   }
+
+   @media (max-width:767px) {
+   .wizard-v1-content   {
+   		 margin-left:-5px !important;  
+		}
+  }
+
+</style>
+	
+</head>
+
+<body>
+<div id="wrapper" class="wrapper">
+	<!---Top menu-->
+	<div class="top_navbar">		
+	  <div class="openbtn" onclick="openNav()">
+		 <div class="one"></div>
+		 <div class="two"></div>
+		 <div class="three"></div>
+	  </div>
+	  <div class="top_menu">
+		<div class="logo"><img src="images/logo3.jpg"/><br></div>
+
+		<!---------Top nav Icons-->
+		<ul>  
+			<div class="dropdown">	
+			  <li class="dropbtn">			
+				<a href="#"  class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+				<span class="glyphicon glyphicon-user"></span>
+				</a>   
+				<div class="dropdown-menu dropdown-content dropdown-menu-right" role="menu" aria-labelledby="navbarDropdown1">   
+				  <a href="accountprofile.html">Account Info</a>
+				  <a href="#">Payment Info</a>
+				  <a href="#">Forgot Password</a>  
+			   </div>
+			  </li>
+			  </div>
+			 
+		  <!-----Account Icon-->      
+	  
+		  <div class="dropdown">	
+			<li class="dropbtn">
+				<a href="#"  class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+				  <span class="glyphicon glyphicon-bell alertNotificacao"></span>
+				  <span id="notificationsBadge" class='badgeAlert'>3</span>
+				</a>
+	  
+				<div class="dropdown-menu notification dropdown-menu-right" role="menu" aria-labelledby="navbarDropdown">
+				  <div class="topc" >              
+					<h5 class="noticard-title">Notifications</h5>            
+				  </div>       
+				   
+					<div class="card noticard">
+					  <div class="card-body">
+						<h5 class="card-title  noticard-title">Special title treatment</h5>
+						<p class="card-text noticart-text">With supporting text below as a natural lead-in to additional.</p>
+					   
+					  </div>
+					  <div class="notisection-title-divider"></div>
+					</div>
+					
+					<div class="card noticard" >
+					  <div class="card-body">
+						<h5 class="card-title noticard-title">Special title treatment</h5>
+						<p class="card-text  noticart-text">With supporting text below as a natural lead-in to additional content.</p>
+					   
+					  </div>
+					  <div class="notisection-title-divider"></div>
+					</div>
+					
+					<div class="card noticard" >
+					  <div class="card-body">
+						<h5 class="card-title noticard-title">Special title treatment</h5>
+						<p class="card-text  noticart-text">With supporting text below as a natural lead-in to additional content.</p>
+					   
+					  </div>
+					</div>
+					</div>
+						  
+				</li>
+			</div>
+	  
+		   
+		  
+		  <!-----Logout Icon-->      
+			  <div class="dropdown">	
+			<li class="dropbtn">			
+			  <a href="#"  class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+			  <span class="glyphicon glyphicon-arrow-right"></span>
+			  </a> 
+			 </li>
+			</div>
+			  
+			  </ul>		
+			</div>
+		  </div>
+	  
+	  
+
+    <!-- Sidebar -->
+    <div id="mySidepanel" class="sidepanel">  
+	  <ul class="sidebar-nav" id="">     
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+		
+		<li><a href="traders.html" >Trades</a></li>
+        <li><a href="vendor.html">Vendors</a></li>
+	  </ul>
+	</div>
+
+    <!-- Page content -->
+      <div id="page-content-wrapper">
+        <!-- Keep all page content within the page-content inset div! -->
+        <div class="page-content inset">
+          <div class="row">
+            <div class="col-md-12">
+            <div class="main_container"></div>
+	
+
+	
+			
+				<div class="wizard-v1-content">			
+		 
+					<div class="wizard-form" >	
+            <h3 class="vendtitle">Confirmation Details</h3>
+						<div id="form-total">
+							<!-- SECTION 1 -->			
+							<section>
+                      <div class="inner">
+                                        <div class="clearfix"></div>
+                                        <br>  
+                                     <div id="form-total" >
+                                        <div class="form-row ">      
+                                          <div class="form-holder form-holder-2">
+                                         
+                                            <div class="col-md-12 ">
+                                             <br><br> 
+                                            <h3 style="color:blue;text-align:center;">Your Information stored successfully!!!</h3><br>   <br>  
+                                             </div>   
+                                            
+                                             <div class="col-md-6">
+                                              <button  type="submit" class="btnsubmit1 center-block text-center"  value="submit"  id="successhome"><a class="viewvend" href="vendor.html">Home</a></button>		
+                                             </div>
+                                            <div class="col-md-6">
+                                              <button  type="submit" class="btnsubmit1 center-block text-center"  value="submit"  id="backhome"><a class="viewvend" href="vendoradd.html">Add New Vendor</a></button>
+                                             </div>
+                                             <br>   <br>   <br> 
+                                            </div>
+                                      </div>
+                                    </div>
+                                
+                                
+                                    </div> <!--inner--> 
+                                
+
+									</section>
+										
+												</div>
+												</form>
+											</div>
+									</div>
+								</div>
+							</div>			
+					  </div>
+					</div>
+				  </div>
+	<script>
+	function openNav() {
+  	document.getElementById("mySidepanel").style.width = "200px";
+	}
+    
+	function closeNav() {
+	  document.getElementById("mySidepanel").style.width = "0px";	  
+	}
+  
+
+	
+/* Auto complete query */
+
+</script>
+</body>
+</html>

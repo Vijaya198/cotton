@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<title>Cotton Sandhai - Vendor Details</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!--link rel="stylesheet" href="vendor/responsive/css/responsive.bootstrap.min.css" type="text/css" /-->
+  <link rel="stylesheet" href="vendor/buttons/css/buttons.bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href= "vendor/datatable/css/jquery.dataTables.min.css" />
+  <link rel="stylesheet" href="vendor/buttons/css/buttons.bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="vendor/bootstrap-3.4.1-dist/css/bootstrap.min.css">  
+  <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.css">    
+  
+  <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.js"></script>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="vendor/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>     <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="vendor/datatable/js/jquery.dataTables.min.js"></script>
+  <script src="vendor/datatable/js/dataTables.bootstrap.min.js"></script>
+  <!--script src="vendor/responsive/js/responsive.bootstrap.min.js"></!--script-->
+  <script src="vendor/buttons/js/dataTables.buttons.min.js"></script>
+  <script src="vendor/buttons/js/buttons.bootstrap.min.js"></script>
+  <script src="vendor/buttons/js/buttons.html5.min.js"></script>
+  <script src="js/jquery.steps.js"></script>
+  <script src="js/main.js"></script>
+
+<style> 
+
+  .tabcontainer{
+  display:flex;
+  box-shadow: 0px 0px 10px rgba(0,0,0,.4);
+  background-color:rgb(243, 243, 243) ;
+  padding-bottom:20px;
+  padding-top:20px;  
+  margin-left:280px;
+  margin-top:60px;
+  margin-right:20px;
+  max-width:79%;}
+
+.confirmdel{
+  font-weight:bold;
+  color:red;
+}
+#example.dt-buttons { 
+ float: right !important;
+}
+#example.btn{float: right !important;}
+
+.btnview{
+    display: none;
+  }
+  .viewvend{
+    text-decoration:none;
+    color:white;
+  }
+  .tbody .tr{
+    border-bottom: 1px solid rgb(228, 228, 228);
+  }
+
+tbody{
+  border-bottom:1px solid rgb(255, 255, 255);
+}
+  @media (max-width:767px) {
+
+    
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block;
+    background-color:rgb(243, 243, 243) !important; 
+  }
+
+
+  .table{
+    height:100vw;
+    max-width:100%;  
+    margin-left:0px !important;
+    border-bottom: 0px solid rgb(255, 255, 255);   
+    }
+    
+  .tabcontainer{   
+    max-width:91%;  
+    max-height:130%!important; 
+  }
+
+  .icn{
+    margin-left:15px !important;
+  }
+  .table{
+    border-bottom:1px solid rgb(163, 15, 15) !important;
+  }
+ 
+  .datatable  .dataTables_info{
+   visibility: hidden;
+   display: none;
+  
+  }  .dataTables_filter input[type="search"]
+    {width:60vw;
+    margin-left:10px !important;
+  }
+  .btnview{
+    display:inline-block ;
+  }
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+   
+    position: absolute !important ;   
+    margin-top:15px;	
+		left: -9999px;
+	}
+
+  tr { border: 1px solid #ccc; }
+
+  tbody tr{
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgb(173, 129, 129); 
+  }
+	td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 0px solid rgb(255, 255, 255); 
+		position: relative;
+		padding-left: 50%; 
+	}
+ 
+	td.details-control {
+  display: none;
+  }
+  .dataTables_wrapper .dataTables_filter input[type="search"]
+    {
+    width:63vw !important; 
+  float: center !important;
+  margin-left:5% !important;
+    }
+   
+	td:before { 
+		/* Now like a table header */
+    font-weight:600;
+		top: 6px;
+		left: 20px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+		/*
+		Label the data
+    You could also use a data-* attribute and content for this. That way "bloats" the HTML, this way means you need to keep HTML and CSS in sync. Lea Verou has a clever way to handle with text-shadow.
+		*/
+		td:nth-of-type(2):before { content: "Name"; }
+		td:nth-of-type(3):before { content: "Type"; }
+		td:nth-of-type(4):before { content: "State"; }
+		td:nth-of-type(5):before { content: "Insurance Ex.Date"; }
+  
+  .dataTables_wrapper .dataTables_info
+  {
+    margin-top: 5px;
+   
+  }
+  }
+ 
+  .sidepanel  {
+  height:100%;
+  }
+
+</style>
+</head>
+
+<body style="background-color:white">
+<!--Top menu-->
+
+<div id="wrapper"  class="wrapper">
+
+	<div class="top_navbar">		
+	  <div class="openbtn" onclick="openNav()">
+		 <div class="one"></div>
+		 <div class="two"></div>
+		 <div class="three"></div>
+	  </div>
+	  <div class="top_menu">
+		<div class="logo"><img src="images/logo3.jpg"/><br>
+    </div>
+    <!---------Top nav Icons-->
+    <ul>  
+      <div class="dropdown">	
+        <li class="dropbtn">			
+          <a href="#"  class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+          <span class="glyphicon glyphicon-user"></span>
+          </a>   
+          <div class="dropdown-menu dropdown-content dropdown-menu-right" role="menu" aria-labelledby="navbarDropdown1">   
+            <a href="accountprofile.html">Account Info</a>
+            <a href="#">Payment Info</a>
+            <a href="#">Forgot Password</a>  
+         </div>
+        </li>
+        </div>
+       
+    <!-----Account Icon-->      
+
+    <div class="dropdown">	
+      <li class="dropbtn">
+          <a href="#"  class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+            <span class="glyphicon glyphicon-bell alertNotificacao"></span>
+            <span id="notificationsBadge" class='badgeAlert'>3</span>
+          </a>
+
+          <div class="dropdown-menu notification dropdown-menu-right" role="menu" aria-labelledby="navbarDropdown">
+            <div class="topc" >              
+              <h5 class="noticard-title">Notifications</h5>            
+            </div>       
+             
+              <div class="card noticard">
+                <div class="card-body">                 
+                  <p class="card-text noticart-text">With supporting text below as a natural lead-in to additional.</p>                 
+                </div>
+                <div class="notisection-title-divider"></div>
+              </div>
+              
+              <div class="card noticard" >
+                <div class="card-body">                  
+                  <p class="card-text  noticart-text">With supporting text below as a natural lead-in to additional content.</p>                 
+                </div>
+                <div class="notisection-title-divider"></div>
+              </div>
+              
+              <div class="card noticard" >
+                <div class="card-body">               
+                  <p class="card-text  noticart-text">With supporting text below as a natural lead-in to additional content.</p>                 
+                </div>
+              </div>
+              <div class="topc1" >              
+                <h5 class="noticard-title1 h51"><a href="notification.html">View more Notifications</a></h5>            
+              </div>   
+						</div>
+					    
+          </li>
+      </div>
+
+     
+	
+    <!-----Logout Icon-->      
+		<div class="dropdown">	
+      <li class="dropbtn">			
+        <a href="#"  class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+        <span class="glyphicon glyphicon-arrow-right"></span>
+        </a> 
+       </li>
+      </div>
+  	  
+		</ul>		
+	  </div>
+	</div>
+
+
+  <!-- Sidebar -->
+  <div id="mySidepanel" class="sidepanel">  
+     <ul class="sidebar-nav" id="">     
+       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+     
+        <li><a href="traders.html" >Trades</a></li>
+        <li><a href="vendor.html">Vendors</a></li>         
+     </ul>
+  </div>
+
+  <!-- Add Button -->
+  <br>
+  <div id="test">
+  </div>
+
+  <!-- Main container -->
+  <div class="container tabcontainer">  
+    <table role="table" id="example" style="font-family: 'Poppins', sans-serif;background-color:rgb(255, 255, 255); ">
+    <thead  role="rowgroup">
+    <tr role="row">
+          <th></th>
+          <th data-orderable="true"  role="columnheader">Name</th>
+          <th data-orderable="true"  role="columnheader">Type</th>
+          <th data-orderable="true"  role="columnheader">State</th>
+          <th data-orderable="true"  role="columnheader">Insurance Ex.Date</th>
+          <th  role="columnheader"></th>
+        
+        </tr>
+      </thead>
+     
+      <tbody class="tbody"  role="rowgroup" >
+
+        <tr class="tr" data-id="1" role="row">
+          <td role="cell" class="details-control" ></td>
+          <td role="cell" class="tdid">Thayarajan kanakasapathy & co - Madhya pradesh branch</td>
+          <td role="cell">Broker</td>
+          <td role="cell">Gujarat</td>
+          <td role="cell">10-Sep-2019</td>
+          <td role="cell">
+            <button class="btnview btn btn-dan btn-xs"><a class="viewvend" href="Reportvendor.html">View</a></button>							
+            <button class="btn btn-prim btn-xs" data-title="Edit" data-toggle="modal"  data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button>
+       <button class="btnDelete btn btn-dan btn-xs" data-title="Delete" data-toggle="modal" data-target="#myModal" ><span class="glyphicon glyphicon-trash"></span></button>
+      </td>
+        </tr>
+      
+        <tr class="tr" data-id="1" role="row">
+          <td role="cell" class="details-control" ></td>
+          <td role="cell" class="tdid">Suzi commodities</td>
+          <td role="cell">Broker</td>
+          <td role="cell">Gujarat</td>
+          <td role="cell">10-Sep-2019</td>
+          <td role="cell">
+            <button class="btnview btn btn-dan btn-xs"><a class="viewvend" href="Reportvendor.html">View</a></button>							
+            <button class="btn btn-prim btn-xs" data-title="Edit" data-toggle="modal"  data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button>
+       <button class="btnDelete btn btn-dan btn-xs" data-title="Delete" data-toggle="modal" data-target="#myModal" ><span class="glyphicon glyphicon-trash"></span></button>
+      </td>
+        </tr>
+
+
+        <tr class="tr" data-id="1" role="row">
+          <td role="cell" class="details-control" ></td>
+          <td role="cell" class="tdid">Indhu cotton mills & co - Madhya pradesh branch</td>
+          <td role="cell">Broker</td>
+          <td role="cell">Gujarat</td>
+          <td role="cell">10-Sep-2019</td>
+          <td role="cell">
+            <button class="btnview btn btn-dan btn-xs"><a class="viewvend" href="Reportvendor.html">View</a></button>							
+            <button class="btn btn-prim btn-xs" data-title="Edit" data-toggle="modal"  data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button>
+       <button class="btnDelete btn btn-dan btn-xs" data-title="Delete" data-toggle="modal" data-target="#myModal" ><span class="glyphicon glyphicon-trash"></span></button>
+      </td>
+        </tr>
+     
+        <tr class="tr" data-id="1" role="row">
+          <td role="cell" class="details-control" ></td>
+          <td role="cell" class="tdid">Thayarajan kanakasapathy & co</td>
+          <td role="cell">Broker</td>
+          <td role="cell">Gujarat</td>
+          <td role="cell">10-Sep-2019</td>
+          <td role="cell">
+            <button class="btnview btn btn-dan btn-xs"><a class="viewvend" href="Reportvendor.html">View</a></button>							
+            <button class="btn btn-prim btn-xs" data-title="Edit" data-toggle="modal"  data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button>
+       <button class="btnDelete btn btn-dan btn-xs" data-title="Delete" data-toggle="modal" data-target="#myModal" ><span class="glyphicon glyphicon-trash"></span></button>
+      </td>
+        </tr>
+      
+        <tr class="tr" data-id="1" role="row">
+          <td role="cell" class="details-control" ></td>
+          <td role="cell" class="tdid">Suzi commodities</td>
+          <td role="cell">Broker</td>
+          <td role="cell">Gujarat</td>
+          <td role="cell">10-Sep-2019</td>
+          <td role="cell">
+            <button class="btnview btn btn-dan btn-xs"><a class="viewvend" href="Reportvendor.html">View</a></button>							
+            <button class="btn btn-prim btn-xs" data-title="Edit" data-toggle="modal"  data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button>
+       <button class="btnDelete btn btn-dan btn-xs" data-title="Delete" data-toggle="modal" data-target="#myModal" ><span class="glyphicon glyphicon-trash"></span></button>
+      </td>
+        </tr>
+
+
+        <tr class="tr" data-id="1" role="row">
+          <td role="cell" class="details-control" ></td>
+          <td role="cell" class="tdid">Indhu cotton mills</td>
+          <td role="cell">Broker</td>
+          <td role="cell">Gujarat</td>
+          <td role="cell">10-Sep-2019</td>
+          <td role="cell">
+            <button class="btnview btn btn-dan btn-xs"><a class="viewvend" href="Reportvendor.html">View</a></button>							
+            <button class="btn btn-prim btn-xs" data-title="Edit" data-toggle="modal"  data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button>
+       <button class="btnDelete btn btn-dan btn-xs" data-title="Delete" data-toggle="modal" data-target="#myModal" ><span class="glyphicon glyphicon-trash"></span></button>
+      </td>
+        </tr>
+
+        <tr class="tr" data-id="1" role="row">
+          <td role="cell" class="details-control" ></td>
+          <td role="cell" class="tdid">Thayarajan kanakasapathy & co</td>
+          <td role="cell">Broker</td>
+          <td role="cell">Gujarat</td>
+          <td role="cell">10-Sep-2019</td>
+          <td role="cell">
+            <button class="btnview btn btn-dan btn-xs"><a class="viewvend" href="Reportvendor.html">View</a></button>							
+            <button class="btn btn-prim btn-xs" data-title="Edit" data-toggle="modal"  data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button>
+       <button class="btnDelete btn btn-dan btn-xs" data-title="Delete" data-toggle="modal" data-target="#myModal" ><span class="glyphicon glyphicon-trash"></span></button>
+      </td>
+        </tr>
+      
+        <tr class="tr" data-id="1" role="row">
+          <td role="cell" class="details-control" ></td>
+          <td role="cell" class="tdid">Suzi commodities</td>
+          <td role="cell">Broker</td>
+          <td role="cell">Gujarat</td>
+          <td role="cell">10-Sep-2019</td>
+          <td role="cell">
+            <button class="btnview btn btn-dan btn-xs"><a class="viewvend" href="Reportvendor.html">View</a></button>							
+            <button class="btn btn-prim btn-xs" data-title="Edit" data-toggle="modal"  data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button>
+       <button class="btnDelete btn btn-dan btn-xs" data-title="Delete" data-toggle="modal" data-target="#myModal" ><span class="glyphicon glyphicon-trash"></span></button>
+      </td>
+        </tr>
+
+
+        <tr class="tr" data-id="1" role="row">
+          <td role="cell" class="details-control" ></td>
+          <td role="cell" class="tdid">Indhu cotton mills</td>
+          <td role="cell">Broker</td>
+          <td role="cell">Gujarat</td>
+          <td role="cell">10-Sep-2019</td>
+          <td role="cell">
+            <button class="btnview btn btn-dan btn-xs"><a class="viewvend" href="Reportvendor.html">View</a></button>							
+            <button class="btn btn-prim btn-xs" data-title="Edit" data-toggle="modal"  data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button>
+       <button class="btnDelete btn btn-dan btn-xs" data-title="Delete" data-toggle="modal" data-target="#myModal" ><span class="glyphicon glyphicon-trash"></span></button>
+      </td>
+        </tr>
+      
+        <tr class="tr" data-id="1" role="row">
+          <td role="cell" class="details-control" ></td>
+          <td role="cell" class="tdid">Thayarajan kanakasapathy & co</td>
+          <td role="cell">Broker</td>
+          <td role="cell">Gujarat</td>
+          <td role="cell">10-Sep-2019</td>
+          <td role="cell">
+            <button class="btnview btn btn-dan btn-xs"><a class="viewvend" href="Reportvendor.html">View</a></button>							
+            <button class="btn btn-prim btn-xs" data-title="Edit" data-toggle="modal"  data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button>
+       <button class="btnDelete btn btn-dan btn-xs" data-title="Delete" data-toggle="modal" data-target="#myModal" ><span class="glyphicon glyphicon-trash"></span></button>
+      </td>
+        </tr>
+      
+        <tr class="tr" data-id="1" role="row">
+          <td role="cell" class="details-control" ></td>
+          <td role="cell" class="tdid">Suzi commodities</td>
+          <td role="cell">Broker</td>
+          <td role="cell">Gujarat</td>
+          <td role="cell">10-Sep-2019</td>
+          <td role="cell">
+            <button class="btnview btn btn-dan btn-xs"><a class="viewvend" href="Reportvendor.html">View</a></button>							
+            <button class="btn btn-prim btn-xs" data-title="Edit" data-toggle="modal"  data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button>
+       <button class="btnDelete btn btn-dan btn-xs" data-title="Delete" data-toggle="modal" data-target="#myModal" ><span class="glyphicon glyphicon-trash"></span></button>
+      </td>
+        </tr>
+
+
+        <tr class="tr" data-id="1" role="row">
+          <td role="cell" class="details-control" ></td>
+          <td role="cell" class="tdid">Indhu cotton mills</td>
+          <td role="cell">Broker</td>
+          <td role="cell">Gujarat</td>
+          <td role="cell">10-Sep-2019</td>
+          <td role="cell">
+            <button class="btnview btn btn-dan btn-xs"><a class="viewvend" href="Reportvendor.html">View</a></button>							
+            <button class="btn btn-prim btn-xs" data-title="Edit" data-toggle="modal"  data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button>
+       <button class="btnDelete btn btn-dan btn-xs" data-title="Delete" data-toggle="modal" data-target="#myModal" ><span class="glyphicon glyphicon-trash"></span></button>
+      </td>
+        </tr>
+      
+      </tbody>
+    </table>
+    <div class="confirmdel" id="confirmdelete" style="display: none;">Record deleted</div>
+  </div>
+  
+
+</div>
+
+<!---- Modal HTML --->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+ 
+	<div class="modal-dialog modal-confirm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<!--div class="icon-box">
+					<i class="material-icons">&#xE5CD;</i>
+				</!--div-->				
+        <h4 class="modal-title">Are you sure?</h4>	
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			</div>
+			<div class="modal-body">
+        <p>Do you really want to delete these records? This process cannot be undone.</p>
+			</div>
+			<div class="modal-footer">
+        <!--input type="text" name="Id" class="hiddenValue" id="hidvalue" /-->
+				<button type="button" class="btn btn-info" data-dismiss="modal" href="#">Cancel</button>
+        <button type="button" class="btn btn-danger" id="btnDelteYes" data-dismiss="modal" data-backdrop="false">Delete</button>
+      </div>
+		</div>
+	</div>
+</div>     
+ 
+
+<script>
+  //Sidenav
+	function openNav() {
+  	document.getElementById("mySidepanel").style.width = "200px";
+	}    
+	function closeNav() {
+	  document.getElementById("mySidepanel").style.width = "0px";	  
+	}
+  function format (i) {
+    // `d` is the original data object for the row
+    return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
+        '<tr>'+
+            '<td>Full name:</td>'+
+            '<td>'+i.name+'</td>'+
+        '</tr>'+
+        '<tr>'+
+            '<td>Extension number:</td>'+
+            '<td>'+i.extn+'</td>'+
+        '</tr>'+
+        '<tr>'+
+            '<td>Extra info:</td>'+
+            '<td>And any further details here (images etc)...</td>'+
+        '</tr>'+
+    '</table>'+'<a cellpadding="5" href="" style="padding-top:10px" class="viewmore">View More</a>';
+        
+}
+ 
+//Datatable
+$(document).ready(function () {
+ 
+var dataTable = $('#example').DataTable({
+  "ordering": true,
+ // "scrollY":  275,  
+  "paging": true,
+ // scrollX: true,
+ // scrollCollapse: true,
+  "bLengthChange" : false,
+    buttons: [
+       {      
+        text: '<h4 style="font-size: 16px;font-weight:bold">&nbsp;&nbsp;<i class="fa fa-plus fa-x5"></i> &nbsp;&nbsp;Add Vendor&nbsp;&nbsp;&nbsp;</h4>',
+        className: 'btnvendor',
+        action: function ( e, dt, button, config ) {
+        window.location = 'vendoradd.html';
+        }        
+      },
+    ], 
+     
+    //Move search from right to left
+    "dom": '<"pull-left"f><"pull-right"l>tpi' ,
+    "order": [
+            [1, 'asc']
+        ],
+    
+    "columns": [
+    
+    { 'orderable': false,"width": "3%" },
+    { "width": "15%" },
+    { "width": "15%" },
+    { "width": "15%" },
+    { "width": "15%" },
+    { 'orderable': false,"width": "6%" }
+           ],
+    //Search Icon
+    "oLanguage": { "sSearch": '<a class="btn searchBtn" id="searchBtn"  style="float:right;vertical-align:middle"><i class="fa fa-search icn"></i></a>' ,}
+  });
+
+ 
+  // ADD Button
+  dataTable.buttons().container().appendTo($('#test'));
+
+    $('.dataTables_filter input[type ="search"]').css(
+      {'width':'450px','margin-bottom':'7px','vertical-align':'baseline'}
+  ); 
+
+  $(".dataTables_wrapper").css("width","100%");  
+
+  // Add event listener for opening and closing details
+    $('#example tbody').on('click', 'td.details-control', function () {
+        var tr = $(this).closest('tr');
+        var row = dataTable.row( tr );
+ 
+        if ( row.child.isShown() ) {
+            // This row is already open - close it
+            row.child.hide();
+            tr.removeClass('shown');
+        }
+        else {
+            // Open this row
+            console.log(row);
+            row.child( format(row.data()) ).show();
+            tr.addClass('shown');
+        }
+    });
+
+    
+  //$(".delmodal").click(function(){
+    //$('tr #modelbox').click(function() {
+   // var $val = $(this).closest('tr').find('.tdid').text();
+     
+  //});
+  $('#confirmdelete').hide();
+ 
+$('button.btnDelete').on('click', function (e) {
+    e.preventDefault();
+    var id = $(this).closest('tr').data('id'); 
+    
+    $("#hidvalue").val(id); 
+    $('#myModal').data('id', id).modal('show');
+   //alert(id1);
+    
+});
+
+
+$('#btnDelteYes').click(function () {
+    var id = $('#myModal').data('id');
+    alert(id);
+    console.log(id);
+    $("#hidvalue").val(id);
+   // $('<div />').html(id+'hello there').dialog();
+    $('[data-id=' + id + ']').remove();    
+    $("#myModal").hide();
+   $('#confirmdelete').show();
+   $('#confirmdelete').delay(2000).fadeOut();
+});
+
+});
+
+</script>
+</body>
+</html>

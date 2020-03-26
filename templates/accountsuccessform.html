@@ -1,0 +1,223 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="../static/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/css/style.css"/>
+    <link rel="stylesheet" href="../static/vendor/bootstrap-3.4.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/vendor/jquery-ui-1.12.1/jquery-ui.css">
+    <link rel="stylesheet" href="../static/vendor/jquery-ui-1.12.1/jquery-ui.min.js">
+    <script src="../static/js/jquery-3.3.1.min.js"></script>
+    <script src="../static/vendor/jquery-ui-1.12.1/jquery-ui.js"></script>
+    <script src="../static/vendor/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script src="../static/vendor/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="../static/vendor/bootbox/bootbox.js"></script>
+  <script src="../static/vendor/bootbox/bootbox.min.js"></script>
+    <script src="js/main.js"></script>
+
+
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../static/css/demo/site-demos.css">
+	<!--<link rel="stylesheet" href="../static/css/style.css"/>-->
+	<link rel="stylesheet" href="../static/css/site-demos.css"/>
+<!--	<link rel="stylesheet" href="../static/vendor/bootstrap-3.4.1-dist/css/bootstrap.min.css">
+  <script src="../static/vendor/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+  <script src="../static/js/jquery-3.3.1.min.js"></script>-->
+  
+<style>
+ .tabcontainer{
+  display:flex;
+  box-shadow: 0px 0px 10px rgba(0,0,0,.4);
+  background-color:rgb(243, 243, 243) ;
+  padding-bottom:20px;
+  padding-top:20px;
+  margin-left:280px;
+  margin-top:60px;
+  margin-right:20px;
+  max-width:79%;
+}
+ @media screen and (min-device-width: 1008px) {
+  .wizard-v1-content   {
+    margin-top:50px;
+    margin-left:250px;
+    width: 60%;
+    height:600px !important;
+  }
+
+  .wizard-v1-content   {
+    margin-left:420px;
+  }
+  .sidepanel  {
+      height:95%;
+  }
+  }</style>
+</head>
+<body>
+  			
+<div id="wrapper" class="wrapper">
+	<!---Top menu-->
+	<div class="top_navbar">		
+	  <div class="openbtn" onclick="openNav()">
+		 <div class="one"></div>
+		 <div class="two"></div>
+		 <div class="three"></div>
+	  </div>
+	  <div class="top_menu">
+		<div class="logo"><img src="../static/images/logo3.jpg"/><br></div>
+
+		<!---------Top nav Icons-->
+		<ul>
+			<div class="dropdown">
+			  <li class="dropbtn">
+				<a href="#"  class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+				<span class="glyphicon glyphicon-user"></span>
+				</a>
+				<div class="dropdown-menu dropdown-content dropdown-menu-right" role="menu" aria-labelledby="navbarDropdown1">
+				  <a href="accountinfo">Account Info</a>
+				  <a href="#">Payment Info</a>
+				  <a href="#">Forgot Password</a>
+			   </div>
+			  </li>
+			  </div>
+
+		  <!-----Account Icon-->
+
+		  <div class="dropdown">
+			<li class="dropbtn">
+				<a href="#"  class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+				  <span class="glyphicon glyphicon-bell alertNotificacao"></span>
+				  <span id="notificationsBadge" class='badgeAlert'>3</span>
+				</a>
+
+				<div class="dropdown-menu notification dropdown-menu-right" role="menu" aria-labelledby="navbarDropdown">
+				  <div class="topc" >
+					<h5 class="noticard-title">Notifications</h5>
+				  </div>
+
+					<div class="card noticard">
+					  <div class="card-body">
+						<h5 class="card-title  noticard-title">Special title treatment</h5>
+						<p class="card-text noticart-text">With supporting text below as a natural lead-in to additional.</p>
+
+					  </div>
+					  <div class="notisection-title-divider"></div>
+					</div>
+
+					<div class="card noticard" >
+					  <div class="card-body">
+						<h5 class="card-title noticard-title">Special title treatment</h5>
+						<p class="card-text  noticart-text">With supporting text below as a natural lead-in to additional content.</p>
+
+					  </div>
+					  <div class="notisection-title-divider"></div>
+					</div>
+
+					<div class="card noticard" >
+					  <div class="card-body">
+						<h5 class="card-title noticard-title">Special title treatment</h5>
+						<p class="card-text  noticart-text">With supporting text below as a natural lead-in to additional content.</p>
+
+					  </div>
+					</div>
+					</div>
+
+				</li>
+			</div>
+
+
+
+		  <!-----Logout Icon-->
+			  <div class="dropdown">
+			<li class="dropbtn">
+			  <a href="#" class="nav-link dropdown-toggle" id="navbarDropown1" role="button"  >
+			  <span class="glyphicon glyphicon-arrow-right"></span>
+			  </a>
+			 </li>
+			</div>
+
+			  </ul>
+			</div>
+		  </div>
+
+    <!-- Sidebar -->
+    <div id="mySidepanel" class="sidepanel">  
+	  <ul class="sidebar-nav" id="">     
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+		
+		<li><a href="traders" >Trades</a></li>
+        <li><a href="vendors">Vendors</a></li>
+	  </ul>
+    </div>
+    				
+    <div class="wizard-v1-content">			
+        <div class="wizard-form">	
+
+
+
+			<form  action="vendors">
+				<div id="form-total">
+					<section>
+						<div class="inner">
+							<div class="clearfix"></div><br>
+								<div class="form-row">
+									<div class="form-holder form-holder-2"><br><br><br>
+										<div class="col-md-12">
+												<h3 style="color:blue;text-align:center;">{{display_messages}}</h3>
+												<h3 style="color:blue;text-align:center;">{{vendor_id}}</h3>
+												<h3 style="color:blue;text-align:center;">{{created_updated_date}}</h3>
+
+										</div><br><br><br>
+										<div class="col-md-6">
+              							<button  type="submit" class=" btnsubmit1 center-block text-center"  value="submit"  id="successhome">Home</button>
+										</div>
+										<div class="col-md-6">
+              								<button  type="submit" class="btnsubmit1 center-block text-center"  value="submit"  id="Add Vendor" formaction="accountinfo">View Info</button>
+             							</div>
+									</div>
+								</div>
+							</div>
+					</section>
+					</div> <!--inner-->
+					</form>
+
+    		</div>
+		</div>
+	</div>
+
+<script>
+
+$(document).on("click", '#navbarDropown1', function(e) {
+
+    bootbox.confirm({
+        title:"Logout",
+        message: "Do you want to Logout?",
+        buttons: {
+            confirm: {
+                label: 'Yes',
+                className: 'btn-success'
+            },
+            cancel: {
+                label: 'No',
+                className: 'btn-danger'
+            }
+        },
+        callback: function (result) {
+        if(result)
+        {
+
+            //$('#navbarDropown1').attr('href', "account/logout")
+            window.location.href="account/logout"
+
+        }
+
+
+        }
+
+    });
+});
+</script>
+
+</body>
+</html>

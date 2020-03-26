@@ -1,0 +1,503 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<title>Cotton Sandhai - Vendor Add Details</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">    
+
+	<link rel="stylesheet" href="css/style.css"/>
+    
+	<link rel="stylesheet" href="vendor/bootstrap-3.4.1-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="vendor/jquery-ui-1.12.1/jquery-ui.css">
+	<link rel="stylesheet" href="vendor/jquery-ui-1.12.1/jquery-ui.min.js">
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="vendor/jquery-ui-1.12.1/jquery-ui.js"></script>
+	<script src="vendor/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script src="vendor/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>   
+ 
+	<script src="js/main.js"></script>
+	<style>
+		
+		.sidepanel  {
+		 height:205%;
+		 }
+	   
+		  @media screen 
+			  and (min-device-width: 900px) 
+			 {
+			   #page-content-wrapper { 
+				margin-left: 75px;
+				 width: auto; 
+				 height:auto;		  
+			   }
+		  }
+		  .form-total {    
+    		background-color:rgb(255, 255, 255)
+		  } 
+
+		  .wizard-v1-content   {    
+			height:auto;
+			margin-bottom:20px;
+  			}
+	   </style>
+</head>
+<body>
+<div id="wrapper" class="wrapper">
+	<!---Top menu-->
+	<div class="top_navbar">
+	  <div class="openbtn" onclick="openNav()">
+		 <div class="one"></div>
+		 <div class="two"></div>
+		 <div class="three"></div>
+	  </div>
+	  <div class="top_menu">
+		<div class="logo"><img src="../static/images/logo3.jpg"/><br></div>
+
+		<!---------Top nav Icons-->
+		<ul>
+			<div class="dropdown">
+			  <li class="dropbtn">
+				<a href="#"  class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+				<span class="glyphicon glyphicon-user"></span>
+				</a>
+				<div class="dropdown-menu dropdown-content dropdown-menu-right" role="menu" aria-labelledby="navbarDropdown1">
+				  <a href="accountinfo">Account Info</a>
+				  <a href="#">Payment Info</a>
+				  <a href="#">Forgot Password</a>
+			   </div>
+			  </li>
+			  </div>
+
+		  <!-----Account Icon-->
+
+		  <div class="dropdown">
+			<li class="dropbtn">
+				<a href="#"  class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+				  <span class="glyphicon glyphicon-bell alertNotificacao"></span>
+				  <span id="notificationsBadge" class='badgeAlert'>3</span>
+				</a>
+
+				<div class="dropdown-menu notification dropdown-menu-right" role="menu" aria-labelledby="navbarDropdown">
+				  <div class="topc" >
+					<h5 class="noticard-title">Notifications</h5>
+				  </div>
+
+					<div class="card noticard">
+					  <div class="card-body">
+						<h5 class="card-title  noticard-title">Special title treatment</h5>
+						<p class="card-text noticart-text">With supporting text below as a natural lead-in to additional.</p>
+
+					  </div>
+					  <div class="notisection-title-divider"></div>
+					</div>
+
+					<div class="card noticard" >
+					  <div class="card-body">
+						<h5 class="card-title noticard-title">Special title treatment</h5>
+						<p class="card-text  noticart-text">With supporting text below as a natural lead-in to additional content.</p>
+
+					  </div>
+					  <div class="notisection-title-divider"></div>
+					</div>
+
+					<div class="card noticard" >
+					  <div class="card-body">
+						<h5 class="card-title noticard-title">Special title treatment</h5>
+						<p class="card-text  noticart-text">With supporting text below as a natural lead-in to additional content.</p>
+
+					  </div>
+					</div>
+					</div>
+
+				</li>
+			</div>
+
+
+
+		  <!-----Logout Icon-->
+			  <div class="dropdown">
+			<li class="dropbtn">
+			  <a href="#"  class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+			  <span class="glyphicon glyphicon-arrow-right"></span>
+			  </a>
+			 </li>
+			</div>
+
+			  </ul>
+			</div>
+		  </div>
+
+    <!-- Sidebar -->
+    <div id="mySidepanel" class="sidepanel">
+	  <ul class="sidebar-nav" id="">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+
+		<li><a href="traders" >Trades</a></li>
+        <li><a href="vendors">Vendors</a></li>
+	  </ul>
+	</div><!--SIDEPANEL-->
+
+    <!-- Page content -->
+      <div id="page-content-wrapper">
+        <!-- Keep all page content within the page-content inset div! -->
+        <div class="page-content">
+          <div class="row">
+            <div class="col-md-12">
+            <div class="main_container">
+ 			<!--- /*----------------------  copy -----------------------*/    ------>
+			<h3 class="vendtitle">Enter Your Vendor Details</h3>
+ 			<!--- /*----------------------  copy -----------------------*/    ------>
+		<!--div class="page-content" style="background-color: rgba(0, 0, 0, 0.15)"-->
+			<!--<div class="wizard-v1-content">-->
+			<div class="wizard-v1-content">	
+				<div class="wizard-form">
+					<form class="form-register" action="vendorRegister" id="form-register" style="padding:25px;background-color: white "  method="POST">						
+						<div id="form-total">
+							{% csrf_token %}
+							<section>
+								<div class="inner">
+									<div class="clearfix"></div>
+									<div class="form-row">
+										<div class="form-holder form-holder-2">
+											<label for="name">Company Nick Name*</label>
+											<input type="text" maxlength="254" placeholder="Enter Company Name" class="form-control" id="company_nick_name" name="company_nick_name" onkeypress="runScript(event)">
+											<span id="spancompanynickname" style="color:red"></span>
+											<div class="spce">
+												<span id="invaild1" >This field is required</span>
+												<!--<span id="compnameexist" >Company name already exist</span>-->
+											</div>
+										</div>
+									</div>
+									<div class="form-row">
+										<div class="form-holder form-holder-2">
+											<label for="name">Company Name*(as per records)</label>
+											<input type="text" maxlength="254" onclick="companyNickNameValidation(event)" placeholder="Enter Company Name" class="form-control" id="company_name_reg" name="company_name_reg">
+											<div class="spce"><span id="invaild2" >This field is required</span></div>
+										</div>
+									</div>
+
+
+									<div class="form-row">
+										<div class="form-holder form-holder-2">
+											<label for="address">Address*</label>
+											<input type="text" maxlength="254" placeholder="Door no & street" class="form-control" id="adddoor" name="adddoor">
+											<div class="spce"><span id="invaild3">This field is required</span></div>
+											<br>
+											<input type="text" maxlength="254" placeholder="locality" class="form-control" id="locality" name="locality">
+
+										</div>
+									</div>
+									<div class="form-row">
+										<div class="form-holder form-holder-2">
+											<label for="card-type">State*</label>
+												<select maxlength="254" name="state" id="vend_state" style="height:35px;">
+													<option value="" disabled selected >Select State</option>
+														<option value="Tamil nadu">Tamil Nadu</option>
+												</select>
+												<div class="spce"><span id="invaild6" >This field is required</span></div>
+										</div>
+										<div class="form-holder form-holder-2">
+											<label for="address">Pincode *</label>
+											<input type="text" maxlength="6" placeholder="Pincode" class="form-control" id="pincode" name="pincode">
+											<div class="spce"><span id="invaild4" >This field is required</span></div>
+										</div>
+									</div><br>
+									<h3  style="font-size:18px">Contact Information</h3>
+									<div class="section-title-divider"></div>
+									<div class="clearfix"></div>
+									<div class="form-row">
+										<div class="form-holder form-holder-2">
+											<label for="primaryEmail"> Primary Email*</label>
+												<input type="email" maxlength="254" placeholder="Enter primary Email" class="form-control" id="primary_email" name="primary_email"  pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+												<div class="spce"><span id="invaild5" >This field is required</span></div>
+										</div>
+										<div class="form-holder form-holder-2">
+											<label for="primaryContactName">Primary Contact Name</label>
+											<input type="text" maxlength="254" placeholder=" Enter Name" class="form-control" id="primary_contact_name" name="primary_contact_name" >
+										</div>
+										<div class="form-holder form-holder-2">
+											<label for="primaryContactNo">Primary Contact No</label>
+											<input type="text" maxlength="10" placeholder="Enter Contact No" class="form-control" id="primary_contact_no" name="primary_contact_no">
+										</div>
+
+									</div>
+									<div class="form-row">
+										<div class="form-holder form-holder-2">
+											<label for="secondayEmail">Secondary Email</label>
+												<input type="email" maxlength="254" placeholder="Enter Email Id" class="form-control" id="secondary_email" name="secondary_email"  pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+										</div>
+										<div class="form-holder form-holder-2">
+											<label for="secondaryContactName">Secondary Contact Name</label>
+											<input type="text" maxlength="254" placeholder=" Enter Name" class="form-control" id="secondary_contact_name" name="contact_name2" >
+										</div>
+										<div class="form-holder form-holder-2">
+											<label for="secondaryContactNo">Secondary Contact No </label>
+											<input type="text" maxlength="10" placeholder="Enter Contact No" class="form-control" id="secondary_contact_no" name="secondary_contact_no">
+										</div>
+
+									</div>
+								</div>
+								<div class="inner">
+									 <h3 style="font-size:18px;">Governance</h3>
+										<div class="section-title-divider"></div>
+										<div class="clearfix"></div>
+										<div class="form-row">
+												<div class="form-holder form-holder-2">
+													<label for="gstin">GSTIN</label>
+													<input type="text" maxlength="15" placeholder="Enter GSTIN no" class="form-control" id="gstin" name="gstin" >
+												</div>
+												<div class="form-holder form-holder-2">
+													<label for="uin">UIN</label>
+													<input type="text" maxlength="15" placeholder="Enter UIN no" class="form-control" id="uin" name="uin" >
+												</div>
+										</div>
+									<div class="clearfix"></div>
+								 </div><br>
+								<div class="inner">
+									<h3  style="font-size:18px;">Insurance Details</h3>
+									<div class="section-title-divider"></div>
+									<div class="clearfix"></div>
+										<div class="form-row">
+												<div class="form-holder form-holder-2">
+													<label for="insurno">Insurance No</label>
+													<input type="text" maxlength="50" placeholder="Insurance No" onfocus="offinsuranceno(event)" class="form-control" id="insurno" name="insurno">
+													<span id="spaninsuranceno" style="color:red"></span>
+												</div>
+												<div class="form-holder form-holder-2">
+													<label for="ExpiryDate">Expiry Date</label>
+													<input autocomplete="off" type="text"  placeholder="dd-mm-yyyy" onfocusin="offexpirydate(event)" class="form-control" id="expirydate" name="expirydate" >
+													<span id="spanexpirydate" style="color:red"></span>
+												</div>
+										</div>
+										<div class="form-row">
+												<div class="form-holder form-holder-2">
+													<label for="insurname">Insurance Company</label>
+													<input type="text" maxlength="254" placeholder="Enter Insurance Company" onfocusin="offcompany(event)" class="form-control" id="insurcompany" name="insurcompany">
+													<span id="spancompany" style="color:red"></span>
+												</div>
+											</div>
+
+										</div>
+							</section>
+								<div class="col-md-6 col-xs-6">
+								<button  type="submit" class="btnsubmit3 center-block text-center viewvend"  value="submit"  id="successhome" formaction="vendor.html">Go Back</button>
+							   </div>
+							  <div class="col-md-6 col-xs-6">
+								<!--button type="submit" class="btnsubmit1 center-block text-center viewvend" value="submit"  id="submitvendor">back</button--->
+								<button  type="submit" class="btnsubmit3 center-block text-center viewvend"  value="submit"  id="submitvendor" >submit</button>
+							   </div>      
+							   <br><br>
+							</div>
+						  </form>                                               
+					  </div>
+				  </div>
+			  </div>
+		  </div>
+		  </div>		
+</div>
+</div>
+</div>
+
+	<script>
+	function openNav() {
+  	document.getElementById("mySidepanel").style.width = "200px";
+	}
+
+	function closeNav() {
+	  document.getElementById("mySidepanel").style.width = "0px";
+	}
+	function offexpirydate(e){
+
+		$('#spanexpirydate').text("");
+
+	}
+	function offcompany(e){
+		$('#spancompany').text("");
+
+	}
+	function offcompany(e){
+		$('#spaninsuranceno').text("");
+
+	}
+
+	function companyNickNameValidation(e){
+		 var tb = document.getElementById("company_nick_name");
+		 if (tb.value !== "")
+		 {
+		 //e.preventDefault();
+		 	alert(tb.value);
+		 	$.ajax({
+            	url: '{% url "valid_company_nick_name" %}',
+            	data: {
+            		'vendor_id':"",
+                   'company_nick_name': tb.value,
+                   },
+            	dataType: 'json',
+            	success: function (data) {
+            		alert(data.duplicate_flag)
+            		if (data.duplicate_flag)
+            		{
+            			//document.getElementById("company_nick_name").style.borderColor = "red";
+						$('#spancompanynickname').text("VendorName available.Enter New Name");
+						$('#company_nick_name').focus()
+						e.preventDefault();
+						return false;
+            		}
+             		else
+                	{
+						$('#spancompanynickname').text("");
+						return true;
+                	}
+            	}
+        	});
+		 }
+		 else
+		 {
+		 	$('#spancompanynickname').text("company nick name is empty. Pls Enter");
+		 	$('#company_nick_name').focus();
+		 	return true;
+		}
+	}
+	function runScript(e){
+		var code = e.keyCode || e.which;
+        var tb = document.getElementById("company_nick_name");
+
+		if(code == 13){
+		e.preventDefault(e);
+        	$.ajax({
+            	url: '{% url "valid_company_nick_name" %}',
+            	data: {
+            		'vendor_id':"",
+                   'company_nick_name': tb.value,
+                   },
+            	dataType: 'json',
+            	success: function (data) {
+            		alert("ENTER"+data.duplicate_flag);
+            		if (data.duplicate_flag)
+            		{
+						//alert("enter" + tb.value)
+						$('#spancompanynickname').text("VendorName available.Enter New Name");
+
+						$('#company_nick_name').focus();
+						e.preventDefault(e);
+						return false;
+            		}
+             		else
+                	{
+                		alert("enter" + tb.value)
+						$('#spancompanynickname').text("");
+						$('#company_name_reg').focus();
+						return true;
+                	}
+            	}
+        	});
+		}
+}
+
+
+$(document).ready(function(){
+
+	$("#company_nick_name").on('keydown', function(e) {
+
+
+  			var keyCode = e.keyCode || e.which;
+  			if (keyCode == 9){
+
+  			var tb = document.getElementById("company_nick_name");
+  			alert (tb.value);
+  			$.ajax({
+            	url: '{% url "valid_company_nick_name" %}',
+            	data: {
+            		'vendor_id':"",
+                   'company_nick_name': tb.value,
+                   },
+            	dataType: 'json',
+            	success: function (data) {
+            		//alert("KEYCODE 9"+data.duplicate_flag)
+            		if (data.duplicate_flag)
+            		{
+            			//document.getElementById("company_nick_name").style.borderColor = "red";
+
+						$('#spancompanynickname').text("VendorName available.Enter New Name");
+						//$('#company_nick_name').focus();
+						e.preventDefault(e);
+						return false;
+            		}
+             		else
+                	{
+                		alert("tab else")
+						$('#spancompanynickname').text("");
+						return true;
+                	}
+            	}
+        	});
+        	//alert("hi")
+  			//return False;
+  			}
+  			//alert("hi2")
+  			//else{return true;}
+  		});
+
+	$("#expirydate").datepicker({
+		minDate: 0
+	});
+
+	$( "#form-register" ).submit(function( event ) {
+		alert("hi enter submit")
+
+		var tb = document.getElementById("company_nick_name");
+		if (tb.value !== "")
+		{
+
+		$.ajax({
+            	url: '{% url "valid_company_nick_name" %}',
+            	data: {
+            	'vendor_id':"",
+                   'company_nick_name': tb.value,
+                   },
+            	dataType: 'json',
+            	success: function (data) {
+					//alert("hi");
+					//alert(data.duplicate_flag);
+            		if (data.duplicate_flag)
+            		{
+            			alert("hi2")
+            			alert("Input value"+tb.value);
+
+            			//document.getElementById("company_nick_name").style.borderColor = "red";
+						$('#spancompanynickname').text("VendorName available.Enter New Name");
+						$('#company_nick_name').focus();
+						//$('#form-register').submit(function(event){
+       					//	return false; // prevents form submit
+     					//	});
+						return false;
+
+            		}
+             		else {
+             			alert("hi true");
+						$('#spancompanynickname').text("");
+						return true;
+                	}// else for duplicate flag
+
+                	alert("hi4");
+
+                	//return false;
+            	}
+
+        });
+
+		}else
+		{return false;}
+	});
+});
+
+
+   </script>
+</body>
+</html>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cotton Sandhai - Account Profile</title>
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/demo/site-demos.css">
+	<link rel="stylesheet" href="css/style.css"/>
+	<link rel="stylesheet" href="css/site-demos.css"/>
+	<link rel="stylesheet" href="vendor/bootstrap-3.4.1-dist/css/bootstrap.min.css">
+  <script src="vendor/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>  
+   <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+
+<style>
+
+body{
+    
+    box-sizing: content-box;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+   
+     }
+.form-group label{ 
+padding:6px;
+margin-left:5px;
+font-weight:normal;
+font-size:14px;
+font-family: 'Montserrat';
+}
+
+.card .card-body .form-group label{ 
+padding:6px;
+margin-left:5px;
+font-weight:normal;
+font-size:14px;
+font-family: 'Montserrat';
+}
+
+@media screen and (min-device-width: 1008px) {
+
+  .wizard-v1-content   {
+    margin-left:400px !important;
+    margin-top:0px; 
+    height:auto;
+  }
+  .sidepanel  {
+      height:135%;
+  }
+  }
+  
+@media (max-width:767px) {
+
+  .wizard-form{
+  text-align:left !important;
+  margin-left:0px !important;
+}
+.profile-page .page-header h3{
+  
+   font-size:20px !important;font-weight: 600;
+  
+  width:240px;
+}
+.profile-page .page-header .headertitle h3{ 
+ padding-top:8%;
+ text-align:center !important;
+ font-weight: 600;
+  
+  width:240px;
+}
+}
+</style>
+<body>
+     			
+<div id="wrapper" class="wrapper">
+	<!---Top menu-->
+	<div class="top_navbar">		
+	  <div class="openbtn" onclick="openNav()">
+		 <div class="one"></div>
+		 <div class="two"></div>
+		 <div class="three"></div>
+	  </div>
+	  <div class="top_menu">
+		<div class="logo"><img src="images/logo3.jpg"/><br></div>
+
+		<ul>     
+		<div class="dropdown">			
+		  <li class="dropbtn" ><a href="#">
+			<i class="glyphicon glyphicon-user"></i>
+			</a>
+		  </li>
+		  <div class="dropdown-content">
+				<a href="accountprofile.html">Account Info</a>
+				<a href="#">Payment Info</a>
+				<a href="#">Forgot Password</a>
+		  </div>		 		
+		</div>
+		<li><a href="#">
+			<i data-toggle="tooltip" data-placement="right" title="Notifications" class="glyphicon glyphicon-bell"></i>
+			</a>
+          </li>
+          <li><a href="#">
+			<i  data-toggle="tooltip" data-placement="right" title="Logout" class="glyphicon glyphicon-arrow-right"></i>
+			</a>
+		  </li>
+		</ul>		
+	  </div>
+	</div>
+
+    <!-- Sidebar -->
+    <div id="mySidepanel" class="sidepanel">  
+	  <ul class="sidebar-nav" id="">     
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+		<li><a href="traders.html">Trades</a></li>
+    <li><a href="vendor.html">Vendors</a></li>
+	  </ul>
+    </div>
+     
+    <div class="wizard-v1-content mt10" >	
+        <div class="wizard-form">	        
+          <section>     
+              
+                    
+     <!--card group--->
+      <div class="card-group"> 
+          <div class="row justify-content-center" > 
+
+            <div class="col-md-12">
+              <div class="card border-light mb-3">  
+                <button type="submit" class="pencil pull-right" style=" border:1px solid white!important;background-color: white;;"> <i class="fa fa-pencil" aria-hidden="true"></i></button>             
+                <div class="profile-page col-md-12 ">
+                  <div class="page-header header-filter" data-parallax="active" style="transform: translate3d(0px, 0px, 0px);">  
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="headertitle">
+                      <h3 >Company name</h3>                    
+                    </div>                   
+                    </div>                  
+                  </div>                 
+              </div>
+            </div>
+          </div>
+
+            <div class="col-md-12">        
+                        
+                        <div class="card ">
+                          <div class="card-header">
+                           
+                            <ul class="nav nav-tabs card-header-tabs" id="myTabs">
+                              <li class="nav-item active">
+                                <a class="nav-link" href="#company1">One</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#company2">Two</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#company3">Three</a>
+                              </li>
+                            </ul>
+                          </div>
+                          
+                            <!------Card 1-->
+                          <div class="card-body tab-content">
+                            <div id="company1" class="tab-pane active">
+                              
+                              <form id="formaccount" action="editaccount_company.html" method="get">     
+                                <div class="card border-light mb-3">
+                                  <div class="card-block">
+                                    
+                                    <div class="card-header">
+                                      <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <h5 class="card-title mb-0">Company Details 1
+                                        <button type="submit" class="pencil"  > <i class="fa fa-pencil" aria-hidden="true"></i></button></h5>
+                                      </div>
+                                    </div>
+                                    
+                                    <div class="card-body"> 
+                                          
+                                      <div class="row form-group ">                       
+                                      <label class=" col-sm-12 col-xs-12 pull-left1" name="companyname" id="companyname" style="float:left;" for="">Company name</label>                    
+                                      </div>
+                    
+                                     <div class="row form-group pull-left1">                      
+                                     <label class="col-md-8 col-sm-12 col-xs-12" id="company_name" name="company_name">Company email</label>     
+                                     </div>
+                    
+                                    <div class="row form-group pull-left1">											
+                                    <label  class="col-md-8 col-sm-12 col-xs-12" id="adddoor" name="adddoor">Door no & street</label>
+                                    </div>
+                    
+                                    <div class="row form-group pull-left1">
+                                    <label class="col-md-8 col-sm-12 col-xs-12" id="locality" name="locality">locality</label>                     
+                                   </div>
+                               
+                                    <div class="row form-group pull-left1">
+                                    <label  style="width:auto !important;padding-right:0px !important;" class="col-md-3 col-sm-12 col-xs-6" id="state" name="state">State &nbsp;  &nbsp;  &nbsp;-  &nbsp;</label>
+                                    <label  style="margin-left:1px;" class="col-md-3 col-sm-12 col-xs-6" id="pincode" name="pincode">Pincode</label>
+                                  </div>
+                    
+                                 </div>
+                              </div>
+                          </div>
+                        </form>
+                    
+                    
+                            </div>
+                    
+                            <!------Card 1 company 2-->
+                            <div id="company2" class="tab-pane">
+                    
+                              <form id="formaccount" action="editaccount_company2.html" method="get">     
+                                <div class="card border-light mb-3">
+                                  <div class="card-block">
+                                    
+                                    <div class="card-header">
+                                      <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <h5 class="card-title mb-0">Company Details 2
+                                        <button type="submit" class="pencil"  > <i class="fa fa-pencil" aria-hidden="true"></i></button></h5>
+                                      </div>
+                                    </div>
+                                    
+                                    <div class="card-body"> 
+                                          
+                                      <div class="row form-group">                       
+                                      <label class="col-md-8 col-sm-12 col-xs-12" name="companyname" id="companyname" for="">Company name</label>                    
+                                      </div>
+                    
+                                     <div class="row form-group">                      
+                                     <label class="col-md-8 col-sm-12 col-xs-12" id="company_name" name="company_name">Company email</label>     
+                                     </div>
+                    
+                                    <div class="row form-group">											
+                                    <label  class="col-md-8 col-sm-12 col-xs-12" id="adddoor" name="adddoor">Door no & street</label>
+                                    </div>
+                    
+                                    <div class="row form-group">
+                                    <label class="col-md-8 col-sm-12 col-xs-12" id="locality" name="locality">locality</label>                     
+                                   </div>
+                               
+                                    <div class="row form-group">
+                                    <label  style="width:auto !important;padding-right:0px !important;" class="col-md-3 col-sm-12 col-xs-6" id="state" name="state">State &nbsp;  &nbsp;  &nbsp;-  &nbsp;</label>
+                                    <label  style="margin-left:1px;" class="col-md-3 col-sm-12 col-xs-6" id="pincode" name="pincode">Pincode</label>
+                                  </div>
+                    
+                                 </div>
+                              </div>
+                          </div>
+                        </form>
+                     </div>
+                    
+                    
+                            <!------Card 1 company 3-->
+                            <div id="company3" class="tab-pane">                    
+                    
+                              <form id="formaccount" action="editaccount_company3.html" method="get">     
+                                <div class="card border-light mb-3">
+                                  <div class="card-block">
+                                    
+                                    <div class="card-header">
+                                      <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <h5 class="card-title mb-0">Company Details 3
+                                        <button type="submit" class="pencil"  > <i class="fa fa-pencil" aria-hidden="true"></i></button></h5>
+                                      </div>
+                                    </div>
+                                    
+                                    <div class="card-body"> 
+                                          
+                                      <div class="row form-group">                       
+                                      <label class="col-md-8 col-sm-12 col-xs-12" name="companyname" id="companyname" for="">Company name</label>                    
+                                      </div>
+                    
+                                     <div class="row form-group">                      
+                                     <label class="col-md-8 col-sm-12 col-xs-12" id="company_name" name="company_name">Company email</label>     
+                                     </div>
+                    
+                                    <div class="row form-group">											
+                                    <label  class="col-md-8 col-sm-12 col-xs-12" id="adddoor" name="adddoor">Door no & street</label>
+                                    </div>
+                    
+                                    <div class="row form-group">
+                                    <label class="col-md-8 col-sm-12 col-xs-12" id="locality" name="locality">locality</label>                     
+                                   </div>
+                               
+                                    <div class="row form-group">
+                                    <label  style="width:auto !important;padding-right:0px !important;" class="col-md-3 col-sm-12 col-xs-6" id="state" name="state">State &nbsp;  &nbsp;  &nbsp;-  &nbsp;</label>
+                                    <label  style="margin-left:1px;" class="col-md-3 col-sm-12 col-xs-6" id="pincode" name="pincode">Pincode</label>
+                                  </div>
+                    
+                                 </div>
+                              </div>
+                          </div>
+                        </form>
+                    
+                            </div>
+                          </div>
+                        </div>
+                        <!-- END WIDGET 2 -->
+                      </div>
+
+        <!-----card 2-->
+            
+          <div class="col-md-12">
+            <form id="formaccount" action="editaccount_contact.html" method="get">  
+              <div class="card border-light mb-3">
+                  <div class="card-block">
+                    <div class="card-header">
+                      <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h5 class="card-title mb-0" >Contact Details
+                          <button type="submit" class="pencil"> <i class="fa fa-pencil" aria-hidden="true"></i></button></h5>
+                      </div>
+                    </div>
+                      <div class="card-body">                 
+                        <div class="row form-group">                                       
+											  <label class="col-md-8 col-sm-12 col-xs-12"   id="proprietorDirectorName" name="proprietorDirectorName" >Proprietor/Director Name</label>                  
+                        </div>
+
+                    <div class="row form-group">                     
+											<label class="col-md-8 col-sm-12 col-xs-12"    id="proprietorDirectorContactno">Proprietor/Director Contact No</label>
+                    </div>
+
+                    <div class="row form-group">                      
+											<label  class="col-md-8 col-sm-12 col-xs-12"  id="local_contact_name" name="local_contact_name" >Local contact name</label>
+                    </div>
+
+                      <div class="row form-group">                        
+                        <label  class="col-md-8 col-sm-12 col-xs-12"  id="local_contact_no" name="local_contact_no" >Local Contact No</label>
+                    </div>
+                 </div>                  
+                  
+                </div>
+            </div>
+        </div>
+      </form>
+        <!-----card 2 ends-->
+     </div>
+  
+
+  </div>
+   
+
+   </section>
+
+   </div><!--wiz form-->
+ </div><!--wiz content-->  
+</div> <!--wrapper-->
+<script>
+	function openNav() {
+  	document.getElementById("mySidepanel").style.width = "200px";
+	}    
+	function closeNav() {
+	  document.getElementById("mySidepanel").style.width = "0px";	  
+  }
+  
+  $(document).ready(function() {
+$('.nav-item a').on('click', function(e){
+var currentAttrValue = $(this).attr('href');
+// Show/Hide Tabs
+$('.tab-content ' + currentAttrValue).show().siblings().hide();
+// Change/remove current tab to active
+$(this).parent('li').addClass('active').siblings().removeClass('active');
+e.preventDefault();
+});
+});
+</script>
+</body>
+</html>

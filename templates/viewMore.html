@@ -1,0 +1,457 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../static/css/demo/site-demos.css">
+	<link rel="stylesheet" href="../static/css/style.css">
+	<link rel="stylesheet" href="../static/css/site-demos.css">
+	<link rel="stylesheet" href="../static/vendor/bootstrap-3.4.1-dist/css/bootstrap.min.css">
+  <script src="../static/vendor/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+  <script src="../static/js/jquery-3.3.1.min.js"></script>
+
+<style>
+    
+  @media screen and (min-device-width: 1008px) {
+  .wizard-v1-content   {
+    margin-left:420px;
+  }
+  .sidepanel  {
+      height:140%;
+  }
+  }
+</style>
+</head>
+<body>
+  			
+<div id="wrapper" class="wrapper">
+
+    				
+    <div class="wizard-v1-content">			
+        <div class="wizard-form">	
+            <div class="form-register" id="form-register" action="vendorRegister" method="POST">
+                <div id="form-total">
+                    <section style="width:100%;background-color: white;width:100%;padding:0px">       
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                          <!-- Indicators -->
+                          <ol class="carousel-indicators carousel-indicators-numbers " >
+                          <li data-target="#myCarousel" data-slide-to="0" class="">1</li>
+                          <li data-target="#myCarousel" data-slide-to="1">2</li>
+                          <li data-target="#myCarousel" data-slide-to="2">3</li>
+                          </ol>
+                          <div class="inner bordwhitew"  > 
+                              <form method="post" name="tradereportform" id="tradereportform" method="post">                        
+                              <div class="carousel-inner">
+                              <div class="item active">                
+                               <div class="form-row table-responsive bordwhite" id="form1" 
+                               style="margin-left:10px;border:none;background-color:white;width:100% !important">                
+                                 <table class="table" style="border:none;background-color:white">
+                                    <tbody style="border:none;">
+                                       <tr class="space-row bordwhite" style="border-spacing: 10px;">
+                                         <th class="reptitle" >COTTON SALE CONFIRMATION</th>                          
+                                        </tr>                        
+                                         <!---section1-->
+                                        <tr class="space-row bordwhite" style="border-spacing: 20px;">                      
+                                          <th class="paddrl">Con.no. </th>
+                                          <td style="margin-left:3px;" class="paddrl" id="tconfirmno-val"></td>	
+                                          <span><td>          </td></span>
+                                          <span><td>        </td></span>										
+                                          <th class="paddrl pl120" >Date: </th>	
+                                          <td class="paddrl " id="tconfirmdate-val"></td>
+                                        </tr> 
+                      
+                                         <tr class="space-row" class="bord">
+                                         <th>To</th>
+                                         </tr>     
+                      
+                                         <tr class="space-row bordwhite" >
+                                         <th>Buyer:</th>                                                                                  
+                                         <tr class="space-row bordwhite" >
+                                         <td class="space-row bordwhite awidt" id="tdoor_add-val"> </tr>
+                                         <tr class="space-row bordwhitew" >
+                                         <td id="tstate-val" class="awidt"><span><span>-</span><td class="pl0 awidt" id="tpincode-val"></td></span></td>
+                                         </tr>
+                      
+                                         <tr class="space-row bordwhite">
+                                         <th>Dear Sir,</th>
+                                         </tr>
+                      
+                                          <tr class="space-row bordwhite">
+                                          <th class="awidt pl100">I am pleased to confirm having this day sold to you on account of my principals,</th>
+                                          </tr>                  
+                                                  <tr class="space-row bordwhite">
+                                                      <th>Quality </th>
+                                                      <th class="wid"> :                              
+                                                      <span><td class="paddrl">Station :</td><td id="tstation-val" class="paddrl"></span>
+                                                      <span><th class="paddrl">, </span>
+                                                      <span><td class="paddrl">State :</td><td id="tstate_qual-val" class="paddrl"></span>
+                                                      <span><th class="paddrl">, </span>
+                                                      <span><td class="paddrl">Variety :</td><td id="tvariety-val" class="paddrl"></span>
+                                                      <span><th class="paddrl">, </span>                                           
+                                                      <span><td class="paddrl">Staple :</td><td id="tstaple-val" class="paddrl"></span>
+                                                      <span><th class="paddrl">, </span>
+                                                      </tr>
+                                                       <tr class="space-row bordwhite">    
+                                                      <span><td>              </td></span>
+                                                      <span><td class="paddrl">Mic :</td><td id="tmicfrom-val" class="paddrl"></span>                                       
+                                                      <span><td class="paddrl">-</td><td id="tmicto-val" class="paddrl"></td></span>
+                                                      <span><th class="paddrl">, </span>                                                          
+                                                      <span><td class="paddrl">Gtex :</td><td id="tgtex-val" class="paddrl"></span>
+                                                      <span><th class="paddrl">, </span>
+                                                      <span><td class="paddrl">Grade :</td><td id="tgrade-val" class="paddrl"></span>
+                                                      <span><th class="paddrl">, </span>
+                                                      <span><td class="paddrl">Trash :</td><td id="ttrash-val" class="paddrl"></span>
+                                                      <span><th class="paddrl">, </span>
+                                                      <span><td class="paddrl">Mositure :</td><td id="tmositure-val" class="paddrl"></span>
+                                                             
+                                                      </th>	                            
+                                                  </td>
+                                                  </tr>
+                      
+                                                   <tr class="space-row bordwhite">
+                                                   <th>Quantity </th>
+                                                   <th class="wid"> :</th>    
+                                                      <span><td class="paddrl">HSN :</td><td id="thsn-val" class="paddrl"></span>
+                                                      <span><th class="paddrl">, </span>
+                                                      <span><td class="paddrl">Truck :</td><td id="ttruck-val" class="paddrl"></span>
+                                                   
+                                                  </th>	                         
+                                                     
+                                                  </td>
+                                                  </tr>
+                      
+                                                     <tr class="space-row bordwhite">
+                                                      <th>Price </th>
+                                                      <th class="wid">:</th><span><td id="tprice-val"class="awidt pd0" style="font-weight:bold"></span>
+                                                      <span><th style="width:auto">/- SPOT/CANDY + Lorry Freight + Transit Insurance + 5% GST.	</span></td>
+                                                     </tr>
+                      
+                                                     <tr class="space-row bordwhite">
+                                                      <th>Dispatch </th>
+                                                      <th class="wid">:</th><span><td id="tdispatch" class="awidt pd0" ></span>
+                                                      <span><th class="awidt">,<span><td id="ownercontact-val" class="awidt" style="padding-left:0px;"></span>
+                                                      </th>	</span></td>
+                                                     </tr>
+                      
+                                                     <tr class="space-row bordwhite" >
+                                                      <th>Payment </th>
+                                                      <th class="wid">:</th><span><td id="ownername-val" class="awidt pd0" ></span>
+                                                      <span><th class="awidt">,<span><td id="ownercontact-val" class="awidt" style="padding-left:0px;"></span></th>	</span></td>
+                                                     </tr>
+                      
+                                                     <tr class="space-row bordwhite" >
+                                                      <th>Note </th>
+                                                      <th class="wid">:</th><span><td id="tnotes-val" class="pd0 awidt"></span>
+                                                      <span><th class="awidt">,<span><td id="ownercontact-val" class="awidt"></span></th>	</span></td>
+                                                     </tr>
+                                                     <tr class="space-row bordwhite">
+                                                      <th class="wid">Expecting your esteemed co-operation and thanking you in the mean while.</th>
+                                                     </tr>             
+                                                     <tr class="space-row bordwhite" style="border-spacing: 20px;">
+                                                                     
+                                                    
+                                                      <th class="paddrl bordwhite signi">Yours Faithfully,</th>	<td class="paddrl" id="tconfirmdate-val"></td>
+                                                      </tr>
+                                                      <tr class="space-row bordwhite awidt" style="border-spacing: 20px;">
+                                                                          
+                                                      <th class="paddrl signi"> R. Surendrakumar</th>	<td class="paddrl" id="tconfirmdate-val"></td>
+                                                  </tr>  
+                                                        
+                                                     <tr class="space-row  bordwhite"><th class="wid"></th></tr>  
+                                                     <tr class="space-row  bordwhite"><th class="wid"></th></tr>  
+                                                     <tr class="space-row  bordwhite"><th class="wid"></th></tr>  
+                                              
+                                        </tbody>
+                                      </table>
+                                     
+                                      </div><!---carousel item-->
+                                  </div>   
+                      
+                      
+                      <!--------------------Form 2------------------------------------------>
+                      
+                      <div class="item">                
+                          <div class="form-row table-responsive bordwhite" id="form1" 
+                               style="margin-left:10px;border:none;background-color:white;width:100% !important">          
+                            <table class="table" style="border:none;background-color:white">
+                               <tbody style="border:none;">
+                                  <tr class="space-row bordwhite" style="border-spacing: 10px;">
+                                    <th class="reptitle" style="color:red">COTTON SALE CONFIRMATION</th>                          
+                                   </tr>                        
+                                    <!---section1-->
+                                   <tr class="space-row bordwhite" style="border-spacing: 20px;">                      
+                                     <th class="paddrl">Con.no. </th>
+                                     <td style="margin-left:3px;" class="paddrl" id="tconfirmno-val1"></td>	
+                                     <span><td>          </td></span>
+                                     <span><td>        </td></span>										
+                                     <th class="paddrl pl120" >Date: </th>	
+                                     <td class="paddrl " id="tconfirmdate-val1"></td>
+                                   </tr> 
+                      
+                                    <tr class="space-row" class="bord">
+                                    <th>To</th>
+                                    </tr>     
+                      
+                                    <tr class="space-row bordwhite" >
+                                    <th>Buyer:</th>                                                                                  
+                                    <tr class="space-row bordwhite" >
+                                    <td class="space-row bordwhite awidt" id="tdoor_add-val1"> </tr>
+                                    <tr class="space-row bordwhitew" >
+                                    <td id="tstate-val1" class="awidt"><span><span>-</span><td class="pl0 awidt" id="tpincode-val1"></td></span></td>
+                                    </tr>
+                      
+                                    <tr class="space-row bordwhite">
+                                    <th>Dear Sir,</th>
+                                    </tr>
+                      
+                                             <tr class="space-row bordwhite">
+                                                 <th class="awidt pl100">I am pleased to confirm having this day sold to you on account of my principals,</th>
+                                             </tr>
+                                             <tr class="space-row bordwhite">
+                                                 <th>Quality </th>
+                                                 <th class="wid"> :                              
+                                                 <span><td class="paddrl">Station :</td><td id="tstation-val1" class="paddrl"></span>
+                                                 <span><th class="paddrl">, </span>
+                                                 <span><td class="paddrl">State :</td><td id="tstate_qual-val1" class="paddrl"></span>
+                                                 <span><th class="paddrl">, </span>
+                                                 <span><td class="paddrl">Variety :</td><td id="tvariety-val1" class="paddrl"></span>
+                                                 <span><th class="paddrl">, </span>                                           
+                                                 <span><td class="paddrl">Staple :</td><td id="tstaple-val1" class="paddrl"></span>
+                                                 <span><th class="paddrl">, </span>
+                                                 </tr>
+                                                  <tr class="space-row bordwhite">    
+                                                 <span><td>              </td></span>
+                                                 <span><td class="paddrl">Mic :</td><td id="tmicfrom-val1" class="paddrl"></span>                                       
+                                                 <span><td class="paddrl">-</td><td id="tmicto-val1" class="paddrl"></td></span>
+                                                 <span><th class="paddrl">, </span>                                                          
+                                                 <span><td class="paddrl">Gtex :</td><td id="tgtex-val1" class="paddrl"></span>
+                                                 <span><th class="paddrl">, </span>
+                                                 <span><td class="paddrl">Grade :</td><td id="tgrade-val1" class="paddrl"></span>
+                                                 <span><th class="paddrl">, </span>
+                                                 <span><td class="paddrl">Trash :</td><td id="ttrash-val1" class="paddrl"></span>
+                                                 <span><th class="paddrl">, </span>
+                                                 <span><td class="paddrl">Mositure :</td><td id="tmositure-val1" class="paddrl"></span>
+                                                        
+                                                 </th>	                            
+                                             </td>
+                                             </tr>
+                      
+                                              <tr class="space-row bordwhite">
+                                              <th>Quantity </th>
+                                              <th class="wid"> :</th>    
+                                                 <span><td class="paddrl">HSN :</td><td id="thsn-val1" class="paddrl"></span>
+                                                 <span><th class="paddrl">, </span>
+                                                 <span><td class="paddrl">Truck :</td><td id="ttruck-val1" class="paddrl"></span>
+                                              
+                                             </th>	                         
+                                                
+                                             </td>
+                                             </tr>
+                      
+                                                <tr class="space-row bordwhite">
+                                                 <th>Price </th>
+                                                 <th class="wid">:</th><span><td id="tprice-val1"class="awidt pd0" style="font-weight:bold"></span>
+                                                 <span><th style="width:auto">/- SPOT/CANDY + Lorry Freight + Transit Insurance + 5% GST.	</span></td>
+                                                </tr>
+                      
+                                                <tr class="space-row bordwhite">
+                                                 <th>Dispatch </th>
+                                                 <th class="wid">:</th><span><td id="tdispatch" class="awidt pd0" ></span>
+                                                 <span><th class="awidt">,<span><td id="ownercontact-val1" class="awidt" style="padding-left:0px;"></span>
+                                                 </th>	</span></td>
+                                                </tr>
+                      
+                                                <tr class="space-row bordwhite" >
+                                                 <th>Payment </th>
+                                                 <th class="wid">:</th><span><td id="ownername-val1" class="awidt pd0" ></span>
+                                                 <span><th class="awidt">,<span><td id="ownercontact-val1" class="awidt" style="padding-left:0px;"></span></th>	</span></td>
+                                                </tr>
+                      
+                                                <tr class="space-row bordwhite" >
+                                                 <th>Note </th>
+                                                 <th class="wid">:</th><span><td id="tnotes-val1" class="pd0 awidt"></span>
+                                                 <span><th class="awidt">,<span><td id="ownercontact-val1" class="awidt"></span></th>	</span></td>
+                                                </tr>
+                                                <tr class="space-row bordwhite">
+                                                 <th class="wid">Expecting your esteemed co-operation and thanking you in the mean while.</th>
+                                                </tr>             
+                                                <tr class="space-row bordwhite" style="border-spacing: 20px;">
+                                                                
+                                               
+                                                 <th class="paddrl bordwhite signi">Yours Faithfully,</th>	<td class="paddrl" id="tconfirmdate-val"></td>
+                                                 </tr>
+                                                 <tr class="space-row bordwhite awidt" style="border-spacing: 20px;">
+                                                                     
+                                                 <th class="paddrl signi"> R. Surendrakumar</th>	<td class="paddrl" id="tconfirmdate-val1"></td>
+                                             </tr>  
+                                                   
+                                                <tr class="space-row  bordwhite"><th class="wid"></th></tr>  
+                                                <tr class="space-row  bordwhite"><th class="wid"></th></tr>  
+                                                <tr class="space-row  bordwhite"><th class="wid"></th></tr>  
+                                         
+                                   </tbody>
+                                 </table>
+                                
+                          </div><!---carousel item-->
+                          </div>
+                      
+                          <!-----------------------Form 3--------------------------------------->
+                         
+                          <div class="item"> 
+                                         
+                              <div class="form-row table-responsive bordwhite" id="form1" 
+                               style="margin-left:10px;border:none;background-color:white;width:100% !important">         
+                                <table class="table" style="border:none;background-color:white">
+                                   <tbody style="border:none;">
+                                      <tr class="space-row bordwhite" style="border-spacing: 10px;">
+                                        <th class="reptitle" style="color:green">COTTON SALE CONFIRMATION</th>                          
+                                       </tr>                        
+                                        <!---section1-->
+                                       <tr class="space-row bordwhite" style="border-spacing: 20px;">                      
+                                         <th class="paddrl">Con.no. </th>
+                                         <td style="margin-left:3px;" class="paddrl" id="tconfirmno-val2"></td>	
+                                         <span><td>          </td></span>
+                                         <span><td>        </td></span>										
+                                         <th class="paddrl pl120" >Date: </th>	
+                                         <td class="paddrl " id="tconfirmdate-val2"></td>
+                                       </tr> 
+                      
+                                        <tr class="space-row" class="bord">
+                                        <th>To</th>
+                                        </tr>     
+                      
+                                        <tr class="space-row bordwhite" >
+                                        <th>Buyer:</th>                                                                                  
+                                        <tr class="space-row bordwhite" >
+                                        <td class="space-row bordwhite awidt" id="tdoor_add-val2"> </tr>
+                                        <tr class="space-row bordwhitew" >
+                                        <td id="tstate-val2" class="awidt"><span><span>-</span><td class="pl0 awidt" id="tpincode-val2"></td></span></td>
+                                        </tr>
+                      
+                                        <tr class="space-row bordwhite">
+                                        <th>Dear Sir,</th>
+                                        </tr>
+                      
+                                                 <tr class="space-row bordwhite">
+                                                     <th class="awidt pl100">I am pleased to confirm having this day sold to you on account of my principals,</th>
+                                                 </tr>
+                                                 <tr class="space-row bordwhite">
+                                                     <th>Quality </th>
+                                                     <th class="wid"> :                              
+                                                         <span><td class="paddrl">Station :</td><td id="tstation-val2" class="paddrl"></td></span>
+                                                     <span><th class="paddrl">, </span>
+                                                     <span><td class="paddrl">State :</td><td id="tstate_qual-val2" class="paddrl"></span>
+                                                     <span><th class="paddrl">, </span>
+                                                     <span><td class="paddrl">Variety :</td><td id="tvariety-val2" class="paddrl"></span>
+                                                     <span><th class="paddrl">, </span>
+                                                     <span><td class="paddrl">Staple :</td><td id="tstaple-val2" class="paddrl"></span>
+                                                     <span><th class="paddrl">,</th> </span>
+                                                     </tr>
+                                                      <tr class="space-row bordwhite">    
+                                                     <span><td>              </td></span>
+                                                     <span><td class="paddrl">Mic :</td><td id="tmicfrom-val2" class="paddrl"></span>                                       
+                                                     <span><td class="paddrl">-</td><td id="tmicto-val2" class="paddrl"></td></span>
+                                                     <span><th class="paddrl">, </span>                                                          
+                                                     <span><td class="paddrl">Gtex :</td><td id="tgtex-val2" class="paddrl"></span>
+                                                     <span><th class="paddrl">, </span>
+                                                     <span><td class="paddrl">Grade :</td><td id="tgrade-val2" class="paddrl"></span>
+                                                     <span><th class="paddrl">, </span>
+                                                     <span><td class="paddrl">Trash :</td><td id="ttrash-val2" class="paddrl"></span>
+                                                     <span><th class="paddrl">, </span>
+                                                     <span><td class="paddrl">Mositure :</td><td id="tmositure-val2" class="paddrl"></span>
+                                                            
+                                                     </th>	                            
+                                                 </td>
+                                                 </tr>
+                      
+                                                  <tr class="space-row bordwhite">
+                                                  <th>Quantity </th>
+                                                  <th class="wid"> :</th>    
+                                                     <span><td class="paddrl">HSN :</td><td id="thsn-val2" class="paddrl"></span>
+                                                     <span><th class="paddrl">, </span>
+                                                     <span><td class="paddrl">Truck :</td><td id="ttruck-val2" class="paddrl"></span>
+                                                  
+                                                 </th>	                         
+                                                    
+                                                 </td>
+                                                 </tr>
+                      
+                                                    <tr class="space-row bordwhite">
+                                                     <th>Price </th>
+                                                     <th class="wid">:</th><span><td id="tprice-val2"class="awidt pd0" style="font-weight:bold"></span>
+                                                     <span><th style="width:auto">/- SPOT/CANDY + Lorry Freight + Transit Insurance + 5% GST.	</span></td>
+                                                    </tr>
+                      
+                                                    <tr class="space-row bordwhite">
+                                                     <th>Dispatch </th>
+                                                     <th class="wid">:</th><span><td id="tdispatch" class="awidt pd0" ></span>
+                                                     <span><th class="awidt">,<span><td id="ownercontact-val2" class="awidt" style="padding-left:0px;"></span>
+                                                     </th>	</span></td>
+                                                    </tr>
+                      
+                                                    <tr class="space-row bordwhite" >
+                                                     <th>Payment </th>
+                                                     <th class="wid">:</th><span><td id="ownername-val2" class="awidt pd0" ></span>
+                                                     <span><th class="awidt">,<span><td id="ownercontact-val2" class="awidt" style="padding-left:0px;"></span></th>	</span></td>
+                                                    </tr>
+                      
+                                                    <tr class="space-row bordwhite" >
+                                                     <th>Note </th>
+                                                     <th class="wid">:</th><span><td id="tnotes-val2" class="pd0 awidt"></span>
+                                                     <span><th class="awidt">,<span><td id="ownercontact-val2" class="awidt"></span></th>	</span></td>
+                                                    </tr>
+                                                    <tr class="space-row bordwhite">
+                                                     <th class="wid">Expecting your esteemed co-operation and thanking you in the mean while.</th>
+                                                    </tr>             
+                                                    <tr class="space-row bordwhite" style="border-spacing: 20px;">
+                                                                    
+                                                   
+                                                     <th class="paddrl bordwhite signi">Yours Faithfully,</th>	<td class="paddrl" id="tconfirmdate-val2"></td>
+                                                     </tr>
+                                                     <tr class="space-row bordwhite awidt" style="border-spacing: 20px;">
+                                                                         
+                                                     <th class="paddrl signi"> R. Surendrakumar</th>	<td class="paddrl" id="tconfirmdate-val2"></td>
+                                                 </tr>  
+                                                       
+                                                    <tr class="space-row  bordwhite"><th class="wid"></th></tr>  
+                                                    <tr class="space-row  bordwhite"><th class="wid"></th></tr>  
+                                                    <tr class="space-row  bordwhite"><th class="wid"></th></tr>  
+                                             
+                                       </tbody>
+                                     </table>
+                                    
+                              </div><!---carousel item-->
+                              </div><!---carousel item-->   
+                                     
+                      <!----------------------------------------------------->
+                              </div>
+                                    <a class="left carousel-control"  href="#myCarousel" data-slide="prev">
+                                      <span class=" glyphicon glyphicon-chevron-left"></span>
+                                      <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="right carousel-control"  href="#myCarousel" data-slide="next">
+                                      <span class=" glyphicon glyphicon-chevron-right"></span>
+                                      <span class="sr-only">Next</span>
+                                    </a>
+                      
+                                     </div><!---Mycarousel-->
+                                  </div> <!---carousel inner-->	
+                               
+                </form>        
+            </section>                              
+    </div>
+    </div>   
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+	<script src="vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+	<script src="vendor/jquery-validation/dist/additional-methods.min.js"></script>
+	<script src="js/jquery.steps.js"></script>
+	<script src="js/main1.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</body>
+</html>
