@@ -60,7 +60,7 @@ ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 3
 #EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 
-LOGIN_REDIRECT_URL = "/traderadd"
+LOGIN_REDIRECT_URL = "/vendors"
 
 
 #EMAIL_SUBJECT_PREFIX = '[dev user skeleton] '
@@ -78,7 +78,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'account_login.middleware.OneSessionPerUserMiddleware',
+    #'account_login.middleware.OneSessionPerUserMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -123,13 +123,13 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME':'cot_sandhai2',
         #'NAME':'cot_sandhai2',
-        'USER':'dme',
+        'USER':'admin',
         #'USER':'root',
-        'PASSWORD':'dharini2009',
+        'PASSWORD':'cotton2019',
         #'PASSWORD':'Kanishka07052010',
-        'HOST':'localhost',
+        'HOST':'cottonsandhai.c4gydg2pk0kk.ap-south-1.rds.amazonaws.com',
         #'HOST':'localhost',
-        'PORT':'8888',
+        'PORT':'3306',
         #'OPTIONS': {
         #   'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
        # }
@@ -227,7 +227,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'umadevi.suren@gmail.com'
-EMAIL_HOST_PASSWORD = 'pifuizzkficciywa'
+EMAIL_HOST_PASSWORD = 'qxuxrhqdcopfivnu'
 PASSWORD_RESET_TIMEOUT_DAYS=1
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 SOCIAL_AUTH_LOGIN_URL = 'accounts/login'

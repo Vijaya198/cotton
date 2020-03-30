@@ -1,7 +1,7 @@
 
 from django.shortcuts import render
 from django.contrib import messages
-from django.contrib.auth import authenticate, logout
+from django.contrib.auth import authenticate, logout, login
 from django.contrib.auth.models import User
 from django.contrib.sites.shortcuts import get_current_site
 from django.core.mail import EmailMessage
@@ -60,7 +60,7 @@ def user_login(request):
 
             #context = {'account_id': accid.account_id}
 
-
+            login(request, user)
             #if request.GET.get('next', None):
                # return HttpResponseRedirect(request.GET['next'])
             return HttpResponseRedirect("vendors")
@@ -405,7 +405,7 @@ class PasswordResetView(View):
 def increment_account_number():
     last_user = User.objects.all().order_by('id').last()
     if not last_user:
-        new_account_id = str(datetime.date.today().year) + str(datetime.date.today().month).zfill(2) +str(datetime.date.today().day).zfill(2)+ '001'
+        new_account_id = str(date.today().year) + str(date.today().month).zfill(2) +str(date.today().day).zfill(2)+ '001'
         new_acc_id = int(new_account_id)
 
         return new_acc_id

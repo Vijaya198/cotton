@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.conf import settings
-import datetime
+from datetime import datetime, date
 
 from django.db.models import ForeignKey
 
@@ -9,11 +9,11 @@ from django.db.models import ForeignKey
 def increment_vendor_number():
     last_vendor_information = vendor_information.objects.all().order_by('id').last()
     if not last_vendor_information:
-        return 'VN-' + str(datetime.date.today().year) + str(datetime.date.today().month).zfill(2) +'-'+ '001'
+        return 'VN-' + str(date.today().year) + str(date.today().month).zfill(2) +'-'+ '001'
     vendor_id = last_vendor_information.vendor_id
     vendor_int = int(vendor_id[10:13])
     new_vendor_int = vendor_int + 1
-    new_vendor_id = 'VN-' + str(str(datetime.date.today().year)) + str(datetime.date.today().month).zfill(2) + '-' + str(new_vendor_int).zfill(3)
+    new_vendor_id = 'VN-' + str(str(date.today().year)) + str(date.today().month).zfill(2) + '-' + str(new_vendor_int).zfill(3)
     return new_vendor_id
 
 # Create your models here.
@@ -47,7 +47,7 @@ class vendor_information(models.Model):
 def increment_account_number():
     last_user_info = user_info.objects.all().order_by('id').last()
     if not user_info:
-        new_account_id= str(datetime.date.today().year) + str(datetime.date.today().month).zfill(2) +str(datetime.date.today().day).zfill(2)+ '000'
+        new_account_id= str(date.today().year) + str(date.today().month).zfill(2) +str(date.today().day).zfill(2)+ '000'
         new_acc_id = int(new_account_id)
 
         return new_acc_id
@@ -55,7 +55,7 @@ def increment_account_number():
     account_id = last_user_info.account_id
     account_int = int(account_id[8:11])
     new_account_int = account_int + 1
-    new_account_id =  str(datetime.date.today().year) + str(datetime.date.today().month).zfill(2) + str(datetime.date.today().day).zfill(2)+str(new_account_int).zfill(3)
+    new_account_id =  str(date.today().year) + str(date.today().month).zfill(2) + str(date.today().day).zfill(2)+str(new_account_int).zfill(3)
     new_acc_id= int(new_account_id)
 
     return new_acc_id

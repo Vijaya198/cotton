@@ -13,7 +13,7 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 from django.core.exceptions import ValidationError
 import logging
-from datetime import datetime
+from datetime import datetime, date
 from requests import ReadTimeout, ConnectTimeout, HTTPError, Timeout, ConnectionError
 from django.db.utils import OperationalError
 from django.contrib.auth.models import User
