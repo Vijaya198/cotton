@@ -2950,7 +2950,21 @@ color:rgb(206, 200, 200);
      padding:9px;
      z-index:1;
   }
-
+   .profile-page select{
+     text-align:center !important;
+     margin-top:0% !important;
+     margin-bottom:3% !important;
+     float:center !important;
+     width:100%;
+     border-color: rgb(19, 93, 153);
+     background-position: top center;
+     background-color:rgb(77, 148, 228) !important;
+     border:1px solid  rgb(19, 93, 153);
+     font-size:24px;font-weight: 600 ;
+     justify-self: center;
+     padding:9px;
+     z-index:1;
+  }
 table {
  table-layout: fixed;
  width:auto;
